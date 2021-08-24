@@ -4,8 +4,9 @@ import LandingPageTemplate from "../templates/LandingPageTemplate";
 const LandingPage = () => {
   return (
     <>
-    <Box h="84vh" w="100%">
-      <LandingPageTemplate />
+    {/* TODO : faire la page front joulie */}
+      <Box h="84vh" w="100%">
+        <LandingPageTemplate />
       </Box>
     </>
   );
