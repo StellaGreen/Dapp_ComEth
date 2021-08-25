@@ -1,4 +1,4 @@
-export const ComEthAddress = [
+export const ComEthAbi = [
   {
     inputs: [
       {
