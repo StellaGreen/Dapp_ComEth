@@ -42,11 +42,13 @@ const CreateComethForm = () => {
   let event =  comEthFactory.on('ComEthCreated')
       console.log(event.address) // = address ComEth 
 
+  // const ComEthAdress = event.address
+
   return (
     <>
       <Box boxShadow="dark-lg" w="35rem" rounded="lg">
         <Link to="/home">
-          <Box>Explication sur la création d'une communoté Ethereum</Box>
+          <Box padding="1rem">Explication sur la création d'une communoté Ethereum</Box>
           <Button boxShadow="lg" onClick={handleClickCreate} margin="2rem">
             Create your account
           </Button>
