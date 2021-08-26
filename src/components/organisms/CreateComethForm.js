@@ -12,7 +12,7 @@ const CreateComethForm = () => {
   const [web3State] = useContext(Web3Context);
   const comEthFactory = useContext(ComEthFactoryContext);
 
-  const toast = useToast();
+  const toast = useToast(); 
 
   const handleClickCreate = async () => {
     try {
