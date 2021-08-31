@@ -1,4 +1,4 @@
-export const ComEthFactoryAdress = "0x26e921a1309589B9F257f565E8357cDE10098f3C";
+export const ComEthFactoryAdress = "0x9399c252A6E49F7b2abdD325b1aC264Be2a3BdaD";
 export const ComEthFactoryAbi = [
   {
     inputs: [
@@ -15,7 +15,7 @@ export const ComEthFactoryAbi = [
     anonymous: false,
     inputs: [
       {
-        indexed: false,
+        indexed: true,
         internalType: "address",
         name: "comEthAddress",
         type: "address",

@@ -40,7 +40,8 @@ const CreateComethForm = () => {
     }
   }
   let event =  comEthFactory.on('ComEthCreated')
-      console.log(event) // = address ComEth 
+      console.log('event')
+      console.log(event._runningEvents) // = address ComEth 
 
   // const ComEthAdress =
 /*
