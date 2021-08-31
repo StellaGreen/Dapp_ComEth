@@ -18,6 +18,9 @@ const CreateComethForm = () => {
     try {
       let tx = await comEthFactory.createComEth(web3State.account) // puisque msg.sender = celui qui dois créer
       await tx.wait()
+      let event =  comEthFactory.on('ComEthCreated')
+          console.log('event')
+          console.log(event._runningEvents) // = address ComEth 
       toast({
         title: 'Confirmed transaction',
         description: `Transaction hash: ${tx.hash}`, // hash de la transac
@@ -39,38 +42,7 @@ const CreateComethForm = () => {
       console.log(e)
     }
   }
-  let event =  comEthFactory.on('ComEthCreated')
-      console.log('event')
-      console.log(event._runningEvents) // = address ComEth 
 
-  // const ComEthAdress =
-/*
-  const handleCheckComethAd = async () => {
-    try {
-      let tx = await comEthFactory.createComEth(web3State.account) // puisque msg.sender = celui qui dois créer
-      await tx.wait()
-      toast({
-        title: 'Confirmed transaction',
-        description: `Transaction hash: ${tx.hash}`, // hash de la transac
-        status: 'success',
-        duration: 7000,
-        isClosable: true,
-      })
-    } catch (e) {
-      if (e.code === 4001) {
-        toast({
-          title: 'Transaction signature denied',
-          description: e.message,
-          status: 'error',
-          duration: 9000,
-          isClosable: true,
-          
-        })
-      }
-      console.log(e)
-    }
-  }
-*/
   return (
     <>
       <Box boxShadow="dark-lg" w="35rem" rounded="lg">
