@@ -1,11 +1,12 @@
 import { Button, Input, Heading, Container, Center, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-
+//import { ComEthContext } from "../../App";
 import { useState } from "react";
 
 const LoginTemplate = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  //const ComEth = useContext(ComEthContext); 
 
   return (
     <>

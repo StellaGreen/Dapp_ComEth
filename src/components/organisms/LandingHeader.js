@@ -11,7 +11,7 @@ const LandingHeader = () => {
             <Link to="/home">Logos</Link>
             </Box>
             <Center>
-            <Heading marginBottom="2rem">Landing Header</Heading>
+            <Heading marginBottom="2rem">Landing ComEth Header</Heading>
             </Center>
             <ToggleModeDark/>
             </Box>
