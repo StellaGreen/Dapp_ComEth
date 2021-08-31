@@ -1,8 +1,9 @@
 import { Heading, Container, Center } from "@chakra-ui/react";
 import CreateComethForm from "../organisms/CreateComethForm";
 
+
 const CreateTemplate = () => {
-  
+ 
   return (
     <> 
     <Center>

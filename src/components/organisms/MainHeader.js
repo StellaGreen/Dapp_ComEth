@@ -11,7 +11,7 @@ const MainHeader = () => {
                 <Link to="/home">Logo</Link>
                 </Box>
                 <Center>
-                    <Heading marginBottom="2rem">Main Header</Heading>
+                    <Heading marginBottom="2rem">Main ComEth Header</Heading>
                 </Center>
                 <ToggleModeDark />
             </Box>
