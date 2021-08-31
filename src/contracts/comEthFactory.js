@@ -1,4 +1,4 @@
-export const ComEthFactoryAdress = "0xBf02E0D1A6c23BB14800e50390791a6792c93139";
+export const ComEthFactoryAdress = "0x26e921a1309589B9F257f565E8357cDE10098f3C";
 export const ComEthFactoryAbi = [
   {
     inputs: [
