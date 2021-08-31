@@ -16,8 +16,14 @@ export const ComEthFactoryAbi = [
     inputs: [
       {
         indexed: false,
-        internalType: "contract ComEth",
-        name: "comEth",
+        internalType: "address",
+        name: "comEthAddress",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "comEthOwner",
         type: "address",
       },
     ],
@@ -47,32 +53,39 @@ export const ComEthFactoryAbi = [
     inputs: [
       {
         internalType: "uint256",
-        name: "",
+        name: "subscriptionPrice_",
         type: "uint256",
       },
     ],
-    name: "comEthAddresses",
+    name: "createComEth",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getComEths",
     outputs: [
       {
-        internalType: "contract ComEth",
+        internalType: "contract ComEth[]",
         name: "",
-        type: "address",
+        type: "address[]",
       },
     ],
     stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [
+    inputs: [],
+    name: "getFactoryOwner",
+    outputs: [
       {
         internalType: "address",
-        name: "comEthOwner_",
+        name: "",
         type: "address",
       },
     ],
-    name: "createComEth",
-    outputs: [],
-    stateMutability: "nonpayable",
+    stateMutability: "view",
     type: "function",
   },
   {
