@@ -1,7 +1,5 @@
-import { React} from "react";
-import { Box, Button,  useToast, /* useToast */ } from "@chakra-ui/react";
-
-import { Link } from "react-router-dom";
+import { React, useEffect, useState} from "react";
+import { Box, Button,  useToast  } from "@chakra-ui/react";
 
 import { ComEthFactoryContext } from "../../App";
 import { useContext } from "react";
@@ -11,16 +9,36 @@ const CreateComethForm = () => {
 
   const [web3State] = useContext(Web3Context);
   const comEthFactory = useContext(ComEthFactoryContext);
+  const [value, setValue] = useState(0);
 
-  const toast = useToast(); 
+  const toast = useToast();
+
+  useEffect(() => {
+    if (comEthFactory) {
+      const cb = (account, str) => {
+        setValue(str);
+        toast({
+          title: "This is YOUR event",
+          description: `${account} ||${str}`,
+          status: "warning",
+          position: "top-right",
+          duration: 9000,
+          isClosable: true,
+        })
+      }
+      const allFilter = comEthFactory.filters.ComEthCreated(web3State.account);
+      comEthFactory.on(allFilter, cb);
+      return () => {
+        comEthFactory.off(allFilter, cb);
+      };
+    }
+  }, [comEthFactory, web3State.account, toast]);
+  
 
   const handleClickCreate = async () => {
     try {
       let tx = await comEthFactory.createComEth(web3State.account) // puisque msg.sender = celui qui dois créer
       await tx.wait()
-      let event =  comEthFactory.on('ComEthCreated')
-          console.log('event')
-          console.log(event._runningEvents) // = address ComEth 
       toast({
         title: 'Confirmed transaction',
         description: `Transaction hash: ${tx.hash}`, // hash de la transac
@@ -46,12 +64,13 @@ const CreateComethForm = () => {
   return (
     <>
       <Box boxShadow="dark-lg" w="35rem" rounded="lg">
-        <Link to="/home">
+        
           <Box padding="1rem">Explication sur la création d'une communoté Ethereum</Box>
           <Button boxShadow="lg" onClick={handleClickCreate} margin="2rem">
             Create your account
           </Button>
-        </Link>
+        
+        <Box>{value}</Box>
       </Box>
     </>
   );
