@@ -71,7 +71,7 @@ const SubmitProposalForm = () => {
     setOptionVote(tmp);
   };
   const handleClickSubOption = () => {
-    if(optionVote.length > 1 ) {setOptionVote(optionVote)}
+    if(optionVote.length > 1 ) {setOptionVote(optionVote.pop())}
   };
   useEffect(() => {
     console.log(proposition);
