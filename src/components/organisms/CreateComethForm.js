@@ -1,4 +1,4 @@
-import { React} from "react";
+import { React, useEffect} from "react";
 import { Box, Button,  useToast  } from "@chakra-ui/react";
 
 import { ComEthFactoryContext } from "../../App";
@@ -59,30 +59,41 @@ const CreateComethForm = () => {
       console.log(e)
     }
   }
-  const handleClickAd = async () => {
-    try {
-      let tax = await comEthFactory.getComEths()
-      toast({
-        title: 'Confirmed transaction',
-        description: ` les cometh address ${tax}`, // hash de la transac
-        status: 'success',
-        duration: 7000,
-        isClosable: true,
-      })
-    } catch (e) {
-      if (e.code === 4001) {
-        toast({
-          title: 'Transaction signature denied',
-          description: e.message,
-          status: 'error',
-          duration: 9000,
-          isClosable: true,
+  useEffect(() => {
+    // si simpleStorage est pas null alors
+    if (comEthFactory) {
+      const cb = (comEthAddress, comEthOwner) => {
+   
+        if (comEthOwner.toLowerCase() === web3State.account.toLowerCase()) {
+
           
-        })
-      }
-      console.log(e)
-    }
-  }
+          toast({
+            title: "Event ComEthCreated",
+            description: `comEthOwner: ${comEthOwner} comEthAddress: ${comEthAddress}`,
+            status: "info",
+            position: "top-right",
+            duration: 9000,
+            isClosable: true,
+          });
+        }
+        console.log('hello')
+        console.log(
+          `comEthOwner: ${comEthOwner} comEthAddress: ${comEthAddress}`
+          );
+          };
+          // ecouter sur l'event DataSet
+          comEthFactory.on("ComEthCreated", cb);
+          return () => {
+            // arreter d'ecouter lorsque le component sera unmount
+            comEthFactory.off("ComEthCreated", cb);
+          };
+        }
+      }, [
+        comEthFactory,
+        web3State.account,
+        toast,
+        //userFilter,
+      ]);
   
  
 
@@ -94,8 +105,6 @@ const CreateComethForm = () => {
           <Button boxShadow="lg" onClick={handleClickCreate} margin="2rem">
             Create your account
           </Button>
-          <Button onClick={handleClickAd} >Address</Button>
-          <Box></Box>
       </Box>
     </>
   );
