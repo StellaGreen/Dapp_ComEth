@@ -10,7 +10,7 @@ import { ComEthAbi } from "./contracts/comEth";
 export const ComEthFactoryContext = React.createContext(null);
 export const ComEthContext = React.createContext(null);
 
-const ComethAddress = "";
+const ComethAddress = '0xf2632965C20F5F4BaAbb6C37AC9bF6f58BCe188E'
 
 function App() {
   const comEthFactory = useContract(ComEthFactoryAdress, ComEthFactoryAbi);

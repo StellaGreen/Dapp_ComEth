@@ -1,4 +1,4 @@
-import { React, useEffect, useState} from "react";
+import { React} from "react";
 import { Box, Button,  useToast  } from "@chakra-ui/react";
 
 import { ComEthFactoryContext } from "../../App";
@@ -9,10 +9,9 @@ const CreateComethForm = () => {
 
   const [web3State] = useContext(Web3Context);
   const comEthFactory = useContext(ComEthFactoryContext);
-  const [value, setValue] = useState(0);
 
   const toast = useToast();
-
+/*
   useEffect(() => {
     if (comEthFactory) {
       const cb = (account, str) => {
@@ -33,7 +32,7 @@ const CreateComethForm = () => {
       };
     }
   }, [comEthFactory, web3State.account, toast]);
-  
+  */
 
   const handleClickCreate = async () => {
     try {
@@ -60,6 +59,32 @@ const CreateComethForm = () => {
       console.log(e)
     }
   }
+  const handleClickAd = async () => {
+    try {
+      let tax = await comEthFactory.getComEths()
+      toast({
+        title: 'Confirmed transaction',
+        description: ` les cometh address ${tax}`, // hash de la transac
+        status: 'success',
+        duration: 7000,
+        isClosable: true,
+      })
+    } catch (e) {
+      if (e.code === 4001) {
+        toast({
+          title: 'Transaction signature denied',
+          description: e.message,
+          status: 'error',
+          duration: 9000,
+          isClosable: true,
+          
+        })
+      }
+      console.log(e)
+    }
+  }
+  
+ 
 
   return (
     <>
@@ -69,8 +94,8 @@ const CreateComethForm = () => {
           <Button boxShadow="lg" onClick={handleClickCreate} margin="2rem">
             Create your account
           </Button>
-        
-        <Box>{value}</Box>
+          <Button onClick={handleClickAd} >Address</Button>
+          <Box></Box>
       </Box>
     </>
   );
