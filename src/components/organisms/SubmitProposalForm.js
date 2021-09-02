@@ -131,8 +131,9 @@ const SubmitProposalForm = () => {
             margin="1rem"
           >
             <option value="option1">1 semaine</option>
-            <option value="option1">2 semaines</option>
-            <option value="option1">3 semaines</option>
+            <option value="option2">2 semaines</option>
+            <option value="option3">3 semaines</option>
+            <option value="option4">4 semaines</option>
           </Select>
 
           <Box>Paiement reveiver</Box>
