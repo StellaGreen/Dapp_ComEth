@@ -14,7 +14,7 @@ const SubmitProposalForm = () => {
     title: "",
     timeLimit: 0,
     target: "",
-    someMany: 0,
+    sum: 0,
   });
   //const [nbOptions, setNbOptions] = useState(1);
 
@@ -28,7 +28,7 @@ const SubmitProposalForm = () => {
     }
   };
   const handleChangeOptions = (e) => {
-    handleChangeVoteOption(e)
+    handleChangeVoteOption(e);
     try {
       setProposition({ ...proposition, options: e.target.value });
     } catch (e) {
@@ -52,7 +52,7 @@ const SubmitProposalForm = () => {
   };
   const handleChangeAmount = (e) => {
     try {
-      setProposition({ ...proposition, someMany: e.target.value });
+      setProposition({ ...proposition, sum: e.target.value });
     } catch (e) {
       console.log(e.message);
     }
@@ -71,7 +71,9 @@ const SubmitProposalForm = () => {
     setOptionVote(tmp);
   };
   const handleClickSubOption = () => {
-    if(optionVote.length > 1 ) {setOptionVote(optionVote.pop())}
+    if (optionVote.length > 1) {
+      setOptionVote(optionVote.pop());
+    }
   };
   useEffect(() => {
     console.log(proposition);
@@ -90,22 +92,36 @@ const SubmitProposalForm = () => {
           />
 
           <Box>Vos Options de Vote - propositions</Box>
-          {optionVote.map((el) => (
-            <>
-              <Input
-                key={el}
-                onChange={handleChangeOptions}
-                boxShadow="lg"
-                w="32rem"
-                placeholder="Que diriez-vous d'une salle de sport ?"
-                margin="1rem"
-              />
-              <Button marginRight="1rem" onClick={handleClickAddOption}>
-                +
-              </Button>
-              <Button onClick={handleClickSubOption}>-</Button>
-            </>
-          ))}
+       
+        
+          <Input
+          onChange={handleChangeOptions}
+          boxShadow="lg"
+          w="32rem"
+          placeholder={`option`}
+          margin="1rem"
+        />
+            <Button marginRight="1rem" onClick={handleClickAddOption}>
+          +
+        </Button>
+        <Button onClick={handleClickSubOption}>-</Button> 
+          
+
+         
+        <Input
+          onChange={handleChangeOptions}
+          boxShadow="lg"
+          w="32rem"
+          placeholder={`option`}
+          margin="1rem"
+        />
+            <Button marginRight="1rem" onClick={handleClickAddOption}>
+          +
+        </Button>
+        <Button onClick={handleClickSubOption}>-</Button> 
+         
+         
+       
 
           <Box>Choisir votre limie de temps</Box>
           <Select
