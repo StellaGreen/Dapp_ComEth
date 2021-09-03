@@ -1,5 +1,5 @@
 import { Center, Heading } from "@chakra-ui/react";
-import InfoNav from "../organisms/InfoNav";
+
 
 const PeopleTemplate = () => {
   return (
@@ -8,7 +8,6 @@ const PeopleTemplate = () => {
       <Center>
       <Heading>View People</Heading>
       </Center>
-      <InfoNav />
     </>
   );
 };
