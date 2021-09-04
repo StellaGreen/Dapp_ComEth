@@ -1,7 +1,7 @@
 import { Button, Input, Heading, Container, Center, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import {  ComEthAddressContext } from "../../App";
-import { useState } from "react";
+import { useState , useContext} from "react";
 
 const LoginTemplate = () => {
   const [username, setUsername] = useState("");

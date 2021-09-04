@@ -10,12 +10,14 @@ export const ComEthAddressContext = React.createContext(null);
 export const ComEthFactoryContext = React.createContext(null);
 export const ComEthContext = React.createContext(null);
 
-const ComethAddress = "0xf2632965C20F5F4BaAbb6C37AC9bF6f58BCe188E";
+// const ComethAddress = "0xf2632965C20F5F4BaAbb6C37AC9bF6f58BCe188E";
 
 function App() {
-  const [comEthAddress,setComEthAddress] = useState('Testin value')
+  const [comEthAddress, setComEthAddress] = useState(
+    "0xf2632965C20F5F4BaAbb6C37AC9bF6f58BCe188E"
+  );
   const comEthFactory = useContract(ComEthFactoryAdress, ComEthFactoryAbi);
-  const comEth = useContract(ComethAddress, ComEthAbi);
+  const comEth = useContract(comEthAddress, ComEthAbi);
   useEffect(()=>{
     console.log('app context comEthAddress', comEthAddress)
   },[comEthAddress])
@@ -23,9 +25,9 @@ function App() {
     <>
       <ComEthFactoryContext.Provider value={comEthFactory}>
         <ComEthAddressContext.Provider value={{comEthAddress,setComEthAddress}}>
-           {/* <ComEthContext.Provider value={comEth}> */}
+           <ComEthContext.Provider value={comEth}>
           <Dapp />
-          {/* </ComEthContext.Provider> */}
+          </ComEthContext.Provider>
         </ComEthAddressContext.Provider>
       </ComEthFactoryContext.Provider>
     </>
