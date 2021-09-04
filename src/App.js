@@ -20,7 +20,7 @@ function App() {
   const comEth = useContract(comEthAddress, ComEthAbi);
   useEffect(()=>{
     console.log('app context comEthAddress', comEthAddress)
-  },[comEthAddress])
+  },[comEthAddress]) 
   return (
     <>
       <ComEthFactoryContext.Provider value={comEthFactory}>
