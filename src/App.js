@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Dapp from "./Dapp";
 import { useContract } from "web3-hooks";
 import {
@@ -18,15 +18,17 @@ function App() {
   );
   const comEthFactory = useContract(ComEthFactoryAdress, ComEthFactoryAbi);
   const comEth = useContract(comEthAddress, ComEthAbi);
-  useEffect(()=>{
-    console.log('app context comEthAddress', comEthAddress)
-  },[comEthAddress]) 
+  useEffect(() => {
+    console.log("app context comEthAddress", comEthAddress);
+  }, [comEthAddress]);
   return (
     <>
       <ComEthFactoryContext.Provider value={comEthFactory}>
-        <ComEthAddressContext.Provider value={{comEthAddress,setComEthAddress}}>
-           <ComEthContext.Provider value={comEth}>
-          <Dapp />
+        <ComEthAddressContext.Provider
+          value={{ comEthAddress, setComEthAddress }}
+        >
+          <ComEthContext.Provider value={comEth}>
+            <Dapp />
           </ComEthContext.Provider>
         </ComEthAddressContext.Provider>
       </ComEthFactoryContext.Provider>
