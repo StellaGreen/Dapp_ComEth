@@ -1,4 +1,4 @@
-import { Box, Center, Flex } from "@chakra-ui/react";
+import { Box,  Flex } from "@chakra-ui/react";
 import React from "react";
 import InfoButton from "../atoms/InfoButton";
 import ProposButton from "../atoms/ProposButton";

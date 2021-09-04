@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import Dapp from "./Dapp";
 import { useContract } from "web3-hooks";
 import {

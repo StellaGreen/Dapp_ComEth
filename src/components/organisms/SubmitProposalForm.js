@@ -1,12 +1,12 @@
-import { Box, Button, Center, FormControl, FormLabel, Input, Select } from "@chakra-ui/react";
+import { Box, Button, Center, FormControl, FormLabel, Input, Select, toast } from "@chakra-ui/react";
 import React from "react";
-//import { ComEthContext } from "../../App";
-import { /*useContext,*/ useEffect, useState } from "react";
+import { ComEthContext } from "../../App";
+import { useContext, useEffect, useState } from "react";
 //import { Web3Context } from "web3-hooks";
 
 const SubmitProposalForm = () => {
   //   const [web3State] = useContext(Web3Context);
-  //   const comEth = useContext(ComEthContext);
+    const comEth = useContext(ComEthContext);
   const [optionVote, setOptionVote] = useState([""]);
 
   const [proposition, setProposition] = useState({
@@ -61,25 +61,28 @@ const SubmitProposalForm = () => {
   const handleSubmitAll = async () => {
     try {
       //fonction ComEth submitProposal a remplir grace au form
+      const {voteOption, title, timeLimit, target, sum} = proposition
+      let props = await comEth.submitProposal(voteOption, title, timeLimit, target, sum)
+      console.log(comEth.address)
+      await props.wait()
+      toast({
+        title: "Proposition send",
+        description: `Your proposition : ${props}`, // hash de la transac
+        status: "success",
+        duration: 4000,
+        isClosable: true,
+      });
     } catch (e) {
       console.log(e.message);
     }
   };
 
-  const handleClickAddOption = () => {
-    setOptionVote(optionVote.push(""));
-    //setNbOptions(nbOptions + 1);
-  };
   const handleChangeVoteOption = (e) => {
     let tmp = [...optionVote];
     tmp[e.key] = e.target.value;
     setOptionVote(tmp);
   };
-  const handleClickSubOption = () => {
-    if (optionVote.length > 1) {
-      setOptionVote(optionVote.pop());
-    }
-  };
+
   useEffect(() => {
     console.log(proposition);
   }, [proposition]);
@@ -107,12 +110,6 @@ const SubmitProposalForm = () => {
             placeholder={`option`}
             margin="1rem"
           />
-          <Button size="sm" marginRight="1rem" onClick={handleClickAddOption}>
-            +
-          </Button>
-          <Button size="sm" onClick={handleClickSubOption}>
-            -
-          </Button>
 
           <FormLabel p="-0">Choisir votre limie de temps</FormLabel>
           <Select
