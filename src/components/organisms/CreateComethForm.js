@@ -66,8 +66,8 @@ const CreateComethForm = () => {
       const cb = (comEthAddress, comEthOwner) => {
    
         if (comEthOwner.toLowerCase() === web3State.account.toLowerCase()) {
-          
-          comEthAddressContext.setComEthAddress(comEthAddress);
+           console.log('Hello',comEthAddressContext);
+          CC
           toast({
             title: "Event ComEthCreated",
             description: `comEthOwner: ${comEthOwner} comEthAddress: ${comEthAddress}`,
