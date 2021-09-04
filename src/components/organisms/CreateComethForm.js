@@ -1,5 +1,10 @@
-import { React} from "react";
-import { Box, Button,  useToast, /* useToast */ } from "@chakra-ui/react";
+import { React, useEffect, useState} from "react";
+import {
+  Box,
+  Button,
+  useToast,
+   /* useToast */
+} from "@chakra-ui/react";
 
 import { Link } from "react-router-dom";
 
@@ -13,14 +18,16 @@ const CreateComethForm = () => {
   const comEthFactory = useContext(ComEthFactoryContext);
 
   const toast = useToast(); 
+  //const userFilter = comEthFactory.filters.ComEthCreated(web3State.account);
 
   const handleClickCreate = async () => {
     try {
-      let tx = await comEthFactory.createComEth(web3State.account) // puisque msg.sender = celui qui dois créer
-      await tx.wait()
+      await comEthFactory.createComEth(0) // puisque msg.sender = celui qui dois créer
+      let tx = await comEthFactory.getComEths()
+      console.log(tx)
       toast({
         title: 'Confirmed transaction',
-        description: `Transaction hash: ${tx.hash}`, // hash de la transac
+        description: `Transaction hash`, // hash de la transac
         status: 'success',
         duration: 7000,
         isClosable: true,
@@ -32,45 +39,51 @@ const CreateComethForm = () => {
           description: e.message,
           status: 'error',
           duration: 9000,
-          isClosable: true,
-          
+          isClosable: true,          
         })
       }
       console.log(e)
     }
   }
-  let event =  comEthFactory.on('ComEthCreated')
-      console.log('event')
-      console.log(event._runningEvents) // = address ComEth 
 
-  // const ComEthAdress =
-/*
-  const handleCheckComethAd = async () => {
-    try {
-      let tx = await comEthFactory.createComEth(web3State.account) // puisque msg.sender = celui qui dois créer
-      await tx.wait()
-      toast({
-        title: 'Confirmed transaction',
-        description: `Transaction hash: ${tx.hash}`, // hash de la transac
-        status: 'success',
-        duration: 7000,
-        isClosable: true,
-      })
-    } catch (e) {
-      if (e.code === 4001) {
-        toast({
-          title: 'Transaction signature denied',
-          description: e.message,
-          status: 'error',
-          duration: 9000,
-          isClosable: true,
+  useEffect(() => {
+    // si simpleStorage est pas null alors
+    if (comEthFactory) {
+      const cb = (comEthAddress, comEthOwner) => {
+   
+        if (comEthOwner.toLowerCase() === web3State.account.toLowerCase()) {
+
           
-        })
-      }
-      console.log(e)
-    }
-  }
-*/
+          toast({
+            title: "Event ComEthCreated",
+            description: `comEthOwner: ${comEthOwner} comEthAddress: ${comEthAddress}`,
+            status: "info",
+            position: "top-right",
+            duration: 9000,
+            isClosable: true,
+          });
+        }
+        console.log('hello')
+        console.log(
+          `comEthOwner: ${comEthOwner} comEthAddress: ${comEthAddress}`
+          );
+          };
+          // ecouter sur l'event DataSet
+          comEthFactory.on("ComEthCreated", cb);
+          return () => {
+            // arreter d'ecouter lorsque le component sera unmount
+            comEthFactory.off("ComEthCreated", cb);
+          };
+        }
+      }, [
+        comEthFactory,
+        web3State.account,
+        toast,
+        //userFilter,
+      ]);
+      // useEffect(() => {
+      // }, []);
+
   return (
     <>
       <Box boxShadow="dark-lg" w="35rem" rounded="lg">
