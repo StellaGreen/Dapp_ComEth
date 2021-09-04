@@ -1,13 +1,14 @@
-import { Center, Heading} from "@chakra-ui/react";
+import {  Center, Heading } from "@chakra-ui/react";
 
 import SubmitProposalForm from "../organisms/SubmitProposalForm";
 
 const PropositionTemplate = () => {
+
   return (
     <>
 
       <Center>
-      <Heading marginBottom="2rem">Make Propositions</Heading>
+      <Heading marginBottom="1rem">Make Propositions</Heading>
       </Center>
       <SubmitProposalForm />
     </>
