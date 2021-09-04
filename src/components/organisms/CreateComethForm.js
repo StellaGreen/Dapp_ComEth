@@ -1,7 +1,7 @@
 import { React, useEffect} from "react";
 import { Box, Button,  useToast  } from "@chakra-ui/react";
 
-import { ComEthFactoryContext } from "../../App";
+import { ComEthFactoryContext, ComEthAddressContext } from "../../App";
 import { useContext } from "react";
 import { Web3Context } from "web3-hooks";
 
@@ -9,6 +9,7 @@ const CreateComethForm = () => {
 
   const [web3State] = useContext(Web3Context);
   const comEthFactory = useContext(ComEthFactoryContext);
+  const comEthAddressContext = useContext(ComEthAddressContext);
 
   const toast = useToast();
 /*
@@ -65,8 +66,8 @@ const CreateComethForm = () => {
       const cb = (comEthAddress, comEthOwner) => {
    
         if (comEthOwner.toLowerCase() === web3State.account.toLowerCase()) {
-
           
+          comEthAddressContext.setComEthAddress(comEthAddress);
           toast({
             title: "Event ComEthCreated",
             description: `comEthOwner: ${comEthOwner} comEthAddress: ${comEthAddress}`,
