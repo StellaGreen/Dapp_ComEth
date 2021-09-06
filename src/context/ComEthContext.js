@@ -18,7 +18,8 @@ export const useComEthFactory = () => {
 };
 
 export const ComEthContextProvider = ({ children }) => {
-  const comEthFactory = useContract(ComEthAdress, ComEthAbi);
+  const { comEthAddress } = useContext(ComEthAddressContext);
+  const comEth = useContract(comEthAddress, ComEthAbi);
   return (
     <ComEthContext.Provider value={comEthFactory}>
       {children}
