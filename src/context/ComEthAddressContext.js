@@ -1,6 +1,5 @@
 import { createContext, useState, useContext } from "react";
 
-
 export const ComEthAddressContext = React.createContext(null);
 
 export const useComEthAddress = () => {
@@ -14,11 +13,9 @@ export const useComEthAddress = () => {
 };
 
 export const ComEthAddressContextProvider = ({ children }) => {
- const [comEthAddress, setComEthAddress] = useState(
-   ""
- );
+  const [comEthAddress, setComEthAddress] = useState("Default value");
   return (
-    <ComEthAddressContext.Provider value={{comEthAddress,setComEthAddress}}>
+    <ComEthAddressContext.Provider value={{ comEthAddress, setComEthAddress }}>
       {children}
     </ComEthAddressContext.Provider>
   );

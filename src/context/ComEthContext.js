@@ -1,9 +1,7 @@
 import { createContext, useContext } from "react";
 import { useContract } from "web3-hooks";
-import{ComEthAddressContext} from "./ComEthAddressContext"
-import {
-  ComEthAbi,
-} from "../contracts/comEthFactory";
+import { ComEthAddressContext } from "./ComEthAddressContext";
+import { ComEthAbi } from "../contracts/comEthFactory";
 
 export const ComEthContext = React.createContext(null);
 
