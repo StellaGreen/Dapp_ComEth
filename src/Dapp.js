@@ -13,6 +13,8 @@ import People from "./components/pages/People";
 import LandingHeader from "./components/organisms/LandingHeader";
 import MainHeader from "./components/organisms/MainHeader";
 //import ErrorTemlate from "./components/templates/ErrorTemlate";
+import { ComEthAddressContextProvider } from "./context/ComEthAddressContext";
+import { ComEthFactoryContextProvider } from "./context/ComEthFactoryContext";
 
 const Dapp = () => {
   console.log(window.location.pathname);
@@ -25,7 +27,11 @@ const Dapp = () => {
           <LandingPage />
         </Route>
         <Route exact path="/Create" component={Create}>
-          <Create />
+          <ComEthAddressContextProvider>
+            <ComEthFactoryContextProvider>
+            <Create />
+            </ComEthFactoryContextProvider>
+          </ComEthAddressContextProvider>
         </Route>
         <Route exact path="/Login" component={Login}>
           <Login />

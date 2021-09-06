@@ -9,31 +9,13 @@ import { Web3Context } from "web3-hooks";
 const CreateComethForm = () => {
   const [web3State] = useContext(Web3Context);
   const comEthFactory = useContext(ComEthFactoryContext);
-  const { comEthAddress } = useContext(ComEthAddressContext);
+  const { comEthAddress, setComEthAddress } = useContext(ComEthAddressContext);
 
   const toast = useToast();
-  /*
+
   useEffect(() => {
-    if (comEthFactory) {
-      const cb = (account, str) => {
-        setValue(str);
-        toast({
-          title: "This is YOUR event",
-          description: `${account} ||${str}`,
-          status: "warning",
-          position: "top-right",
-          duration: 9000,
-          isClosable: true,
-        })
-      }
-      const allFilter = comEthFactory.filters.ComEthCreated(web3State.account);
-      comEthFactory.on(allFilter, cb);
-      return () => {
-        comEthFactory.off(allFilter, cb);
-      };
-    }
-  }, [comEthFactory, web3State.account, toast]);
-  */
+    console.log("comEthAddress", comEthAddress);
+  }, [comEthAddress]);
 
   const handleClickCreate = async () => {
     try {
@@ -64,7 +46,8 @@ const CreateComethForm = () => {
     if (comEthFactory) {
       const cb = (ComEthAddress, ComEthOwner) => {
         if (ComEthOwner.toLowerCase() === web3State.account.toLowerCase()) {
-          console.log("Hello", comEthAddress);
+          console.log("Hello", ComEthAddress);
+          setComEthAddress(ComEthAddress);
           toast({
             title: "Event ComEthCreated",
             description: `comEthOwner: ${ComEthOwner} comEthAddress: ${ComEthAddress}`,
@@ -90,7 +73,8 @@ const CreateComethForm = () => {
     comEthFactory,
     web3State.account,
     toast,
-    comEthAddress
+    setComEthAddress,
+    comEthAddress,
     //userFilter,
   ]);
 
