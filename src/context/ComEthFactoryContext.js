@@ -5,7 +5,7 @@ import {
   ComEthFactoryAbi,
 } from "../contracts/comEthFactory";
 
-export const ComEthFactoryContext = React.createContext(null);
+export const ComEthFactoryContext = createContext(null);
 
 export const useComEthFactory = () => {
   const comEthFactoryContext = useContext(ComEthFactoryContext);

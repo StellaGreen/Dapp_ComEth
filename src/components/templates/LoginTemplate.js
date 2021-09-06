@@ -6,7 +6,7 @@ import { useState , useContext} from "react";
 const LoginTemplate = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { comEthAddress, setComEthAddress } = useContext(ComEthAddressContext); 
+  const {setComEthAddress } = useContext(ComEthAddressContext); 
 
   return (
     <>

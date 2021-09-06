@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext } from "react";
 
-export const ComEthAddressContext = React.createContext(null);
+export const ComEthAddressContext = createContext(null);
 
 export const useComEthAddress = () => {
   const comEthAddressContext = useContext(ComEthAddressContext);

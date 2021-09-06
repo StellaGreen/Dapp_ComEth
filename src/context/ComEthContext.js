@@ -3,7 +3,7 @@ import { useContract } from "web3-hooks";
 import { ComEthAddressContext } from "./ComEthAddressContext";
 import { ComEthAbi } from "../contracts/comEth";
 
-export const ComEthContext = React.createContext(null);
+export const ComEthContext = createContext(null);
 
 export const useComEth = () => {
   const comEthContext = useContext(ComEthContext);
