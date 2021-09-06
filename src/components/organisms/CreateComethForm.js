@@ -9,7 +9,7 @@ import { Web3Context } from "web3-hooks";
 const CreateComethForm = () => {
   const [web3State] = useContext(Web3Context);
   const comEthFactory = useContext(ComEthFactoryContext);
-  const { comEthAddress, setComEthAddress } = useContext(ComEthAddressContext);
+  const { comEthAddress } = useContext(ComEthAddressContext);
 
   const toast = useToast();
   /*
@@ -90,6 +90,7 @@ const CreateComethForm = () => {
     comEthFactory,
     web3State.account,
     toast,
+    comEthAddress
     //userFilter,
   ]);
 
