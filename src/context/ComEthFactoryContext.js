@@ -11,7 +11,7 @@ export const useComEthFactory = () => {
   const comEthFactoryContext = useContext(ComEthFactoryContext);
   if (comEthFactoryContext === undefined) {
     throw new Error(
-      `It seems that you are trying to use ComEthAddressContext outside of its provider`
+      `It seems that you are trying to use ComEthFactoryContext outside of its provider`
     );
   }
   return comEthFactoryContext;
