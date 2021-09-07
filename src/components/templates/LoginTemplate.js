@@ -17,26 +17,38 @@ const LoginTemplate = () => {
         <Heading margin="3rem">Join ComEth</Heading>
       </Center>
       <Container>
-        <Box boxShadow="dark-lg" w="35rem" rounded="lg" pb="0.3rem">
+        <Box
+          boxShadow="lg"
+          backgroundColor="blackAlpha.200"
+          w="35rem"
+          mt="4rem"
+          rounded="lg"
+          pb="0.3rem"
+        >
           <Input
             boxShadow="lg"
             w="32rem"
-            placeholder="enter Your ComEth address"
+            placeholder="ID of your group"
+            backgroundColor="teal.400"
             margin="1rem"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
           <Link to="/home">
-            <Circle
-              as="button"
-              backgroundColor="teal"
-              p="1em"
-              margin="2rem"
-              boxShadow="lg"
-              onClick={handleClickLinkToHome}
-            >
-              Join Community
-            </Circle>
+            <Center>
+              <Circle
+                as="button"
+                fontWeight="bold"
+                w="24rem"
+                backgroundColor="whiteAlpha.400"
+                p="0.5em"
+                margin="2rem"
+                boxShadow="lg"
+                onClick={handleClickLinkToHome}
+              >
+                Join Community
+              </Circle>
+            </Center>
           </Link>
         </Box>
       </Container>
