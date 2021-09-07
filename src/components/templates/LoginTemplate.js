@@ -5,7 +5,6 @@ import { useState , useContext} from "react";
 
 const LoginTemplate = () => {
   const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const comEthAddressContext = useContext(ComEthAddressContext); 
 
   return (
@@ -14,27 +13,23 @@ const LoginTemplate = () => {
         <Heading margin="3rem">Join ComEth</Heading>
       </Center>
       <Container>
-        <Box boxShadow="dark-lg" w="35rem" rounded="lg" pb="0.3rem">
+        <Box boxShadow="lg" backgroundColor="blackAlpha.200" w="35rem" mt="4rem" rounded="lg" pb="0.3rem">
           <Input
             boxShadow="lg"
             w="32rem"
             placeholder="ID of your group"
+            backgroundColor="teal.400"
             margin="1rem"
+            
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <Input
-            boxShadow="lg"
-            w="32rem"
-            placeholder="password of your group"
-            margin="1rem"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
           <Link to="/home">
-            <Circle as="button" backgroundColor="teal" p="1em" margin="2rem" boxShadow="lg" onClick={comEthAddressContext.setComEthAddress(username)}>
+            <Center>
+            <Circle as="button" fontWeight="bold" w="24rem" backgroundColor="whiteAlpha.400" p="0.5em" margin="2rem" boxShadow="lg" onClick={comEthAddressContext.setComEthAddress(username)}>
               Join Community
             </Circle>
+            </Center>
           </Link>
         </Box>
       </Container>
