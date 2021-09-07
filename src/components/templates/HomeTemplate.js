@@ -7,7 +7,7 @@ const HomeTemplate = () => {
     <>
       
       <Center>
-      <Heading>Welcome Home</Heading>
+      <Heading ml="3rem">Welcome Home</Heading>
       </Center>
       <HomeBody />
     </>

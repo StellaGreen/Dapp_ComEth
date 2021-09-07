@@ -36,6 +36,7 @@ const BudgetTemplate = () => {
       <Box onChange={handleBalance} padding="1rem">Get Balance getBalance : {balance}</Box>
       <Box onChange={handleInvest}>getInvestmentBalance :  {invest}</Box>
       </Box>
+      
     </>
   );
 };
