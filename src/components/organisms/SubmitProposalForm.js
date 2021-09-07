@@ -1,4 +1,4 @@
-import { Box, Button, Center, FormControl, FormLabel, Input, Select, toast } from "@chakra-ui/react";
+import { Box, Circle, Center, FormControl, FormLabel, Input, Select, toast } from "@chakra-ui/react";
 import React from "react";
 import { ComEthContext } from "../../App";
 import { useContext, useEffect, useState } from "react";
@@ -89,13 +89,13 @@ const SubmitProposalForm = () => {
   return (
     <>
       <Center>
-        <FormControl boxShadow="lg" padding="2rem" w="45rem" rounded="lg">
+        <FormControl boxShadow="lg" backgroundColor="blackAlpha.200" padding="2rem" w={{sm:"29rem" ,md:"43rem",lg:"45rem"}} ml={{sm:"8rem", md:"9rem"}} mt="2rem">
           <FormLabel isRequired>Titre de proposition proposition</FormLabel>
           <Input
             onChange={handleChangeProposition}
             size="sm"
             boxShadow="lg"
-            w="32rem"
+            w={{sm:"23rem" ,md:"32rem"}}
             placeholder="Salle de sport ?"
             margin="1rem"
           />
@@ -106,7 +106,7 @@ const SubmitProposalForm = () => {
             onChange={handleChangeOptions}
             size="sm"
             boxShadow="lg"
-            w="32rem"
+            w={{sm:"23rem" ,md:"32rem"}}
             placeholder={`option`}
             margin="1rem"
           />
@@ -116,7 +116,7 @@ const SubmitProposalForm = () => {
             onChange={handleChangeTimeLimit}
             size="sm"
             boxShadow="lg"
-            w="32rem"
+            w={{sm:"23rem" ,md:"32rem"}}
             margin="1rem"
           >
             <option value="option1">1 semaine</option>
@@ -130,7 +130,7 @@ const SubmitProposalForm = () => {
             onChange={handleChangeAmount}
             size="sm"
             boxShadow="lg"
-            w="32rem"
+            w={{sm:"23rem" ,md:"32rem"}}
             placeholder="0,75"
             margin="1rem"
           />
@@ -139,12 +139,13 @@ const SubmitProposalForm = () => {
             onChange={handleChangeAddressReceive}
             size="sm"
             boxShadow="lg"
-            w="32rem"
+            w={{sm:"23rem" ,md:"32rem"}}
             placeholder="0x00...."
             margin="1rem"
           />
-
-          <Button onClick={handleSubmitAll}>Valider</Button>
+          <Center>
+          <Circle as="button" backgroundColor="whiteAlpha.400" p="1rem" m="0.5rem" onClick={handleSubmitAll}>Valider</Circle>
+          </Center>
         </FormControl>
       </Center>
     </>

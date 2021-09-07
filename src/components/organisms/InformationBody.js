@@ -1,49 +1,29 @@
-import { Box, Flex } from '@chakra-ui/react';
-import React from 'react';
-import PeopleButton from '../atoms/PeopleButton';
-import BudgetButton from '../atoms/BudgetButton';
-import StatsButton from '../atoms/StatsButton';
+import { Box, SimpleGrid, Spacer} from "@chakra-ui/react";
+import React from "react";
+import PeopleButton from "../atoms/PeopleButton";
+import BudgetButton from "../atoms/BudgetButton";
+import StatsButton from "../atoms/StatsButton";
 
 const InformationBody = () => {
-    return (
-        <>
-            <Flex marginLeft="4rem" w="90%" marginTop="4rem">
-        <Box
-          boxShadow="lg"
-          marginLeft="11rem"
-          backgroundColor="blackAlpha.200"
-          w="25%"
-          h="24rem"
-        > 
-          <Box marginTop="20rem" marginLeft="2rem">
-            <StatsButton />
-          </Box>
+  return (
+    <>
+    
+    <SimpleGrid columns={[1, 1, 2, 3]} spacing="40px" m="2rem" ml="10rem">
+    <Box backgroundColor="blackAlpha.200" height="9rem">
+          blablablablabla
+          <StatsButton />
         </Box>
-        <Box
-          boxShadow="lg"
-          marginLeft="6rem"
-          backgroundColor="blackAlpha.200"
-          w="25%"
-          h="24rem"
-        >
-          <Box marginTop="20rem" marginLeft="2rem">
-            <BudgetButton />
-          </Box>
+        <Box backgroundColor="blackAlpha.200" height="9rem">
+          Hello <BudgetButton />
         </Box>
-        <Box
-          boxShadow="lg"
-          marginLeft="6rem"
-          backgroundColor="blackAlpha.200"
-          w="25%"
-          h="24rem"
-        >
-          <Box marginTop="20rem" marginLeft="2rem">
-            <PeopleButton />
-          </Box>
+        <Box backgroundColor="blackAlpha.200" height="9rem">
+          hey
+          <PeopleButton />
         </Box>
-      </Flex>
-        </>
-    );
+      </SimpleGrid>
+      
+    </>
+  );
 };
 
 export default InformationBody;
