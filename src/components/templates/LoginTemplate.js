@@ -27,7 +27,14 @@ const LoginTemplate = () => {
             onChange={(e) => setAddress(e.target.value)}
           />
           <Link to="/home">
-            <Circle as="button" backgroundColor="teal" p="1em" margin="2rem" boxShadow="lg" onClick={comEthAddressContext.setComEthAddress(username)}>
+            <Circle
+              as="button"
+              backgroundColor="teal"
+              p="1em"
+              margin="2rem"
+              boxShadow="lg"
+              onClick={handleClickLinkToHome}
+            >
               Join Community
             </Circle>
           </Link>

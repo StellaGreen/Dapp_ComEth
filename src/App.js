@@ -5,7 +5,7 @@ import {
   ComEthFactoryAdress,
   ComEthFactoryAbi,
 } from "./contracts/comEthFactory";
-import { ComEthAbi } from "./contracts/comEth";
+//import { ComEthAbi } from "./contracts/comEth";
 export const ComEthAddressContext = React.createContext(null);
 export const ComEthFactoryContext = React.createContext(null);
 export const ComEthContext = React.createContext(null);
@@ -17,23 +17,21 @@ function App() {
     "0xf2632965C20F5F4BaAbb6C37AC9bF6f58BCe188E"
   );
   const comEthFactory = useContract(ComEthFactoryAdress, ComEthFactoryAbi);
-  const comEth = useContract(comEthAddress, ComEthAbi);
+  //const comEth = useContract(comEthAddress, ComEthAbi);
   
   useEffect(() => {
     console.log("app context comEthAddress", comEthAddress);
   }, [comEthAddress]);
-  useEffect(() => {
-    if(comEth){console.log('ComEth',comEth);}
-  }, [comEthAddress,comEth]);
+
   return (
     <>
       <ComEthFactoryContext.Provider value={comEthFactory}>
         <ComEthAddressContext.Provider
           value={{ comEthAddress, setComEthAddress }}
         >
-          <ComEthContext.Provider value={comEth}>
-            <Dapp />
-          </ComEthContext.Provider>
+          {/* <ComEthContext.Provider value={comEth}> */}
+          <Dapp comEthAdd={comEthAddress}/>
+          {/* </ComEthContext.Provider> */}
         </ComEthAddressContext.Provider>
       </ComEthFactoryContext.Provider>
     </>
