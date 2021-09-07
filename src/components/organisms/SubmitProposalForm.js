@@ -131,7 +131,7 @@ const SubmitProposalForm = () => {
             size="sm"
             boxShadow="lg"
             w="32rem"
-            placeholder="0,75 ETH"
+            placeholder="0,75"
             margin="1rem"
           />
           <FormLabel>Paiement reveiver</FormLabel>
@@ -140,7 +140,7 @@ const SubmitProposalForm = () => {
             size="sm"
             boxShadow="lg"
             w="32rem"
-            placeholder="0x...."
+            placeholder="0x00...."
             margin="1rem"
           />
 

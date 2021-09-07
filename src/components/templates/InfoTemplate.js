@@ -8,7 +8,7 @@ const InfoTemplate = () => {
       <Center>
         <Heading>View Informations</Heading>
       </Center>
-
+      
       <InformationBody />
     </>
   );
