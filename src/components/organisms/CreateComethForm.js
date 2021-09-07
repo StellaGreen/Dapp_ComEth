@@ -1,8 +1,8 @@
 import { React, useEffect } from "react";
 import { Box, Button, useToast } from "@chakra-ui/react";
 
-import { ComEthFactoryContext } from "../../context/ComEthFactoryContext";
-import { ComEthAddressContext } from "../../context/ComEthAddressContext";
+import { ComEthFactoryContext } from "../../App";
+import { ComEthAddressContext } from "../../App";
 import { useContext } from "react";
 import { Web3Context } from "web3-hooks";
 

@@ -7,12 +7,16 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { ComEthAddressContext } from "../../context/ComEthAddressContext";
+import { ComEthAddressContext } from "../../App";
 import { useState, useContext } from "react";
 
 const LoginTemplate = () => {
   const [address, setAddress] = useState("");
   const { setComEthAddress } = useContext(ComEthAddressContext);
+
+  const handleClickLinkToHome = () => {
+    setComEthAddress(address);
+  };
 
   return (
     <>
@@ -33,7 +37,7 @@ const LoginTemplate = () => {
             <Button
               margin="2rem"
               boxShadow="lg"
-              onClick={setComEthAddress(address)}
+              onClick={handleClickLinkToHome}
             >
               Join Community
             </Button>
