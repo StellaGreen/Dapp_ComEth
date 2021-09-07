@@ -69,7 +69,6 @@ const CreateComethForm = () => {
 
     comEthFactory,
     web3State.account,
-    comEthAddressContext,
     toast,
     setComEthAddress,
     comEthAddress,
