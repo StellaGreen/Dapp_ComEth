@@ -13,10 +13,6 @@ const CreateComethForm = () => {
 
   const toast = useToast();
 
-  useEffect(() => {
-    console.log("comEthAddress", comEthAddress);
-  }, [comEthAddress]);
-
   const handleClickCreate = async () => {
     try {
       let tx = await comEthFactory.createComEth(web3State.account); // puisque msg.sender = celui qui dois créer
