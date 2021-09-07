@@ -22,12 +22,12 @@ const Dapp = () => {
 
   return (
     <>
+        <ComEthAddressContextProvider>
       {window.location.pathname === "/" ? <LandingHeader /> : <MainHeader />}
       <Switch>
         <Route exact path="/" component={LandingPage}>
           <LandingPage />
         </Route>
-        <ComEthAddressContextProvider>
           <Route exact path="/Create" component={Create}>
             <ComEthFactoryContextProvider>
               <Create />
@@ -36,12 +36,7 @@ const Dapp = () => {
           <Route exact path="/Login" component={Login}>
             <Login />
           </Route>
-        </ComEthAddressContextProvider>
       </Switch>
-
-
-
-
 
         <Route exact path="/Home" component={Home}>
           <ComEthContext>
@@ -66,6 +61,7 @@ const Dapp = () => {
         <Route exact path="/People" component={People}>
           <People />
         </Route>
+        </ComEthAddressContextProvider>
     </>
   );
 };
