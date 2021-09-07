@@ -8,16 +8,26 @@ import {
   Select,
   //useToast,
 } from "@chakra-ui/react";
+<<<<<<< HEAD
 //import { ComEthContext } from "../../context/ComEthContext";
 //import { useContext } from "react";
+=======
+//import { ComEthContext } from "../../App";
+//import { useContext, useEffect } from "react";
+>>>>>>> f17ad92a0380afaea628604f2c0515104c22692a
 //import { Web3Context } from "web3-hooks";
 
 const VoteTemplate = () => {
 
   //const [web3State] = useContext(Web3Context);
   //const comEth = useContext(ComEthContext);
+<<<<<<< HEAD
 
   //const toast = useToast();
+=======
+  //const toast = useToast();
+  //const handle
+>>>>>>> f17ad92a0380afaea628604f2c0515104c22692a
   
   return (
     <>

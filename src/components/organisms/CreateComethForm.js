@@ -66,17 +66,20 @@ const CreateComethForm = () => {
       };
     }
   }, [
+
     comEthFactory,
     web3State.account,
+    comEthAddressContext,
     toast,
     setComEthAddress,
     comEthAddress,
     //userFilter,
   ]);
+  
 
   return (
     <>
-      <Box boxShadow="dark-lg" w="35rem" rounded="lg">
+      <Box boxShadow="lg" w="35rem">
         <Box padding="1rem">
           Explication sur la création d'une communoté Ethereum
         </Box>
