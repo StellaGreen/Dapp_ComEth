@@ -13,35 +13,25 @@ import People from "./components/pages/People";
 import LandingHeader from "./components/organisms/LandingHeader";
 import MainHeader from "./components/organisms/MainHeader";
 //import ErrorTemlate from "./components/templates/ErrorTemlate";
-import { ComEthAddressContextProvider } from "./context/ComEthAddressContext";
-import { ComEthFactoryContextProvider } from "./context/ComEthFactoryContext";
-import { ComEthContext } from "./context/ComEthContext";
 
 const Dapp = () => {
   console.log(window.location.pathname);
 
   return (
     <>
-        <ComEthAddressContextProvider>
       {window.location.pathname === "/" ? <LandingHeader /> : <MainHeader />}
       <Switch>
         <Route exact path="/" component={LandingPage}>
           <LandingPage />
         </Route>
-          <Route exact path="/Create" component={Create}>
-            <ComEthFactoryContextProvider>
-              <Create />
-            </ComEthFactoryContextProvider>
-          </Route>
-          <Route exact path="/Login" component={Login}>
-            <Login />
-          </Route>
-      </Switch>
-
+        <Route exact path="/Create" component={Create}>
+          <Create />
+        </Route>
+        <Route exact path="/Login" component={Login}>
+          <Login />
+        </Route>
         <Route exact path="/Home" component={Home}>
-          <ComEthContext>
-            <Home />
-          </ComEthContext>
+          <Home />
         </Route>
         <Route exact path="/Vote" component={Vote}>
           <Vote />
@@ -61,7 +51,7 @@ const Dapp = () => {
         <Route exact path="/People" component={People}>
           <People />
         </Route>
-        </ComEthAddressContextProvider>
+      </Switch>
     </>
   );
 };
