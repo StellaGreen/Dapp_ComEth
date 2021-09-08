@@ -30,7 +30,7 @@ function App() {
           value={{ comEthAddress, setComEthAddress }}
         >
           {/* <ComEthContext.Provider value={comEth}> */}
-          <Dapp comEthAdd={comEthAddress}/>
+          <Dapp comEthAdr={comEthAddress}/>
           {/* </ComEthContext.Provider> */}
         </ComEthAddressContext.Provider>
       </ComEthFactoryContext.Provider>
