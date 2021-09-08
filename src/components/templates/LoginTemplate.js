@@ -1,11 +1,15 @@
 import { Circle, Input, Heading, Container, Center, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import {  ComEthAddressContext } from "../../App";
-import { useState , useContext} from "react";
+import { ComEthAddressContext } from "../../App";
+import { useState, useContext } from "react";
 
 const LoginTemplate = () => {
-  const [username, setUsername] = useState("");
-  const comEthAddressContext = useContext(ComEthAddressContext); 
+  const [address, setAddress] = useState("");
+  const { setComEthAddress } = useContext(ComEthAddressContext);
+
+  const handleClickLinkToHome = () => {
+    setComEthAddress(address);
+  };
 
   return (
     <>
@@ -17,16 +21,14 @@ const LoginTemplate = () => {
           <Input
             boxShadow="lg"
             w="32rem"
-            placeholder="ID of your group"
-            backgroundColor="teal.400"
+            placeholder="enter Your ComEth address"
             margin="1rem"
-            
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
           />
           <Link to="/home">
             <Center>
-            <Circle as="button" fontWeight="bold" w="24rem" backgroundColor="whiteAlpha.400" p="0.5em" margin="2rem" boxShadow="lg" onClick={comEthAddressContext.setComEthAddress(username)}>
+            <Circle as="button" fontWeight="bold" w="24rem" backgroundColor="whiteAlpha.400" p="0.5em" margin="2rem" boxShadow="lg" onClick={handleClickLinkToHome}>
               Join Community
             </Circle>
             </Center>

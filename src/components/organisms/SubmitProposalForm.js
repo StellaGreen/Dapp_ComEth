@@ -1,6 +1,6 @@
 import { Box, Circle, Center, FormControl, FormLabel, Input, Select, toast } from "@chakra-ui/react";
 import React from "react";
-import { ComEthContext } from "../../App";
+import { ComEthContext } from "../../context/ComEthContext";
 import { useContext, useEffect, useState } from "react";
 //import { Web3Context } from "web3-hooks";
 

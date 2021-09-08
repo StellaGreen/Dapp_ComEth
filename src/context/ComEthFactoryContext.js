@@ -1,11 +1,11 @@
-import { createContext, useContext } from "react";
+import React, { createContext, useContext } from "react";
 import { useContract } from "web3-hooks";
 import {
   ComEthFactoryAdress,
   ComEthFactoryAbi,
-} from "../contracts/comEthFactory"
+} from "../contracts/comEthFactory";
 
-export const ComEthFactoryContext = React.createContext(null);
+export const ComEthFactoryContext = createContext(null);
 
 export const useComEthFactory = () => {
   const comEthFactoryContext = useContext(ComEthFactoryContext);
@@ -18,7 +18,7 @@ export const useComEthFactory = () => {
 };
 
 export const ComEthFactoryContextProvider = ({ children }) => {
-   const comEthFactory = useContract(ComEthFactoryAdress, ComEthFactoryAbi);
+  const comEthFactory = useContract(ComEthFactoryAdress, ComEthFactoryAbi);
   return (
     <ComEthFactoryContext.Provider value={comEthFactory}>
       {children}
