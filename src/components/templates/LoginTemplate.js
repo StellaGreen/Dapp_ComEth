@@ -28,26 +28,16 @@ const LoginTemplate = () => {
           <Input
             boxShadow="lg"
             w="32rem"
-            placeholder="ID of your group"
-            backgroundColor="teal.400"
+            placeholder="enter Your ComEth address"
             margin="1rem"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
           <Link to="/home">
             <Center>
-              <Circle
-                as="button"
-                fontWeight="bold"
-                w="24rem"
-                backgroundColor="whiteAlpha.400"
-                p="0.5em"
-                margin="2rem"
-                boxShadow="lg"
-                onClick={handleClickLinkToHome}
-              >
-                Join Community
-              </Circle>
+            <Circle as="button" fontWeight="bold" w="24rem" backgroundColor="whiteAlpha.400" p="0.5em" margin="2rem" boxShadow="lg" onClick={handleClickLinkToHome}>
+              Join Community
+            </Circle>
             </Center>
           </Link>
         </Box>

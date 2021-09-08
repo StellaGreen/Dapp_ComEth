@@ -89,34 +89,34 @@ const SubmitProposalForm = () => {
   return (
     <>
       <Center>
-        <FormControl boxShadow="lg" backgroundColor="blackAlpha.200" padding="2rem" w={{sm:"29rem" ,md:"43rem",lg:"45rem"}} ml={{sm:"8rem", md:"9rem"}} mt="2rem">
-          <FormLabel isRequired>Titre de proposition proposition</FormLabel>
+        <FormControl boxShadow="lg" backgroundColor="blackAlpha.200" padding="2rem" w={{sm:"68%" ,md:"43rem",lg:"45rem"}} ml={{sm:"8rem", md:"9rem"}} mt="2rem">
+          <FormLabel fontWeight="bold" isRequired>Titre de proposition proposition</FormLabel>
           <Input
             onChange={handleChangeProposition}
             size="sm"
             boxShadow="lg"
-            w={{sm:"23rem" ,md:"32rem"}}
+            w={{sm:"99%" ,md:"32rem"}}
             placeholder="Salle de sport ?"
             margin="1rem"
           />
 
-          <Box>Vos Options de Vote - propositions</Box>
+          <Box fontWeight="bold">Vos Options de Vote - propositions</Box>
 
           <Input
             onChange={handleChangeOptions}
             size="sm"
             boxShadow="lg"
-            w={{sm:"23rem" ,md:"32rem"}}
+            w={{sm:"99%" ,md:"32rem"}}
             placeholder={`option`}
             margin="1rem"
           />
 
-          <FormLabel p="-0">Choisir votre limie de temps</FormLabel>
+          <FormLabel p="-0" fontWeight="bold">Choisir votre limie de temps</FormLabel>
           <Select
             onChange={handleChangeTimeLimit}
             size="sm"
             boxShadow="lg"
-            w={{sm:"23rem" ,md:"32rem"}}
+            w={{sm:"99%" ,md:"32rem"}}
             margin="1rem"
           >
             <option value="option1">1 semaine</option>
@@ -125,26 +125,26 @@ const SubmitProposalForm = () => {
             <option value="option4">4 semaines</option>
           </Select>
 
-          <FormLabel>Amount</FormLabel>
+          <FormLabel fontWeight="bold">Amount</FormLabel>
           <Input
             onChange={handleChangeAmount}
             size="sm"
             boxShadow="lg"
-            w={{sm:"23rem" ,md:"32rem"}}
+            w={{sm:"99%" ,md:"32rem"}}
             placeholder="0,75"
             margin="1rem"
           />
-          <FormLabel>Paiement reveiver</FormLabel>
+          <FormLabel fontWeight="bold">Paiement reveiver</FormLabel>
           <Input
             onChange={handleChangeAddressReceive}
             size="sm"
             boxShadow="lg"
-            w={{sm:"23rem" ,md:"32rem"}}
+            w={{sm:"99%" ,md:"32rem"}}
             placeholder="0x00...."
             margin="1rem"
           />
           <Center>
-          <Circle as="button" backgroundColor="whiteAlpha.400" p="1rem" m="0.5rem" onClick={handleSubmitAll}>Valider</Circle>
+          <Circle as="button" backgroundColor="whiteAlpha.400" p="1rem" m="0.5rem" fontWeight="bold" onClick={handleSubmitAll}>Valider</Circle>
           </Center>
         </FormControl>
       </Center>
