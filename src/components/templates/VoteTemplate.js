@@ -38,7 +38,7 @@ const VoteTemplate = () => {
             <Select
               boxShadow="lg"
               margin="1rem"
-              w={{sm:"20rem", md:"35rem"}}
+              w={{sm:"60%", md:"59%", lg:"80%"}}
               placeholder="Selectionnez votre réponse"
             >
               <option>Oui</option>
