@@ -22,7 +22,7 @@ const LandingPageTemplate = () => {
         <Heading>
           <Text
             textShadow="3px 3px #43A2F7"
-            m="6"
+            mt={{sm:"10rem", lg:"10rem"}}
             fontSize="100px"
             color="blue.700"
             margin="4rem"
@@ -35,6 +35,10 @@ const LandingPageTemplate = () => {
         <Text
           color={"gray.500"}
           maxW={"4xl"}
+          ml={{sm:"0.5rem"}}
+          mr={{sm:"0.5rem"}}
+          mt={{lg:"2rem"}}
+          mb={{lg:"1rem"}}
           textAlign="center"
           fontStyle="italic"
           fontWeight="bold"
@@ -43,7 +47,8 @@ const LandingPageTemplate = () => {
           A new possibility to create communities and manage sharing funds
         </Text>
       </Center>
-      <Center marginBottom="4rem">
+      <Center>
+        
         <Link to={web3State.isLogged ? "/create" : "/"}>
           <Circle
           as="button"
@@ -71,6 +76,7 @@ const LandingPageTemplate = () => {
             Join a Community
           </Circle>
         </Link>
+        
       </Center>
       <FooterLandingPage />
     </>
