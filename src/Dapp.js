@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import { Switch, Route } from "react-router-dom";
 import LandingPage from "./components/pages/LandingPage";
 import Create from "./components/pages/Create";
@@ -14,7 +14,13 @@ import LandingHeader from "./components/organisms/LandingHeader";
 import MainHeader from "./components/organisms/MainHeader";
 //import ErrorTemlate from "./components/templates/ErrorTemlate";
 
+import {
+  ComEthContextProvider,
+} from "./context/ComEthContext";
+
+
 const Dapp = ({ comEthAdr }) => {
+  
   //console.log(window.location.pathname);
 
   return (
@@ -30,27 +36,31 @@ const Dapp = ({ comEthAdr }) => {
         <Route exact path="/Login" component={Login}>
           <Login />
         </Route>
-        <Route exact path="/Home" component={Home}>
-          <Home comEthAdr={comEthAdr} />
-        </Route>
-        <Route exact path="/Vote" component={Vote}>
-          <Vote />
-        </Route>
-        <Route exact path="/Proposition" component={Proposition}>
-          <Proposition />
-        </Route>
-        <Route exact path="/Info" component={Info}>
-          <Info />
-        </Route>
-        <Route exact path="/Stats" component={Stats}>
-          <Stats />
-        </Route>
-        <Route exact path="/Budget" component={Budget}>
-          <Budget />
-        </Route>
-        <Route exact path="/People" component={People}>
-          <People />
-        </Route>
+
+        <ComEthContextProvider comEthAdr={comEthAdr}>
+
+          <Route exact path="/Home" component={Home}>
+            <Home comEthAdr={comEthAdr} />
+          </Route>
+          <Route exact path="/Vote" component={Vote}>
+            <Vote />
+          </Route>
+          <Route exact path="/Proposition" component={Proposition}>
+            <Proposition />
+          </Route>
+          <Route exact path="/Info" component={Info}>
+            <Info />
+          </Route>
+          <Route exact path="/Stats" component={Stats}>
+            <Stats />
+          </Route>
+          <Route exact path="/Budget" component={Budget}>
+            <Budget />
+          </Route>
+          <Route exact path="/People" component={People}>
+            <People />
+          </Route>
+        </ComEthContextProvider>
       </Switch>
     </>
   );
