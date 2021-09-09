@@ -1,4 +1,4 @@
-import React ,{useEffect}from "react";
+import React from "react";
 import { Switch, Route } from "react-router-dom";
 import LandingPage from "./components/pages/LandingPage";
 import Create from "./components/pages/Create";
@@ -14,19 +14,8 @@ import LandingHeader from "./components/organisms/LandingHeader";
 import MainHeader from "./components/organisms/MainHeader";
 //import ErrorTemlate from "./components/templates/ErrorTemlate";
 
-import { useContract } from "web3-hooks";
-import { ComEthAbi } from "./contracts/comEth";
-//import { ComEthContext } from "./App";
-
-export const ComEthContext = React.createContext(null);
-
-const Dapp = ({comEthAdr}) => {
-   const comEth = useContract(comEthAdr, ComEthAbi);
-     useEffect(() => {
-       console.log("ComEth", comEth);
-     }, [comEth]);
+const Dapp = ({ comEthAdr }) => {
   //console.log(window.location.pathname);
-
 
   return (
     <>
@@ -42,10 +31,7 @@ const Dapp = ({comEthAdr}) => {
           <Login />
         </Route>
         <Route exact path="/Home" component={Home}>
-
-          <ComEthContext.Provider value={comEth}>
-            <Home />
-          </ComEthContext.Provider>
+          <Home comEthAdr={comEthAdr} />
         </Route>
         <Route exact path="/Vote" component={Vote}>
           <Vote />
