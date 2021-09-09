@@ -16,7 +16,9 @@ import MainHeader from "./components/organisms/MainHeader";
 
 import { useContract } from "web3-hooks";
 import { ComEthAbi } from "./contracts/comEth";
-import { ComEthContext } from "./App";
+//import { ComEthContext } from "./App";
+
+export const ComEthContext = React.createContext(null);
 
 const Dapp = ({comEthAdr}) => {
    const comEth = useContract(comEthAdr, ComEthAbi);
@@ -40,6 +42,7 @@ const Dapp = ({comEthAdr}) => {
           <Login />
         </Route>
         <Route exact path="/Home" component={Home}>
+
           <ComEthContext.Provider value={comEth}>
             <Home />
           </ComEthContext.Provider>

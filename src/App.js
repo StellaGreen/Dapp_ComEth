@@ -14,7 +14,7 @@ export const ComEthContext = React.createContext(null);
 
 function App() {
   const [comEthAddress, setComEthAddress] = useState(
-    "0xf2632965C20F5F4BaAbb6C37AC9bF6f58BCe188E"
+    ""
   );
   const comEthFactory = useContract(ComEthFactoryAdress, ComEthFactoryAbi);
   //const comEth = useContract(comEthAddress, ComEthAbi);
