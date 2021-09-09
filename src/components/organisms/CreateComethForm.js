@@ -1,12 +1,13 @@
-import { React, useEffect } from "react";
+import { React, useEffect, useState } from "react";
 import { Box, Circle, useToast } from "@chakra-ui/react";
-
+import { Redirect } from "react-router-dom";
 import { ComEthFactoryContext } from "../../App";
 import { ComEthAddressContext } from "../../App";
 import { useContext } from "react";
 import { Web3Context } from "web3-hooks";
 
 const CreateComethForm = () => {
+  const [created , setCreated ] = useState(false)
   const [web3State] = useContext(Web3Context);
   const comEthFactory = useContext(ComEthFactoryContext);
   const { comEthAddress, setComEthAddress } = useContext(ComEthAddressContext);
@@ -35,6 +36,7 @@ const CreateComethForm = () => {
         });
       }
       console.log(e);
+      
     }
   };
   useEffect(() => {
@@ -53,7 +55,6 @@ const CreateComethForm = () => {
             isClosable: true,
           });
         }
-        console.log("hello");
         console.log(
           `comEthOwner: ${ComEthOwner} comEthAddress: ${ComEthAddress}`
         );
@@ -63,10 +64,11 @@ const CreateComethForm = () => {
       return () => {
         // arreter d'ecouter lorsque le component sera unmount
         comEthFactory.off("ComEthCreated", cb);
+        setCreated(!created)
       };
     }
   }, [
-
+    
     comEthFactory,
     web3State.account,
     toast,
@@ -74,18 +76,43 @@ const CreateComethForm = () => {
     comEthAddress,
     //userFilter,
   ]);
-  
+  useEffect(() => {
+    console.log(created);
+  }, [created]);
 
   return (
     <>
-      <Box boxShadow="lg" w="35rem" p="1rem" mt="3rem" rounded="md" backgroundColor="blackAlpha.200">
-        <Box fontWeight="bold" backgroundColor="teal.400" boxShadow="inner" p="0.5rem" rounded="md">
+      <Box
+        boxShadow="lg"
+        w="35rem"
+        p="1rem"
+        mt="3rem"
+        rounded="md"
+        backgroundColor="blackAlpha.200"
+      >
+        <Box
+          fontWeight="bold"
+          backgroundColor="teal.400"
+          boxShadow="inner"
+          p="0.5rem"
+          rounded="md"
+        >
           Explication sur la création d'une communoté Ethereum
         </Box>
-        <Circle fontWeight="bold" backgroundColor="whiteAlpha.400" boxShadow="lg" onClick={handleClickCreate}  _hover= {{bg:"#0db5aa"}} _selected={{bg:"#17d4c7"}} p="0.5em" margin="2rem">
+        <Circle
+          fontWeight="bold"
+          backgroundColor="whiteAlpha.400"
+          boxShadow="lg"
+          onClick={handleClickCreate}
+          _hover={{ bg: "#0db5aa" }}
+          _selected={{ bg: "#17d4c7" }}
+          p="0.5em"
+          margin="2rem"
+        >
           Create your account
         </Circle>
       </Box>
+      {created && <Redirect exact from="/create" to="/home" />}
     </>
   );
 };
