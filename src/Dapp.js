@@ -12,6 +12,7 @@ import Budget from "./components/pages/Budget";
 import People from "./components/pages/People";
 import LandingHeader from "./components/organisms/LandingHeader";
 import MainHeader from "./components/organisms/MainHeader";
+import { Box } from "@chakra-ui/layout";
 //import ErrorTemlate from "./components/templates/ErrorTemlate";
 
 const Dapp = () => {
@@ -19,6 +20,7 @@ const Dapp = () => {
 
   return (
     <>
+    <Box minH="100vh">
       {window.location.pathname === "/" ? <LandingHeader /> : <MainHeader />}
       <Switch>
         <Route exact path="/" component={LandingPage}>
@@ -52,6 +54,7 @@ const Dapp = () => {
           <People />
         </Route>
       </Switch>
+      </Box>
     </>
   );
 };
