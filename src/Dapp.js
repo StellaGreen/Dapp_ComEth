@@ -15,8 +15,8 @@ import MainHeader from "./components/organisms/MainHeader";
 import { Box } from "@chakra-ui/layout";
 //import ErrorTemlate from "./components/templates/ErrorTemlate";
 
-const Dapp = () => {
-  console.log(window.location.pathname);
+const Dapp = ({ comEthAdr }) => {
+  //console.log(window.location.pathname);
 
   return (
     <>
@@ -33,7 +33,7 @@ const Dapp = () => {
           <Login />
         </Route>
         <Route exact path="/Home" component={Home}>
-          <Home />
+          <Home comEthAdr={comEthAdr} />
         </Route>
         <Route exact path="/Vote" component={Vote}>
           <Vote />

@@ -17,7 +17,14 @@ const LoginTemplate = () => {
         <Heading margin="3rem">Join ComEth</Heading>
       </Center>
       <Container>
-        <Box boxShadow="lg" backgroundColor="blackAlpha.200" w="35rem" mt="4rem" rounded="lg" pb="0.3rem">
+        <Box
+          boxShadow="lg"
+          backgroundColor="blackAlpha.200"
+          w="35rem"
+          mt="4rem"
+          rounded="lg"
+          pb="0.3rem"
+        >
           <Input
             boxShadow="lg"
             w="32rem"
