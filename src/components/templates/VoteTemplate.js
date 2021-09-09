@@ -28,11 +28,11 @@ const VoteTemplate = () => {
           mt={{base:"4rem", sm: "4rem", md: "6rem", lg: "9rem" }}
           ml={{ sm: "0rem", md: "4rem" }}
           boxShadow="lg"
-          w={{base:"20rem", sm:"24rem",lg:"40rem"}}
+          w={{base:"20rem", sm:"30rem",lg:"40rem"}}
           backgroundColor="blackAlpha.200"
         >
-          <FormControl w={{base:"17rem",sm:"32rem"}} textAlign={{base:"center"}} margin="2rem">
-            <FormLabel fontWeight="bold" margin="1rem" textAlign={{base:"center"}}>
+          <FormControl w={{base:"17rem",sm:"32rem"}} margin="2rem">
+            <FormLabel fontWeight="bold" margin="1rem">
               Que diriez-vous d'une salle de sport ?
             </FormLabel>
             <Select

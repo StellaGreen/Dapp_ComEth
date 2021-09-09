@@ -39,10 +39,10 @@ const PeopleTemplate = () => {
     <>
       <Center>
         <Heading
-          mt={{ sm: "3rem",md:"5rem", lg: "8rem" }}
+          mt={{base:"2rem", sm:"1rem",lg:"6rem"}}
           ml={{md:"5rem"}}
           textAlign="center"
-          fontSize="4xl"
+          fontSize={{base:"xl", sm:"4xl"}}
           fontFamily="mono"
         >
           Membre de ma ComEhnauté

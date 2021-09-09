@@ -41,13 +41,13 @@ const BudgetTemplate = () => {
       </Center>
       <Box
         boxShadow="lg"
-        ml={{base:"1rem", sm: "1rem", md: "16rem", lg: "26rem" }}
+        ml={{base:"1rem", sm: "1rem", md: "14rem", lg: "24rem" }}
         mr={{base:"1rem", sm: "1rem" }}
         p="2rem"
-        mt={{base:"3rem", sm: "8rem" }}
+        mt={{base:"3rem", sm: "6rem" }}
         rounded="md"
         backgroundColor="blackAlpha.200"
-        w={{ md: "60%", lg: "40%" }}
+        w={{ md: "55%", lg: "45%", xl:"30%" }}
       >
         <Box
           boxShadow="inner"
