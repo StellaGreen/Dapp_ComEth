@@ -29,19 +29,19 @@ const BudgetTemplate = () => {
     <>
       <Center>
         <Heading
-          ml={{ sm: "6rem" }}
+          ml={{ md: "6rem" }}
           mt={{ sm: "5rem", lg: "8rem" }}
           textAlign="center"
           fontSize="4xl"
           w={{ sm: "70%" }}
-          fontFamily="fantasy"
+          fontFamily="mono"
         >
           Les budgets de votre ComEth
         </Heading>
       </Center>
       <Box
         boxShadow="lg"
-        ml={{ sm: "9rem", md: "16rem", lg: "26rem" }}
+        ml={{ sm: "1rem", md: "16rem", lg: "26rem" }}
         mr={{ sm: "1rem" }}
         p="2rem"
         mt={{ sm: "8rem" }}

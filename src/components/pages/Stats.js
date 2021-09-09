@@ -9,8 +9,8 @@ const Stats = () => {
   return (
     <>
     <Box minH="100vh" maxH="100%" w="100%"  bgGradient="linear(to-t,teal.600, teal.400);">
-      <StatsTemplate />
       <NavInfoOnly />
+      <StatsTemplate />
       </Box>
     </>
   );
