@@ -16,16 +16,11 @@ const Home = ({ comEthAdr }) => {
   }, [comEth]);
   return (
     <>
-      {/* <ComEthContext.Provider value={comEth}> */}
-        <Box
-          h={{ sm: "100%", md: "91.7vh", lg: "91.7vh" }}
-          w="100%"
-          bgGradient="linear(to-t,teal.600, teal.400);"
-        >
-          <HomeTemplate />
-          <NavLat />
-        </Box>
-      {/* </ComEthContext.Provider> */}
+      <Box w="100%" minH="100vh"  bgGradient="linear(to-t,teal.600, teal.400);">
+        <HomeTemplate />
+        <NavLat />
+        
+      </Box>
     </>
   );
 };
