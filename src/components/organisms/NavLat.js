@@ -25,6 +25,9 @@ const NavLat = () => {
                         as={IconButton}
                         aria-label="Options"
                         icon={<HamburgerIcon />}
+                        pos="sticky"
+                        left="80%"
+                        top="-10%"
                         size="lg"
                         backgroundColor="teal.600"
                         _hover= {{bg:"#0db5aa"}}
