@@ -6,7 +6,7 @@ const MainHeader = () => {
     return (
         <>
             <Box  right="0" left="0" w="100%" backgroundColor="teal.400" >
-                <Box  pos="sticky" marginRight="113rem">
+                <Box  pos="sticky" ml="4rem" marginRight="113rem">
                 <Logo />
                 </Box>
             </Box>

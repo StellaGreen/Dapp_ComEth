@@ -19,8 +19,9 @@ const Home = ({ comEthAdr }) => {
           bgGradient="linear(to-t,teal.600, teal.400);"
           minH="100vh"
         >
-          <HomeTemplate />
           <NavLat />
+          <HomeTemplate />
+          
         </Box>
       </ComEthContext.Provider>
     </>
