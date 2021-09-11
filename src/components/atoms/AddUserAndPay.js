@@ -33,7 +33,7 @@ const AddUserAndPay = () => {
           p="1rem"
           textAlign="center"
           fontWeight="bold"
-          _hover="green"
+          _hover= {{bg:"#1e3b45"}}
         >
           {" "}
           Se rajouter dans la ComEth
@@ -45,7 +45,7 @@ const AddUserAndPay = () => {
           p="1rem"
           textAlign="center"
           fontWeight="bold"
-          _hover="green"
+          _hover= {{bg:"#1e3b45"}}
         >
           {" "}
           Se mettre à jour
