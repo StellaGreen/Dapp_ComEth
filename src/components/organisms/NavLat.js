@@ -1,11 +1,6 @@
 import {
     Box,
-    Menu,
-    MenuButton,
-    MenuList,
-    IconButton
 } from "@chakra-ui/react";
-import { HamburgerIcon } from "@chakra-ui/icons";
 import { React } from "react";
 import VoteButton from "../atoms/VoteButton";
 import ProposButton from "../atoms/ProposButton";

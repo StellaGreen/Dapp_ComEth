@@ -89,7 +89,7 @@ const SubmitProposalForm = () => {
   return (
     <>
       <Center>
-        <FormControl boxShadow="lg" backgroundColor="blackAlpha.200" padding="2rem" w={{sm:"86%" ,md:"43rem",lg:"45rem"}} ml={{sm:"0.5rem", md:"9rem"}} mt={{base:"3rem",sm:"2rem"}} >
+        <FormControl position="static" boxShadow="lg" backgroundColor="blackAlpha.200" padding="2rem" w={{sm:"86%" ,md:"43rem",lg:"45rem"}} ml={{sm:"0.5rem", md:"9rem"}} mt={{base:"3rem",sm:"4rem"}} >
           <FormLabel fontWeight="bold" isRequired>Titre de proposition proposition</FormLabel>
           <Input
             onChange={handleChangeProposition}
@@ -99,6 +99,7 @@ const SubmitProposalForm = () => {
             w={{sm:"99%" ,md:"32rem"}}
             placeholder="Salle de sport ?"
             margin="1rem"
+            position="static"
           />
 
           <Box fontWeight="bold">Vos Options de Vote - propositions</Box>

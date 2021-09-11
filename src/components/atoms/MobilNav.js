@@ -13,14 +13,11 @@ import PeopleButton from './PeopleButton';
 const MobilNav = () => {
     return (
         <>
-            <Menu>
+            <Menu pos="absolute">
                     <MenuButton
                         as={IconButton}
                         aria-label="Options"
                         icon={<HamburgerIcon />}
-                        
-                        
-                        
                         size="lg"
                         backgroundColor="teal.600"
                         _hover= {{bg:"#0db5aa"}}
@@ -33,7 +30,7 @@ const MobilNav = () => {
               top="0"
               h="19.4rem"
               w="100%"
-              rounded="md"
+              rounded="sm"
               boxShadow="dark-lg"
               backgroundColor="teal.600"
             >

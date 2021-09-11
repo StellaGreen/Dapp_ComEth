@@ -34,9 +34,9 @@ const StatsTemplate = () => {
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" onChange={handleProposal} mb="6%">time limite : {proposal.timeLimit}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" onChange={handleProposal} mb="6%">paiment receiver : {proposal.receiver}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" onChange={handleProposal} mb="6%">amount : {proposal.amount}</Box>
-        <Center>
+        {/* <Center>
           <Circle backgroundColor="whiteAlpha.200" fontWeight="bold" p="1rem" w="40%" _hover= {{bg:"#21bdbf"}}>Voter</Circle>
-        </Center>
+        </Center> */}
       </Box>
     </>
   );
