@@ -23,13 +23,13 @@ const StatsTemplate = () => {
       const pr = ide.toString().split(',')
       
       setProposal({...proposal, 
-      option : pr[0], //
+      option : pr[0], 
       voteCount :  pr[1],
       statuVote : pr[2],
       createdAt: pr[3],
-      autor : pr[4], //
-      title: pr[5], //
-      receiver : pr[6], //
+      autor : pr[4], 
+      title: pr[5], 
+      receiver : pr[6],
       amount: pr[7]})
       //console.log(propositions)
 
@@ -54,7 +54,7 @@ const StatsTemplate = () => {
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">paiment receiver : {proposal.receiver}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold"mb="6%">amount : {proposal.amount}</Box>
         <Center>
-          <Circle backgroundColor="whiteAlpha.200" fontWeight="bold" p="1rem" w="40%" onClick={handleProposal} _hover= {{bg:"#21bdbf"}}>Voter</Circle>
+          <Circle backgroundColor="whiteAlpha.200" fontWeight="bold" p="1rem" w="40%" onClick={handleProposal} _hover= {{bg:"#21bdbf"}}>Rechercher</Circle>
         </Center>
       </Box>
     </>

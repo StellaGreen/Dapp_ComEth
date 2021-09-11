@@ -115,7 +115,7 @@ const SubmitProposalForm = () => {
       comEth.off("ProposalCreated", cb)
     }
     };
-  }, [comEth]);
+  }, [comEth, toast]);
 
   return (
     <>
