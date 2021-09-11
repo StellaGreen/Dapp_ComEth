@@ -58,7 +58,7 @@ const SubmitProposalForm = () => {
   };
   const handleChangeAmount = (e) => {
     try {
-      setProposition({ ...proposition, sum: ethers.utils.parseEthers(e.target.value) });
+      setProposition({ ...proposition, sum: ethers.utils.parseEther(e.target.value) });
     } catch (e) {
       console.log(e.message);
     }
