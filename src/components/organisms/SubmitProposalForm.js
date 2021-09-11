@@ -1,12 +1,14 @@
-import { Box, Circle, Center, FormControl, FormLabel, Input, Select, toast } from "@chakra-ui/react";
+import { Box, Circle, Center,  FormLabel, Input, Select, toast } from "@chakra-ui/react";
 import React from "react";
 import { ComEthContext } from "../../context/ComEthContext";
 import { useContext, useEffect, useState } from "react";
-//import { Web3Context } from "web3-hooks";
 
+//import { Web3Context } from "web3-hooks";
+const ethers = require ("ethers") 
 const SubmitProposalForm = () => {
   //   const [web3State] = useContext(Web3Context);
     const comEth = useContext(ComEthContext);
+
   const [optionVote, setOptionVote] = useState([""]);
 
   const [proposition, setProposition] = useState({
@@ -19,6 +21,10 @@ const SubmitProposalForm = () => {
   //const [nbOptions, setNbOptions] = useState(1);
 
   //const toast = useToast();
+
+  useEffect(()=>{
+    console.log(proposition)
+  },[proposition])
 
   const handleChangeProposition = (e) => {
     try {
@@ -38,7 +44,7 @@ const SubmitProposalForm = () => {
 
   const handleChangeTimeLimit = (e) => {
     try {
-      setProposition({ ...proposition, timeLimit: e.target.value });
+      setProposition({ ...proposition, timeLimit:Number(e.target.value) });
     } catch (e) {
       console.log(e.message);
     }
@@ -52,7 +58,7 @@ const SubmitProposalForm = () => {
   };
   const handleChangeAmount = (e) => {
     try {
-      setProposition({ ...proposition, sum: e.target.value });
+      setProposition({ ...proposition, sum: ethers.utils.parseEthers(e.target.value) });
     } catch (e) {
       console.log(e.message);
     }
@@ -89,7 +95,7 @@ const SubmitProposalForm = () => {
   return (
     <>
       <Center>
-        <FormControl position="static" boxShadow="lg" backgroundColor="blackAlpha.200" padding="2rem" w={{sm:"86%" ,md:"43rem",lg:"45rem"}} ml={{sm:"0.5rem", md:"9rem"}} mt={{base:"3rem",sm:"4rem"}} >
+        <Box position="static" boxShadow="lg" backgroundColor="blackAlpha.200" padding="2rem" w={{sm:"86%" ,md:"43rem",lg:"45rem"}} ml={{sm:"0.5rem", md:"9rem"}} mt={{base:"3rem",sm:"4rem"}} >
           <FormLabel fontWeight="bold" isRequired>Titre de proposition proposition</FormLabel>
           <Input
             onChange={handleChangeProposition}
@@ -123,10 +129,10 @@ const SubmitProposalForm = () => {
             w={{sm:"99%" ,md:"32rem"}}
             margin="1rem"
           >
-            <option value="option1">1 semaine</option>
-            <option value="option2">2 semaines</option>
-            <option value="option3">3 semaines</option>
-            <option value="option4">4 semaines</option>
+            <option value="604800">1 semaine</option>
+            <option value="1209600">2 semaines</option>
+            <option value="1814400">3 semaines</option>
+            <option value="2419200">4 semaines</option>
           </Select>
 
           <FormLabel fontWeight="bold">Amount</FormLabel>
@@ -152,7 +158,7 @@ const SubmitProposalForm = () => {
           <Center>
           <Circle as="button" backgroundColor="whiteAlpha.400" p="1rem" m="0.5rem" fontWeight="bold" onClick={handleSubmitAll} _hover= {{bg:"#21bdbf"}}>Valider</Circle>
           </Center>
-        </FormControl>
+        </Box>
       </Center>
     </>
   );
