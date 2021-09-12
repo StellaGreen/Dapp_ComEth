@@ -29,6 +29,15 @@ const AddUserAndPay = () => {
           isClosable: true,
         });
       }
+      if (e.code === 32603) {
+        toast({
+          title: "Vous faites déjà partie de la ComEth",
+          description: e.message,
+          status: "error",
+          duration: 400,
+          isClosable: true,
+        });
+      }
       console.log(e.error);
     }
   };
@@ -51,6 +60,15 @@ const AddUserAndPay = () => {
           description: e.message,
           status: "error",
           duration: 4000,
+          isClosable: true,
+        });
+      }
+      if (e.code === 32603) {
+        toast({
+          title: "Vous avez déjà régularisé votre situation pour ce moi",
+          description: e.message,
+          status: "error",
+          duration: 400,
           isClosable: true,
         });
       }

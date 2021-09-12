@@ -63,6 +63,7 @@ const StatsTemplate = () => {
           <Input w="40%" onChange={handleId} mr="1rem" placeholder="0"></Input>
           <Circle backgroundColor="whiteAlpha.200" fontWeight="bold" p="0.5rem" w="40%" onClick={handleProposal} _hover= {{bg:"#21bdbf"}}>Rechercher</Circle>
         </Center>
+        <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">title : {proposal.option}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">title : {proposal.title}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">Vote count : {proposal.voteCount}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">createdAt : {proposal.createdAt}</Box>
