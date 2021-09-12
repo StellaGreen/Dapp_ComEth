@@ -5,23 +5,26 @@ import { ComEthFactoryContext } from "../../App";
 import { ComEthAddressContext } from "../../App";
 import { useContext } from "react";
 import { Web3Context } from "web3-hooks";
+import { ethers } from 'ethers';
 
 const CreateComethForm = () => {
   const [web3State] = useContext(Web3Context);
   const comEthFactory = useContext(ComEthFactoryContext);
   const { comEthAddress, setComEthAddress } = useContext(ComEthAddressContext);
-  const [subscriptionPrice, setSubscriptionPrice] = useState(1)
+  const [subscriptionPrice, setSubscriptionPrice] = useState("");
 
   const toast = useToast();
-  const ethers = require("ethers");
 
-  const handleSubscription = (e) => {
-    setSubscriptionPrice(e.target.value)
-  }
+  // subscription price parametter <------------------------
+  const handleChangeSubscription = (e) => {
+    setSubscriptionPrice(e.target.value.toString());
+    console.log("ETH",e.target.value)
+  };
+  //-------------------------------------------------------------
 
   const handleClickCreate = async () => {
     try {
-      let tx = await comEthFactory.createComEth({value :ethers.utils.parseEther(subscriptionPrice)}); 
+      let tx = await comEthFactory.createComEth(ethers.utils.parseEther(subscriptionPrice)); // <------------
       await tx.wait();
       toast({
         title: "Confirmed transaction",
@@ -72,7 +75,6 @@ const CreateComethForm = () => {
       };
     }
   }, [
-
     comEthFactory,
     web3State.account,
     toast,
@@ -80,18 +82,62 @@ const CreateComethForm = () => {
     comEthAddress,
     //userFilter,
   ]);
-  
 
   return (
     <>
-      <Box boxShadow="lg" w="35rem" p="1rem" mt="3rem" rounded="md" backgroundColor="blackAlpha.200">
-        <Box fontWeight="bold" backgroundColor="teal.400" boxShadow="inner" p="0.5rem" rounded="md">
-          Explication sur la création d'une communoté Ethereum
+      <Box
+        boxShadow="lg"
+        w={{ base: "90%", md: "35rem" }}
+        p="1rem"
+        ml="4%"
+        mt="3rem"
+        rounded="md"
+        backgroundColor="blackAlpha.200"
+      >
+        <Box
+          fontWeight="bold"
+          fontSize={{ base: "md", sm: "lg" }}
+          textAlign="center"
+          m={{ base: "0.5rem", sm: "0" }}
+          backgroundColor="teal.400"
+          boxShadow="inner"
+          p="0.5rem"
+          rounded="md"
+        >
+          Explication sur la création d'une communauté Ethereum
         </Box>
         <Center>
-        <Box boxShadow="lg" w="60%" p="1rem" mt="3rem" rounded="md" backgroundColor="teal.400">Subscription Price <Input onChange={handleSubscription} ml="2rem" w="25%"placeHolder="10"></Input> ETH</Box>
+          <Box
+            boxShadow="lg"
+            fontSize={{ base: "sm", sm: "lg" }}
+            w={{ base: "90%", sm: "60%" }}
+            p="1rem"
+            mt="3rem"
+            rounded="md"
+            backgroundColor="teal.400"
+          >
+            Subscription Price{" "}
+            <Input
+              onChange={handleChangeSubscription}
+              ml="2rem"
+              w="25%"
+              placeHolder="10"
+            ></Input>{" "}
+            ETH
+          </Box>
         </Center>
-        <Circle fontWeight="bold" backgroundColor="whiteAlpha.400" boxShadow="lg" onClick={handleClickCreate}  _hover= {{bg:"#0db5aa"}} _selected={{bg:"#17d4c7"}} p="0.5em" margin="2rem">
+        <Circle
+          fontWeight="bold"
+          textAlign="center"
+          fontSize={{ base: "md", sm: "lg" }}
+          backgroundColor="whiteAlpha.400"
+          boxShadow="lg"
+          onClick={handleClickCreate}
+          _hover={{ bg: "#0db5aa" }}
+          _selected={{ bg: "#17d4c7" }}
+          p="0.5em"
+          margin="2rem"
+        >
           Create your account
         </Circle>
       </Box>
