@@ -7,7 +7,7 @@ const HomeTemplate = () => {
     <>
       
       <Center>
-      <Heading  ml={{ sm: "8rem" }} textAlign="center" fontSize="4xl" fontFamily="fantasy">Welcome Home</Heading>
+      <Heading  textAlign="center" mt={{base:"2rem", sm:"1rem",lg:"6rem"}} fontSize="4xl" fontFamily="mono">Welcome Home</Heading>
       </Center>
       <HomeBody />
     </>
