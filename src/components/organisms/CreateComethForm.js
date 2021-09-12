@@ -74,7 +74,7 @@ const CreateComethForm = () => {
       return () => {
         // arreter d'ecouter lorsque le component sera unmount
         comEthFactory.off("ComEthCreated", cb);
-        setCreated(!created)
+        setCreated(!created);
       };
     }
   }, [
@@ -83,7 +83,7 @@ const CreateComethForm = () => {
     toast,
     setComEthAddress,
     comEthAddress,
-    //userFilter,
+    created,
   ]);
 
   return (
