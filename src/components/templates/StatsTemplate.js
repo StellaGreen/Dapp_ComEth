@@ -1,5 +1,5 @@
 import { Box, Center, Heading, Circle, Input} from "@chakra-ui/react";
-import { useContext,  useState } from "react";
+import { useContext,  useEffect,  useState } from "react";
 import { ComEthContext } from "../../context/ComEthContext";
 
 const StatsTemplate = () => {
@@ -41,14 +41,15 @@ const StatsTemplate = () => {
       title: pr[5], 
       receiver : pr[6],
       amount: pr[7]})
-      //console.log(propositions)
 
       
     } catch (e) {
       console.log(e);
     }
   };
-
+  useEffect(()=>{
+    console.log("heyho",proposal)
+  })
   return (
     <>
       <Center>
