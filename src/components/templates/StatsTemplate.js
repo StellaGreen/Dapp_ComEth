@@ -7,8 +7,8 @@ const StatsTemplate = () => {
   const [ id, setId ] = useState(0)
 
   const [proposal, setProposal] = useState({
-    option: [""],
-    voteCount:0,
+    nbYes: 0,
+    nbNo: 0,
     statuVote: "",
     createdAt: "",
     autor: "",
@@ -31,10 +31,10 @@ const StatsTemplate = () => {
     try {
       let ide = await comEth.proposalById(id);
       const pr = ide.toString().split(',')
-      
-      setProposal({...proposal, 
-      option : pr[0], 
-      voteCount :  pr[1],
+      console.log(ide.toString())
+      setProposal({...proposal,
+      nbYes: pr[0],
+      nbNo: pr[1],
       statuVote : pr[2],
       createdAt: pr[3],
       autor : pr[4], 
@@ -61,11 +61,12 @@ const StatsTemplate = () => {
           <Circle backgroundColor="whiteAlpha.200" fontWeight="bold" p="0.5rem" w="40%" onClick={handleProposal} _hover= {{bg:"#21bdbf"}}>Rechercher</Circle>
         </Center>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">title : {proposal.title}</Box>
-        <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">Vote count : {proposal.voteCount}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">createdAt : {proposal.createdAt}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">author : {proposal.autor}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">paiment receiver : {proposal.receiver}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold"mb="6%">amount : {(proposal.amount / 10**18)} ETH</Box>
+        <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">nombre de votes validant : {proposal.nbYes}</Box>
+        <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">nombre de votes refusant : {proposal.nbNo}</Box>
       </Box>
     </>
   );
