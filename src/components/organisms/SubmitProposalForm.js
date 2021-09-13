@@ -5,7 +5,6 @@ import {
   FormLabel,
   Input,
   Select,
-  useToast
 } from "@chakra-ui/react";
 import React from "react";
 import { ComEthContext } from "../../context/ComEthContext";
@@ -18,8 +17,6 @@ const SubmitProposalForm = () => {
   const comEth = useContext(ComEthContext);
 
   // const [optionVote, setOptionVote] = useState([""]);;
-
-  const toast = useToast();
 
   const [proposition, setProposition] = useState({
     // voteOption: optionVote,
@@ -82,27 +79,6 @@ const SubmitProposalForm = () => {
       console.log(e.message);
     }
   };
-
-  useEffect(() => {
-    if(comEth){
-      const cb = (id, descriptions) => {
-        toast({
-            title: "Proposition créé",
-            description: `id de la proposition: ${id} . Desciprion : ${descriptions}`,
-            status: "info",
-            position: "top-right",
-            padding:"1rem",
-            fontWeight:"bold",
-            duration: 4000,
-            isClosable: true,
-          });
-        };
-    comEth.on("ProposalCreated", cb)
-    return () => {
-      comEth.off("ProposalCreated", cb)
-    }
-    };
-  }, [comEth, toast]);
 
   return (
     <>
