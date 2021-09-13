@@ -33,7 +33,7 @@ const UseEffect = () => {
             const cb = (newUser) => {
                 toast({
                     title: "",
-                    description: `Vous avez était rajouter en tant que nouvel utilisateur de ComEth sous l'addresse :${newUser}, veuillez régulariser votre situation.`,
+                    description: `Vous avez était rajouter en tant que nouvel utilisateur de ComEth sous l'addresse : ${newUser}, veuillez régulariser votre situation.`,
                     status: "info",
                     position: "top-right",
                     padding: "1rem",
@@ -49,26 +49,65 @@ const UseEffect = () => {
         };
     }, [comEth, toast]);
     useEffect(() => {
-    if (comEth) {
-        const cb = (sender,amount) => {
-            toast({
-                title: "Vous avez bien déposé dans votre ComEth",
-                description: `L'addresse : ${sender}, D'un montant de : ${amount / 10**18} ETH`,
-                status: "info",
-                position: "top-right",
-                padding: "1rem",
-                fontWeight: "bold",
-                duration: 8000,
-                isClosable: true,
-            });
+        if (comEth) {
+            const cb = (sender, amount) => {
+                toast({
+                    title: "Vous avez bien déposé dans votre ComEth",
+                    description: `L'addresse : ${sender}, D'un montant de : ${amount / 10 ** 18} ETH`,
+                    status: "info",
+                    position: "top-right",
+                    padding: "1rem",
+                    fontWeight: "bold",
+                    duration: 8000,
+                    isClosable: true,
+                });
+            };
+            comEth.on("Deposited", cb)
+            return () => {
+                comEth.off("Deposited", cb)
+            }
         };
-        comEth.on("Deposited", cb)
-        return () => {
-            comEth.off("Deposited", cb)
-        }
-    };
-}, [comEth, toast]);
-
+    }, [comEth, toast]);
+    useEffect(() => {
+        if (comEth) {
+            const cb = (voter, proposalId, proposalDescription) => {
+                toast({
+                    title: "À voter !",
+                    description: `Le compte : ${voter}, à voter la proposition: ${proposalDescription}, ID : ${proposalId}`,
+                    status: "info",
+                    position: "top-right",
+                    padding: "1rem",
+                    fontWeight: "bold",
+                    duration: 8000,
+                    isClosable: true,
+                });
+            };
+            comEth.on("Voted", cb)
+            return () => {
+                comEth.off("Voted", cb)
+            }
+        };
+    }, [comEth, toast]);
+    useEffect(() => {
+        if (comEth) {
+            const cb = (id, descriptions) => {
+                toast({
+                    title: "Proposition créé",
+                    description: `id de la proposition: ${id} . Desciprion : ${descriptions}`,
+                    status: "info",
+                    position: "top-right",
+                    padding: "1rem",
+                    fontWeight: "bold",
+                    duration: 4000,
+                    isClosable: true,
+                });
+            };
+            comEth.on("ProposalCreated", cb)
+            return () => {
+                comEth.off("ProposalCreated", cb)
+            }
+        };
+    }, [comEth, toast]);
     return (
         <>
             <Box></Box>
