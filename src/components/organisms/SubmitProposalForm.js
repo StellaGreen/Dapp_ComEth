@@ -35,15 +35,7 @@ const SubmitProposalForm = () => {
 
   const handleChangeProposition = (e) => {
     try {
-      setProposition({ ...proposition, title: e.target.value });
-    } catch (e) {
-      console.log(e.message);
-    }
-  };
-  const handleChangeOptions = (e) => {
-    handleChangeVoteOption(e);
-    try {
-      setProposition({ ...proposition, options: e.target.value });
+      setProposition({ ...proposition, title: e.target.value, options:["oui"] });
     } catch (e) {
       console.log(e.message);
     }
@@ -88,12 +80,6 @@ const SubmitProposalForm = () => {
     } catch (e) {
       console.log(e.message);
     }
-  };
-
-  const handleChangeVoteOption = (e) => {
-    let tmp = [...optionVote];
-    tmp[e.key] = e.target.value;
-    setOptionVote(tmp);
   };
 
   useEffect(() => {
@@ -141,18 +127,6 @@ const SubmitProposalForm = () => {
             placeholder="Salle de sport ?"
             margin="1rem"
             position="static"
-          />
-
-          <Box fontWeight="bold">Vos Options de Vote - propositions</Box>
-
-          <Input
-            onChange={handleChangeOptions}
-            backgroundColor="teal.600"
-            size="sm"
-            boxShadow="lg"
-            w={{ sm: "99%", md: "32rem" }}
-            placeholder={`option`}
-            margin="1rem"
           />
 
           <FormLabel p="-0" fontWeight="bold">

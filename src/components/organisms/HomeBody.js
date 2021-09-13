@@ -12,18 +12,18 @@ const HomeBody = () => {
     <AddUserAndPay />
       <SimpleGrid columns={[1, 1, 2, 3]} spacing="40px" mr={{base:"1rem",sm:"3rem"}} mt="4rem" ml={{base:"1rem", sm:"3rem", md:"10rem", lg:"12rem"}}>
         <Box rounded="md" textAlign="center" p="2rem" backgroundColor="blackAlpha.200" height={{sm:"20rem", md:"22rem", lg:"28rem"}}>
-          <Box fontWeight="bold" boxShadow="inner" p="0.5rem" rounded="md" backgroundColor="teal.400" mb={{base:"5rem",sm:"6rem", md:"8rem", lg:"15rem"}}>
+          <Box fontWeight="bold" boxShadow="inner" p="0.5rem" rounded="md" backgroundColor="teal.400" mb={{base:"3rem",sm:"4rem", md:"8rem", lg:"12rem"}}>
            Venez voter les propositions déjà suggérer par votre groupe ComEth
            </Box>
           <VoteButton />
         </Box>
         <Box rounded="md"  textAlign="center" p="2rem"  backgroundColor="blackAlpha.200" height={{sm:"20rem", md:"22rem", lg:"28rem"}}>
-        <Box fontWeight="bold" boxShadow="inner" p="0.5rem" rounded="md" backgroundColor="teal.400" mb={{base:"5rem",sm:"6rem", md:"8rem", lg:"15rem"}}>
+        <Box fontWeight="bold" boxShadow="inner" p="0.5rem" rounded="md" backgroundColor="teal.400" mb={{base:"3rem",sm:"4rem", md:"6rem", lg:"11rem"}}>
           Soumettez vos propres propositions à faire voter à votre groupe
           </Box> <ProposButton />
         </Box>
         <Box rounded="md" textAlign="center" p="2rem" backgroundColor="blackAlpha.200" height={{sm:"20rem", md:"22rem", lg:"28rem"}}>
-        <Box fontWeight="bold" boxShadow="inner" p="0.5rem" rounded="md" backgroundColor="teal.400" mb={{base:"5rem",sm:"6rem", md:"8rem", lg:"15rem"}}>
+        <Box fontWeight="bold" boxShadow="inner" p="0.5rem" rounded="md" backgroundColor="teal.400" mb={{base:"3rem",sm:"4rem", md:"6rem", lg:"11rem"}}>
           Retrouvez vos informations, statistique, proposition déjà voter ici
           </Box>
           <InfoButton />

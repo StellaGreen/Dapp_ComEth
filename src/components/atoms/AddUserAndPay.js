@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import { Circle, Center, useToast} from "@chakra-ui/react";
 import { ComEthContext } from "../../context/ComEthContext";
 import { Web3Context } from "web3-hooks";
@@ -8,17 +8,9 @@ const AddUserAndPay = () => {
   const comEth = useContext(ComEthContext);
   const toast = useToast();
 
-
-  const handleAddUser = async () => {
+  const handleAddUser = async (isLoadingAd) => {
     try {
       await comEth.addUser();
-      toast({
-        title: "Vous êtes un utilisateur de ComEth",
-        description: `Félicitation, bienvenue dans votre ComEth`, // hash de la transac
-        status: "success",
-        duration: 2000,
-        isClosable: true,
-      });
     } catch (e) {
       if (e.code === 4001) {
         toast({
@@ -42,16 +34,8 @@ const AddUserAndPay = () => {
   };
   const handlePay = async () => {
     try {
-
       const get = await comEth.getAmountToBePaid(web3State.account)
       await comEth.pay({value : get._hex});
-      toast({
-        title: "Vous êtes régularisé",
-        description: `Veuillez attends le toast de valisation de la blockchain`, // hash de la transac
-        status: "success",
-        duration: 4000,
-        isClosable: true,
-      });
     } catch (e) {
       if (e.code === 4001) {
         toast({
