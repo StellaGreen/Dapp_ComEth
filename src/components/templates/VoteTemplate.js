@@ -7,15 +7,14 @@ import {
   Heading,
   Select,
   Input,
-  useToast,
+
 } from "@chakra-ui/react";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { ComEthContext } from "../../context/ComEthContext";
 //import { useContext } from "react";
 //import { Web3Context } from "web3-hooks";
 
 const VoteTemplate = () => {
-  const toast = useToast();
   const comEth = useContext(ComEthContext);
   const [id, setId] = useState("");
   const [proposal, setProposal] = useState({
@@ -77,26 +76,7 @@ const VoteTemplate = () => {
       console.log(e.error);
     }
   }
-  useEffect(() =>{
-    if(comEth){
-      const cb = (voter,proposalId,proposalDescription) => {
-        toast ({
-          title: "À voter !",
-          description: `Le compte : ${voter}, à voter la proposition: ${proposalDescription}, ID : ${proposalId}`,
-          status: "info",
-          position: "top-right",
-          padding:"1rem",
-          fontWeight:"bold",
-          duration: 8000,
-          isClosable: true,
-        });
-      };
-  comEth.on("Voted", cb)
-  return () => {
-    comEth.off("Voted", cb)
-  }
-  };
-}, [comEth, toast]);
+
 
   return (
     <>
@@ -152,9 +132,8 @@ const VoteTemplate = () => {
               placeholder="Selectionnez votre réponse"
               onChange={handleChangeChoice}
             >
-              <option value={0}>Oui</option>
-              <option value={1}>Non</option>
-              <option value={2}>Blanc</option>
+              <option value={1}>Oui</option>
+              <option value={0}>Non</option>
             </Select>
             {/* <---------------------------- */}
             <Box fontWeight="bold" w={{ sm: "80%", md: "79%", lg: "80%" }}  backgroundColor="teal.400" rounded="md" mb="2%">Destinataire des fonds de la proposition :</Box>
