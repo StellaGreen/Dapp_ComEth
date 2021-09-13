@@ -17,12 +17,12 @@ const SubmitProposalForm = () => {
   //   const [web3State] = useContext(Web3Context);
   const comEth = useContext(ComEthContext);
 
-  const [optionVote, setOptionVote] = useState([""]);;
+  // const [optionVote, setOptionVote] = useState([""]);;
 
   const toast = useToast();
 
   const [proposition, setProposition] = useState({
-    voteOption: optionVote,
+    // voteOption: optionVote,
     title: "",
     timeLimit: 0,
     target: "",
@@ -35,8 +35,8 @@ const SubmitProposalForm = () => {
 
   const handleChangeProposition = (e) => {
     try {
-      setOptionVote(optionVote)
-      setProposition({ ...proposition, title: e.target.value, options:["oui"] });
+      // setOptionVote(optionVote)
+      setProposition({ ...proposition, title: e.target.value });
     } catch (e) {
       console.log(e.message);
     }
@@ -69,10 +69,10 @@ const SubmitProposalForm = () => {
 
   const handleSubmitAll = async () => {
     try {
-      //fonction ComEth submitProposal a remplir grace au form
-      const { voteOption, title, timeLimit, target, sum } = proposition;
+      //fonction ComEth submitProposal a remplir grace au form voteOption,
+      const {  title, timeLimit, target, sum } = proposition;
        await comEth.submitProposal(
-        voteOption,
+        // voteOption,
         title,
         timeLimit,
         target,
