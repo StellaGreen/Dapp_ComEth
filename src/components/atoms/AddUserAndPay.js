@@ -63,22 +63,24 @@ const AddUserAndPay = () => {
       <Center>
         <Circle
           onClick={handleAddUser}
-          backgroundColor="red"
-          w="25%"
+          backgroundColor="blackAlpha.300"
+          w="20%"
           mr="2rem"
+          mt="2rem"
           p="1rem"
           textAlign="center"
           fontWeight="bold"
           _hover= {{bg:"#1e3b45"}}
         >
           {" "}
-          Se rajouter dans la ComEth
+          Se rajouter
         </Circle>
         <Circle
           onClick={handlePay}
           w="20%"
-          backgroundColor="green"
+          backgroundColor="blackAlpha.300"
           p="1rem"
+          mt="2rem"
           textAlign="center"
           fontWeight="bold"
           _hover= {{bg:"#1e3b45"}}
