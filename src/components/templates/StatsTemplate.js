@@ -1,5 +1,5 @@
 import { Box, Center, Heading, Circle, Input} from "@chakra-ui/react";
-import { useContext,  useEffect,  useState } from "react";
+import { useContext,  useState } from "react";
 import { ComEthContext } from "../../context/ComEthContext";
 
 const StatsTemplate = () => {
@@ -7,7 +7,7 @@ const StatsTemplate = () => {
   const [ id, setId ] = useState(0)
 
   const [proposal, setProposal] = useState({
-    option: [],
+    option: [""],
     voteCount:0,
     statuVote: "",
     createdAt: "",
@@ -41,15 +41,12 @@ const StatsTemplate = () => {
       title: pr[5], 
       receiver : pr[6],
       amount: pr[7]})
-
       
     } catch (e) {
       console.log(e);
     }
   };
-  useEffect(()=>{
-    console.log("heyho",proposal)
-  })
+  
   return (
     <>
       <Center>
@@ -63,13 +60,12 @@ const StatsTemplate = () => {
           <Input w="40%" onChange={handleId} mr="1rem" placeholder="0"></Input>
           <Circle backgroundColor="whiteAlpha.200" fontWeight="bold" p="0.5rem" w="40%" onClick={handleProposal} _hover= {{bg:"#21bdbf"}}>Rechercher</Circle>
         </Center>
-        <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">title : {proposal.option}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">title : {proposal.title}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">Vote count : {proposal.voteCount}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">createdAt : {proposal.createdAt}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">author : {proposal.autor}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">paiment receiver : {proposal.receiver}</Box>
-        <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold"mb="6%">amount : {proposal.amount}</Box>
+        <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold"mb="6%">amount : {(proposal.amount / 10**18)} ETH</Box>
       </Box>
     </>
   );

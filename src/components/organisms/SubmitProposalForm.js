@@ -28,7 +28,7 @@ const SubmitProposalForm = () => {
     target: "",
     sum: 0,
   });
-
+  
   useEffect(() => {
     console.log(proposition);
   }, [proposition]);
@@ -101,14 +101,14 @@ const SubmitProposalForm = () => {
       const cb = (id, descriptions) => {
         toast({
             title: "Proposition créé",
-            description: `id de la proposition: ${id} desciprion : ${descriptions}`,
+            description: `id de la proposition: ${id} . Desciprion : ${descriptions}`,
             status: "info",
             position: "top-right",
+            padding:"1rem",
+            fontWeight:"bold",
             duration: 4000,
             isClosable: true,
           });
-          console.log(` DABIDOUDADIDA ${id},${descriptions}`)
-
         };
     comEth.on("ProposalCreated", cb)
     return () => {

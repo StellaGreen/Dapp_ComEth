@@ -12,6 +12,7 @@ const BudgetTemplate = () => {
     try {
       let balances = await comEth.getBalance();
       setGetBalance(balances.toString());
+      console.log("ok", balances.toString())
     } catch (e) {
       console.log(e);
     }
@@ -21,7 +22,7 @@ const BudgetTemplate = () => {
     try {
       let invests = await comEth.getInvestmentBalance(comEth.address);
       setInvest(invests.toString());
-      console.log("ok", invests)
+      console.log("ok", invests.toString())
     } catch (e) {
       console.log(e);
     }
@@ -73,7 +74,7 @@ const BudgetTemplate = () => {
           mb="2rem"
           rounded="lg"
         >
-          Get Balance getBalance : {balance}
+            Pot Commun : {balance / 10**18} ETH
         </Box>
         <Button
         onClick={handleBalance}
@@ -97,7 +98,7 @@ const BudgetTemplate = () => {
           rounded="lg"
           s
         >
-          getInvestmentBalance : {invest}
+          Investissement personnel : {invest / 10**18} ETH
         </Box>
         <Button
         onClick={handleInvest}

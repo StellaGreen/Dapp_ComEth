@@ -28,13 +28,12 @@ const AddUserAndPay = () => {
           duration: 4000,
           isClosable: true,
         });
-      }
-      if (e.code === 32603) {
+      }else {
         toast({
           title: "Vous faites déjà partie de la ComEth",
-          description: e.message,
+          description: "Vous êtes déjà un membre à part entière de cette ComEth !",
           status: "error",
-          duration: 400,
+          duration: 4000,
           isClosable: true,
         });
       }
@@ -48,9 +47,9 @@ const AddUserAndPay = () => {
       await comEth.pay({value : get._hex});
       toast({
         title: "Vous êtes régularisé",
-        description: `Transaction hash: ${get.hash}`, // hash de la transac
+        description: `Veuillez attends le toast de valisation de la blockchain`, // hash de la transac
         status: "success",
-        duration: 2000,
+        duration: 4000,
         isClosable: true,
       });
     } catch (e) {
@@ -62,13 +61,12 @@ const AddUserAndPay = () => {
           duration: 4000,
           isClosable: true,
         });
-      }
-      if (e.code === 32603) {
+      } else {
         toast({
           title: "Vous avez déjà régularisé votre situation pour ce moi",
-          description: e.message,
+          description: "Vous avez déjà payé, attendez le moi prochain avant de régulariser votre situation",
           status: "error",
-          duration: 400,
+          duration: 4000,
           isClosable: true,
         });
       }
