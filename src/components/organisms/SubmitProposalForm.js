@@ -28,22 +28,15 @@ const SubmitProposalForm = () => {
     target: "",
     sum: 0,
   });
-
+  
   useEffect(() => {
     console.log(proposition);
   }, [proposition]);
 
   const handleChangeProposition = (e) => {
     try {
-      setProposition({ ...proposition, title: e.target.value });
-    } catch (e) {
-      console.log(e.message);
-    }
-  };
-  const handleChangeOptions = (e) => {
-    handleChangeVoteOption(e);
-    try {
-      setProposition({ ...proposition, options: e.target.value });
+      setOptionVote(optionVote)
+      setProposition({ ...proposition, title: e.target.value, options:["oui"] });
     } catch (e) {
       console.log(e.message);
     }
@@ -90,25 +83,19 @@ const SubmitProposalForm = () => {
     }
   };
 
-  const handleChangeVoteOption = (e) => {
-    let tmp = [...optionVote];
-    tmp[e.key] = e.target.value;
-    setOptionVote(tmp);
-  };
-
   useEffect(() => {
     if(comEth){
       const cb = (id, descriptions) => {
         toast({
             title: "Proposition créé",
-            description: `id de la proposition: ${id} desciprion : ${descriptions}`,
+            description: `id de la proposition: ${id} . Desciprion : ${descriptions}`,
             status: "info",
             position: "top-right",
+            padding:"1rem",
+            fontWeight:"bold",
             duration: 4000,
             isClosable: true,
           });
-          console.log(` DABIDOUDADIDA ${id},${descriptions}`)
-
         };
     comEth.on("ProposalCreated", cb)
     return () => {
@@ -141,18 +128,6 @@ const SubmitProposalForm = () => {
             placeholder="Salle de sport ?"
             margin="1rem"
             position="static"
-          />
-
-          <Box fontWeight="bold">Vos Options de Vote - propositions</Box>
-
-          <Input
-            onChange={handleChangeOptions}
-            backgroundColor="teal.600"
-            size="sm"
-            boxShadow="lg"
-            w={{ sm: "99%", md: "32rem" }}
-            placeholder={`option`}
-            margin="1rem"
           />
 
           <FormLabel p="-0" fontWeight="bold">

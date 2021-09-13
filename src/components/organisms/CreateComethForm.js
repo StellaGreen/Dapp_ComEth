@@ -113,7 +113,7 @@ const CreateComethForm = () => {
           <Box
             boxShadow="lg"
             fontSize={{ base: "sm", sm: "lg" }}
-            w={{ base: "90%", sm: "60%" }}
+            w={{ base: "90%", sm: "80%" }}
             p="1rem"
             mt="3rem"
             rounded="md"
@@ -123,6 +123,7 @@ const CreateComethForm = () => {
             <Input
               onChange={handleChangeSubscription}
               ml="2rem"
+              mr="0.5rem"
               w="25%"
               placeHolder="10"
             ></Input>{" "}

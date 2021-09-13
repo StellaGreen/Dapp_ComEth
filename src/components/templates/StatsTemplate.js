@@ -7,7 +7,7 @@ const StatsTemplate = () => {
   const [ id, setId ] = useState(0)
 
   const [proposal, setProposal] = useState({
-    option: [],
+    option: [""],
     voteCount:0,
     statuVote: "",
     createdAt: "",
@@ -41,14 +41,12 @@ const StatsTemplate = () => {
       title: pr[5], 
       receiver : pr[6],
       amount: pr[7]})
-      //console.log(propositions)
-
       
     } catch (e) {
       console.log(e);
     }
   };
-
+  
   return (
     <>
       <Center>
@@ -67,7 +65,7 @@ const StatsTemplate = () => {
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">createdAt : {proposal.createdAt}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">author : {proposal.autor}</Box>
         <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold" mb="6%">paiment receiver : {proposal.receiver}</Box>
-        <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold"mb="6%">amount : {proposal.amount}</Box>
+        <Box p="1%" mt="2rem" ml={{md:"2rem"}} backgroundColor="teal.400" rounded="lg" fontWeight="bold"mb="6%">amount : {(proposal.amount / 10**18)} ETH</Box>
       </Box>
     </>
   );

@@ -1,18 +1,18 @@
 import { Box, Center, Heading, Stack, Button } from "@chakra-ui/react";
-import {  useState } from "react";
-import { useComEth, ComEthContext } from "../../context/ComEthContext";
+import {  useContext, useState } from "react";
+import { ComEthContext } from "../../context/ComEthContext";
 
 const BudgetTemplate = () => {
   const [balance, setGetBalance] = useState("0");
   const [invest, setInvest] = useState("0");
-  const comEth = useComEth(ComEthContext);
+  const comEth = useContext(ComEthContext);
 
   const handleBalance = async () => {
-    setGetBalance(balance);
+    
     try {
       let balances = await comEth.getBalance();
       setGetBalance(balances.toString());
-      console.log("balance",balance)
+      console.log("ok", balances.toString())
     } catch (e) {
       console.log(e);
     }
@@ -20,8 +20,9 @@ const BudgetTemplate = () => {
   const handleInvest = async () => {
     setInvest(invest);
     try {
-      let invests = await comEth.getInvestmentBalance();
-      setInvest(invests);
+      let invests = await comEth.getInvestmentBalance(comEth.address);
+      setInvest(invests.toString());
+      console.log("ok", invests.toString())
     } catch (e) {
       console.log(e);
     }
@@ -64,7 +65,7 @@ const BudgetTemplate = () => {
         <Stack direction="row">
         <Box
           boxShadow="inner"
-          onChange={handleBalance}
+          
           fontWeight="bold"
           fontSize={{base:"sm",sm:"md"}}
           backgroundColor="teal.400"
@@ -73,9 +74,10 @@ const BudgetTemplate = () => {
           mb="2rem"
           rounded="lg"
         >
-          Get Balance getBalance : {balance}
+            Pot Commun : {balance / 10**18} ETH
         </Box>
         <Button
+        onClick={handleBalance}
                 backgroundColor="whiteAlpha.300"
                 _hover={{ bg: "#21bdbf" }}
                 fontSize={{base:"sm",sm:"md"}}
@@ -87,7 +89,7 @@ const BudgetTemplate = () => {
         <Stack direction="row">
         <Box
           boxShadow="inner"
-          onChange={handleInvest}
+          
           fontWeight="bold"
           fontSize={{base:"sm",sm:"md"}}
           backgroundColor="teal.400"
@@ -96,9 +98,10 @@ const BudgetTemplate = () => {
           rounded="lg"
           s
         >
-          getInvestmentBalance : {invest}
+          Investissement personnel : {invest / 10**18} ETH
         </Box>
         <Button
+        onClick={handleInvest}
                 backgroundColor="whiteAlpha.300"
                 fontSize={{base:"sm",sm:"md"}}
                 _hover={{ bg: "#21bdbf" }}
