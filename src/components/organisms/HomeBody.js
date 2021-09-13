@@ -10,7 +10,7 @@ const HomeBody = () => {
   return (
     <>
     <AddUserAndPay />
-      <SimpleGrid columns={[1, 1, 2, 3]} spacing="40px" mr={{base:"1rem",sm:"3rem"}} mt="4rem" ml={{base:"1rem", sm:"3rem", md:"10rem", lg:"12rem"}}>
+      <SimpleGrid columns={[1, 1, 2, 3]} spacing="40px" mr={{base:"1rem",sm:"3rem"}} mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }} ml={{base:"1rem", sm:"3rem", md:"10rem", lg:"12rem"}}>
         <Box rounded="md" textAlign="center" p="2rem" backgroundColor="blackAlpha.200" height={{sm:"20rem", md:"22rem", lg:"28rem"}}>
           <Box fontWeight="bold" boxShadow="inner" p="0.5rem" rounded="md" backgroundColor="teal.400" mb={{base:"3rem",sm:"4rem", md:"8rem", lg:"12rem"}}>
            Venez voter les propositions déjà suggérer par votre groupe ComEth

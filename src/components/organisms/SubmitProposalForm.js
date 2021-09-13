@@ -114,7 +114,7 @@ const SubmitProposalForm = () => {
           padding="2rem"
           w={{ sm: "86%", md: "43rem", lg: "45rem" }}
           ml={{ sm: "0.5rem", md: "9rem" }}
-          mt={{ base: "3rem", sm: "4rem" }}
+          mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
         >
           <FormLabel fontWeight="bold">
             Titre de proposition proposition

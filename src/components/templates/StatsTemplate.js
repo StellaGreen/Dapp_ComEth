@@ -50,9 +50,9 @@ const StatsTemplate = () => {
   return (
     <>
       <Center>
-        <Heading  mt={{base:"2rem", sm:"1rem",lg:"6rem"}} ml={{md:"6rem"}} fontSize="4xl" textAlign="center" fontFamily="mono">Vos stats ComEth</Heading>
+        <Heading  mt={{ base: "2rem", sm: "1rem", lg: "2rem" }} ml={{md:"6rem"}} fontSize="4xl" textAlign="center" fontFamily="mono">Vos stats ComEth</Heading>
       </Center>
-      <Box backgroundColor="blackAlpha.200" ml={{base:"1rem",sm:"2rem",md:"12rem",lg:"16rem"}} mr={{base:"1rem", sm:"2rem"}} rounded="md" mt={{base:"2rem",sm:"4rem"}} p="2rem" width={{sm:"90%",md:"75%",lg:"50%"}} maxW="35rem" h="55%">
+      <Box backgroundColor="blackAlpha.200" ml={{base:"1rem",sm:"2rem",md:"12rem",lg:"16rem"}} mr={{base:"1rem", sm:"2rem"}} rounded="md" mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }} p="2rem" width={{sm:"90%",md:"75%",lg:"50%"}} maxW="35rem" h="55%">
         <Center><Box p="7%" rounded="md" backgroundColor="#2ac9c7" fontWeight="bold" textAlign="center">Dernière proposition voter/ou à voter</Box></Center>
           <Box fontWeight="bold" textAlign="center"m="3%">Rechercher avec l'id de la proposition</Box>
         <Center> 

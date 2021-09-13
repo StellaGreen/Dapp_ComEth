@@ -93,7 +93,7 @@ const CreateComethForm = () => {
         w={{ base: "90%", md: "35rem" }}
         p="1rem"
         ml="4%"
-        mt="3rem"
+        mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
         rounded="md"
         backgroundColor="blackAlpha.200"
       >

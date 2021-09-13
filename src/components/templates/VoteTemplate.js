@@ -82,7 +82,7 @@ const VoteTemplate = () => {
     <>
       <Center>
         <Heading
-          mt={{ base: "2rem", sm: "1rem", lg: "6rem" }}
+          mt={{ base: "2rem", sm: "1rem", lg: "2rem" }}
           ml={{ sm: "1rem" }}
           fontSize="4xl"
           fontFamily="mono"
@@ -94,7 +94,7 @@ const VoteTemplate = () => {
         <Box
           ml="12rem"
           fontWeight="bold"
-          mt={{ base: "4rem", sm: "4rem", md: "6rem", lg: "9rem" }}
+          mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
         >
           
           ID de la proposition*
@@ -110,7 +110,7 @@ const VoteTemplate = () => {
       </Center>
       <Center>
         <Box
-          mt={{ base: "1rem", sm: "2rem", md: "3rem", lg: "4rem" }}
+          mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
           ml={{ sm: "0rem", md: "4rem" }}
           boxShadow="lg"
           w={{ base: "20rem", sm: "30rem", lg: "40rem" }}

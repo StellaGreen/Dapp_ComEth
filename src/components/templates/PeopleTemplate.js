@@ -55,7 +55,7 @@ const PeopleTemplate = () => {
     <>
       <Center>
         <Heading
-          mt={{base:"2rem", sm:"1rem",lg:"6rem"}}
+          mt={{ base: "2rem", sm: "1rem", lg: "2rem" }}
           ml={{md:"5rem"}}
           textAlign="center"
           fontSize={{base:"xl", sm:"4xl"}}
@@ -67,7 +67,7 @@ const PeopleTemplate = () => {
       <Box
         rounded="md"
         boxShadow="lg"
-        mt={{ sm: "4rem" }}
+        mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
         ml={{ sm: "3rem", md: "11rem", lg: "19rem" }}
         w={{ sm: "80%", md: "75%", lg: "40%" }}
         backgroundColor="blackAlpha.200"
