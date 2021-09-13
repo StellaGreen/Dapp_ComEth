@@ -35,6 +35,7 @@ const SubmitProposalForm = () => {
 
   const handleChangeProposition = (e) => {
     try {
+      setOptionVote(optionVote)
       setProposition({ ...proposition, title: e.target.value, options:["oui"] });
     } catch (e) {
       console.log(e.message);
