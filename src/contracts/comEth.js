@@ -175,19 +175,6 @@ export const ComEthAbi = [
     type: "function",
   },
   {
-    inputs: [],
-    name: "getActiveUsersNb",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     inputs: [
       {
         internalType: "address",
@@ -534,19 +521,6 @@ export const ComEthAbi = [
         type: "bool",
       },
     ],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "userAddress_",
-        type: "address",
-      },
-    ],
-    name: "toggleIsBanned",
-    outputs: [],
     stateMutability: "nonpayable",
     type: "function",
   },
