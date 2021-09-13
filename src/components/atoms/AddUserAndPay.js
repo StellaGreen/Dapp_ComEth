@@ -32,7 +32,9 @@ const AddUserAndPay = () => {
       console.log(e.error);
     }
   };
-  const handlePay = async () => {
+  const handleClickPay = async () => {
+   const get = await comEth.getAmountToBePaid(web3State.account);
+   console.log(get.toString());
     try {
       const get = await comEth.getAmountToBePaid(web3State.account)
       await comEth.pay({value : get._hex});
@@ -58,6 +60,7 @@ const AddUserAndPay = () => {
     }
   };
 
+
   return (
     <>
       <Center>
@@ -76,7 +79,7 @@ const AddUserAndPay = () => {
           Se rajouter
         </Circle>
         <Circle
-          onClick={handlePay}
+          onClick={handleClickPay}
           w="20%"
           backgroundColor="blackAlpha.300"
           p="1rem"
