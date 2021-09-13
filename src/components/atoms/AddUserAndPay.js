@@ -8,6 +8,10 @@ const AddUserAndPay = () => {
   const [web3State] = useContext(Web3Context);
   const comEth = useContext(ComEthContext);
 
+const unixTime = 1210981217;
+const date = new Date(unixTime*1000);
+console.log(date.toDateString());
+
   const handleAddUser = async () => {
     try {
       await comEth.addUser();
@@ -27,6 +31,7 @@ const AddUserAndPay = () => {
       console.log(e.error);
     }
   };
+
 
   return (
     <>
