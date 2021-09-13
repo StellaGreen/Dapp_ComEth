@@ -77,6 +77,19 @@ export const ComEthAbi = [
     inputs: [
       {
         indexed: false,
+        internalType: "uint256",
+        name: "proposalId",
+        type: "uint256",
+      },
+    ],
+    name: "Rejected",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
         internalType: "address",
         name: "paymentReceiver",
         type: "address",
@@ -208,6 +221,19 @@ export const ComEthAbi = [
   },
   {
     inputs: [],
+    name: "getCreationTime",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "getCycle",
     outputs: [
       {
@@ -245,14 +271,14 @@ export const ComEthAbi = [
       {
         components: [
           {
-            internalType: "string[]",
-            name: "voteOptions",
-            type: "string[]",
+            internalType: "uint256",
+            name: "nbYes",
+            type: "uint256",
           },
           {
-            internalType: "uint256[]",
-            name: "voteCount",
-            type: "uint256[]",
+            internalType: "uint256",
+            name: "nbNo",
+            type: "uint256",
           },
           {
             internalType: "enum ComEth.StatusVote",
@@ -409,14 +435,14 @@ export const ComEthAbi = [
       {
         components: [
           {
-            internalType: "string[]",
-            name: "voteOptions",
-            type: "string[]",
+            internalType: "uint256",
+            name: "nbYes",
+            type: "uint256",
           },
           {
-            internalType: "uint256[]",
-            name: "voteCount",
-            type: "uint256[]",
+            internalType: "uint256",
+            name: "nbNo",
+            type: "uint256",
           },
           {
             internalType: "enum ComEth.StatusVote",
@@ -461,16 +487,11 @@ export const ComEthAbi = [
     inputs: [],
     name: "quitComEth",
     outputs: [],
-    stateMutability: "payable",
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
     inputs: [
-      {
-        internalType: "string[]",
-        name: "voteOptions_",
-        type: "string[]",
-      },
       {
         internalType: "string",
         name: "proposition_",
