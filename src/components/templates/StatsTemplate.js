@@ -113,11 +113,11 @@ const StatsTemplate = () => {
           </HStack>
         </>) : proposal.statuVote === 1 ? (<>
           <HStack column="row" mt="1rem">
-          <Circle p="2%" mt="2%" w="2%" backgroundColor="green"></Circle> <Box>Proposition voté et valider</Box>
+          <Circle p="2%" mt="2%" w="2%" backgroundColor="green"></Circle> <Box>Proposition votée et validée</Box>
           </HStack>
           </>) : (<>
             <HStack column="row"  mt="1rem">
-          <Circle p="2%" mt="2%" w="2%" backgroundColor="red"></Circle> <Box>Proposition voté et refusé</Box>
+          <Circle p="2%" mt="2%" w="2%" backgroundColor="red"></Circle> <Box>Proposition votée et refusée</Box>
           </HStack>
           </>)}
         <Box

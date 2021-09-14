@@ -6,16 +6,17 @@ import MobilNav from "../atoms/MobilNav";
 const MainHeader = () => {
     return (
         <>
+        {window.location.pathname === "/create" || "/login" ?  "" : ( <>
             <Box pos="sticky" w="100%" backgroundColor="teal.400" >
                 <Stack direction="row">
                 <Logo />
                 <Spacer/>
                 <Box display={{base:"flex", sm:"flex", md:"none"}}>
                 <MobilNav/>
-                
                 </Box>
                 </Stack>
             </Box>
+            </>)}
         </>
     );
 };

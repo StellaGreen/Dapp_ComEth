@@ -22,16 +22,16 @@ const LandingPageTemplate = () => {
         <Heading>
           <Text
             textShadow="3px 3px #43A2F7"
-            mt={{sm:"10rem", lg:"10rem"}}
-            fontSize={{sm:"100px",lg:"100px"}}
+            mt={{sm:"11rem", lg:"10rem"}}
+            fontSize={{base:"73px",sm:"100px",lg:"100px"}}
             color="blue.700"
-            margin="4rem"
+            margin={{base:"7rem",sm:"4rem"}}
           >
             ComEth
           </Text>
         </Heading>
       </Center>
-      <Center marginBottom="4rem">
+      <Center marginBottom="3rem">
         <Text
           color={"gray.600"}
           maxW={"4xl"}
@@ -42,7 +42,7 @@ const LandingPageTemplate = () => {
           textAlign="center"
           fontStyle="italic"
           fontWeight="bold"
-          fontSize={{sm:"24px",lg:"25px"}}
+          fontSize={{base:"22px",sm:"24px",lg:"25px"}}
         >
           A new possibility to create communities and manage sharing funds
         </Text>
@@ -54,8 +54,9 @@ const LandingPageTemplate = () => {
           as="button"
           backgroundColor="blue.500"
           fontWeight="bold"
-          p={{sm:"0.8rem",lg:"1rem"}}
-            marginRight="2rem"
+          p="0.8rem"
+          m={{base:"0.8rem",sm:"0"}}
+            marginRight={{base:"0.5rem", md:"2rem"}}
             colorScheme="blue"
             onClick={() => handleOnClickLogin()}
             _hover= {{bg:"#42daf5"}}
@@ -69,7 +70,8 @@ const LandingPageTemplate = () => {
           <Circle
           as="button"
           fontWeight="bold"
-          p={{sm:"0.8rem",lg:"1rem"}}
+          p="1rem"
+          m={{base:"0.8rem",sm:"0"}}
           backgroundColor="blue.500"
             marginLeft="2rem"
             colorScheme="blue"
@@ -80,7 +82,7 @@ const LandingPageTemplate = () => {
             Join a Community
           </Circle>
         </Link>
-        
+       
       </Center>
       <FooterLandingPage />
     </>

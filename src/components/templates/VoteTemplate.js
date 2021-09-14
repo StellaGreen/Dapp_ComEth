@@ -21,7 +21,7 @@ const VoteTemplate = () => {
   const [proposal, setProposal] = useState({
     nbYes : null,
     NbNo: null,
-    statuVote: "",
+    statuVote: null,
     createdAt: "",
     autor: "",
     title: "",
@@ -106,7 +106,7 @@ const VoteTemplate = () => {
             ml="3rem"
             mr="1rem"
           ></Input>
-          <Button onClick={handleClickSearchId}>chercher</Button>
+          <Button onClick={handleClickSearchId}>Cherchez</Button>
         </Box>
       </Center>
       <Center>
@@ -127,13 +127,13 @@ const VoteTemplate = () => {
           </HStack>
         </>) : proposal.statuVote === "1" ? (<>
           <HStack column="row">
-          <Circle p="2%" mt="2%" mb="4%" w="2%" backgroundColor="green"></Circle> <Box  mt="2%">Proposition voté et valider</Box>
+          <Circle p="2%" mt="2%" mb="4%" w="2%" backgroundColor="green"></Circle> <Box  mt="2%">Proposition votée et validée</Box>
           </HStack>
-          </>) : (<>
+          </>) : proposal.statuVote === "2" ? (<>
             <HStack column="row">
-          <Circle p="2%" mt="2%" mb="4%" w="2%" backgroundColor="red"></Circle> <Box  mt="2%">Proposition voté et refusé</Box>
+          <Circle p="2%" mt="2%" mb="4%" w="2%" backgroundColor="red"></Circle> <Box  mt="2%">Proposition votée et refusée</Box>
           </HStack>
-          </>)}
+          </>) : ""}
             <Box fontWeight="bold" w={{ sm: "80%", md: "79%", lg: "80%" }} backgroundColor="teal.400" rounded="md" mb="2%">Auteur de la proposition :</Box><Box> {proposal.autor}</Box>
             <Box  fontWeight="bold" w={{ sm: "80%", md: "79%", lg: "80%" }} backgroundColor="teal.400" rounded="md" mb="2%">Montant de la proposition : {proposal.amount / 10**18} ETH</Box>
             <Box  fontWeight="bold" w={{ sm: "80%", md: "79%", lg: "80%" }} backgroundColor="teal.400" rounded="md" mb="2%">Durée de la proposition : {proposal.createdAt}</Box>
@@ -152,11 +152,11 @@ const VoteTemplate = () => {
             {/* <---------------------------- */}
             <Box fontWeight="bold" w={{ sm: "80%", md: "79%", lg: "80%" }}  backgroundColor="teal.400" rounded="md" mb="2%">Destinataire des fonds de la proposition :</Box>
             <Box>{proposal.receiver}</Box>
-            {/* <----------------------------- */}
+            <Center>
             <Button onClick={handleClickVote} boxShadow="lg" margin="2re" _hover={{ bg: "#21bdbf" }}>
-              Voter
+              Votez
             </Button>
-            {/* <------------------------------- */}
+            </Center>
           </FormControl>
         </Box>
       </Center>

@@ -74,7 +74,7 @@ const BudgetTemplate = () => {
           mb="2rem"
           rounded="lg"
         >
-            Pot Commun : {balance / 10**18} ETH
+            Pot commun actuel : {balance / 10**18} ETH
         </Box>
         <Button
         onClick={handleBalance}
@@ -98,7 +98,7 @@ const BudgetTemplate = () => {
           rounded="lg"
           s
         >
-          Investissement personnel : {invest / 10**18} ETH
+          Fond total commun : {invest / 10**18} ETH
         </Box>
         <Button
         onClick={handleInvest}

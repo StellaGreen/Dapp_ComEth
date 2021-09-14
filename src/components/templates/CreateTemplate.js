@@ -7,7 +7,7 @@ const CreateTemplate = () => {
   return (
     <> 
     <Center>
-      <Heading margin="4rem">Create ComEth</Heading>
+    <Heading  textAlign="center" mt={{ base: "2rem", sm: "1rem", lg: "2rem" }} mb={{base:"0.5rem", sm:"0"}} m={{base:"2rem", sm:"8%"}} fontSize="4xl" fontFamily="mono">Créez votre communauté</Heading>
       </Center>
       <Container>
         <CreateComethForm />
