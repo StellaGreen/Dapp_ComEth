@@ -98,7 +98,7 @@ const StatsBody = () => {
             Rechercher
           </Circle>
         </Center>
-        {proposal.statuVote === "0" ? (
+        {proposal.statuVote === 0 ? (
               <>
                 <HStack column="row" position="static">
                   <Circle
@@ -111,7 +111,7 @@ const StatsBody = () => {
                   <Box mt="2%">Proposition toujours en cours de vote</Box>
                 </HStack>
               </>
-            ) : proposal.statuVote === "1" ? (
+            ) : proposal.statuVote === 1 ? (
               <>
                 <HStack column="row" position="static">
                   <Circle
@@ -124,7 +124,7 @@ const StatsBody = () => {
                   <Box mt="2%">Proposition votée et validée</Box>
                 </HStack>
               </>
-            ) : proposal.statuVote === "2" ? (
+            ) : proposal.statuVote === 2 ? (
               <>
                 <HStack column="row" position="static">
                   <Circle
@@ -137,9 +137,7 @@ const StatsBody = () => {
                   <Box mt="2%">Proposition votée et refusée</Box>
                 </HStack>
               </>
-            ) : (
-              ""
-            )}
+            ) : ""}
         <Box
           p="1%"
           mt="4%"
