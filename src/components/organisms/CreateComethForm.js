@@ -121,7 +121,7 @@ const CreateComethForm = () => {
               ml="2rem"
               mr="0.5rem"
               w="25%"
-              placeHolder="10"
+              placeholder="10"
             ></Input>
             ETH
           </Box>
