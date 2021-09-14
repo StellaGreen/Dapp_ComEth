@@ -24,7 +24,7 @@ const FooterLandingPage = () => {
                         <Tag
                             borderRadius="full"
                             variant="solid"
-                            colorScheme="red"
+                            backgroundColor="red"
                             onClick={() => handleOnClickLogin()}
                         >
                             <TagLabel>Vous n'êtes pas connecté a Metamask</TagLabel>
