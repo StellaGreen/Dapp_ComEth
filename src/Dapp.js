@@ -33,34 +33,34 @@ const Dapp = ({ comEthAdr }) => {
         <Route exact path="/" component={LandingPage}>
           <LandingPage />
         </Route>
-        <Route exact path="/Create" component={Create}>
+        <Route exact path="/create" component={Create}>
           <Create />
         </Route>
-        <Route exact path="/Login" component={Login}>
+        <Route exact path="/login" component={Login}>
           <Login />
         </Route>
 
         <ComEthContextProvider comEthAdr={comEthAdr}>
 
-          <Route exact path="/Home" component={Home}>
+          <Route exact path="/home" component={Home}>
             <Home comEthAdr={comEthAdr} />
           </Route>
-          <Route exact path="/Vote" component={Vote}>
+          <Route exact path="/vote" component={Vote}>
             <Vote />
           </Route>
-          <Route exact path="/Proposition" component={Proposition}>
+          <Route exact path="/proposition" component={Proposition}>
             <Proposition />
           </Route>
-          <Route exact path="/Info" component={Info}>
+          <Route exact path="/info" component={Info}>
             <Info />
           </Route>
-          <Route exact path="/Stats" component={Stats}>
+          <Route exact path="/stats" component={Stats}>
             <Stats />
           </Route>
-          <Route exact path="/Budget" component={Budget}>
+          <Route exact path="/budget" component={Budget}>
             <Budget />
           </Route>
-          <Route exact path="/People" component={People}>
+          <Route exact path="/people" component={People}>
             <People />
           </Route>
         </ComEthContextProvider>
