@@ -8,7 +8,7 @@ const StatsBody = () => {
     const [proposal, setProposal] = useState({
       nbYes: 0,
       nbNo: 0,
-      statuVote: "",
+      statuVote: null,
       createdAt: "",
       autor: "",
       title: "",
@@ -98,19 +98,48 @@ const StatsBody = () => {
             Rechercher
           </Circle>
         </Center>
-        {proposal.statuVote === 0 ? (<>
-        <HStack column="row"  mt="1rem">
-          <Circle p="2%" mt="2%" w="2%" backgroundColor="orange"></Circle> <Box>Proposition toujours en cours de vote</Box>
-          </HStack>
-        </>) : proposal.statuVote === 1 ? (<>
-          <HStack column="row" mt="1rem">
-          <Circle p="2%" mt="2%" w="2%" backgroundColor="green"></Circle> <Box>Proposition votée et validée</Box>
-          </HStack>
-          </>) : (<>
-            <HStack column="row"  mt="1rem">
-          <Circle p="2%" mt="2%" w="2%" backgroundColor="red"></Circle> <Box>Proposition votée et refusée</Box>
-          </HStack>
-          </>)}
+        {proposal.statuVote === "0" ? (
+              <>
+                <HStack column="row" position="static">
+                  <Circle
+                    p="2%"
+                    mt="2%"
+                    mb="4%"
+                    w="2%"
+                    backgroundColor="orange"
+                  ></Circle>{" "}
+                  <Box mt="2%">Proposition toujours en cours de vote</Box>
+                </HStack>
+              </>
+            ) : proposal.statuVote === "1" ? (
+              <>
+                <HStack column="row" position="static">
+                  <Circle
+                    p="2%"
+                    mt="2%"
+                    mb="4%"
+                    w="2%"
+                    backgroundColor="green"
+                  ></Circle>{" "}
+                  <Box mt="2%">Proposition votée et validée</Box>
+                </HStack>
+              </>
+            ) : proposal.statuVote === "2" ? (
+              <>
+                <HStack column="row" position="static">
+                  <Circle
+                    p="2%"
+                    mt="2%"
+                    mb="4%"
+                    w="2%"
+                    backgroundColor="red"
+                  ></Circle>{" "}
+                  <Box mt="2%">Proposition votée et refusée</Box>
+                </HStack>
+              </>
+            ) : (
+              ""
+            )}
         <Box
           p="1%"
           mt="4%"
