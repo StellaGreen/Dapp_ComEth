@@ -52,19 +52,17 @@ const CreateComethForm = () => {
   useEffect(() => {
     // si simpleStorage est pas null alors
     if (comEthFactory) {
-      const cb = (ComEthAddress, ComEthOwner) => {
-        if (ComEthOwner.toLowerCase() === web3State.account.toLowerCase()) {
+      const cb = (ComEthAddress) => {
           setComEthAddress(ComEthAddress);
           localStorage.setItem("AddressComEth", JSON.stringify(ComEthAddress))
           toast({
             title: "Votre communauté à sa propre addresse Ethereum !",
-            description: `Votre addresse : ${ComEthOwner} L'addresse de votre communauté : ${ComEthAddress}`,
+            description: `L'addresse de votre communauté : ${ComEthAddress}`,
             status: "info",
             position: "top-right",
             duration: 9000,
             isClosable: true,
           });
-        }
       };
       // ecouter sur l'event DataSet
       comEthFactory.on("ComEthCreated", cb);
