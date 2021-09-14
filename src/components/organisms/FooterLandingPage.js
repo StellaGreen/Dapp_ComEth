@@ -15,7 +15,7 @@ const FooterLandingPage = () => {
             <Box pos="absolute" bottom="0" left="1">
                 {web3State.isLogged ? (
                     <>
-                        <Tag borderRadius="full" variant="solid" colorScheme="green">
+                        <Tag borderRadius="full" variant="solid" backgroundColor="green">
                             <TagLabel>Vous êtes connecté a Metamask</TagLabel>
                         </Tag>{" "}
                     </>
