@@ -9,7 +9,7 @@ const HomeTemplate = () => {
     <>
       
       <Center>
-      <Heading  textAlign="center" mt={{ base: "2rem", sm: "3rem", lg: "6rem" }} fontSize="4xl" fontFamily="mono">Home ComEth</Heading>
+      <Heading  textAlign="center" mt={{ base: "2rem", sm: "3rem", lg: "6rem" }} fontSize={{base:"52px", md:"4xl"}} fontFamily="mono">Home ComEth</Heading>
       </Center>
       <ComEthAddressPopover />
       <HomeBody />

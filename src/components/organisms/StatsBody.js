@@ -50,16 +50,17 @@ const StatsBody = () => {
   
     return (
         <>
+        <Center>
             <Box
         backgroundColor="blackAlpha.200"
-        ml={{ base: "1rem", sm: "2rem", md: "12rem", lg: "16rem" }}
+        ml={{ base: "1rem", sm: "2rem" }}
         mr={{ base: "1rem", sm: "2rem" }}
         rounded="md"
         mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
         p="2rem"
-        width={{ sm: "90%", md: "75%", lg: "50%" }}
-        maxW="35rem"
-        h="55%"
+        width={{ sm: "90%", md: "75%", lg: "90%" }}
+        maxW={{md:"35rem", lg:"40rem"}}
+        
       >
         <Center>
           <Box
@@ -84,6 +85,7 @@ const StatsBody = () => {
             onChange={handleOnChangeId}
             mr="1rem"
             placeholder="0"
+            position="static"
           ></Input>
           <Circle
             backgroundColor="whiteAlpha.200"
@@ -111,82 +113,82 @@ const StatsBody = () => {
           </>)}
         <Box
           p="1%"
-          mt="2rem"
+          mt="4%"
           ml={{ md: "2rem" }}
           backgroundColor="teal.400"
           rounded="lg"
           fontWeight="bold"
-          mb="6%"
+          mb="2%"
         >
           title : {proposal.title}
         </Box>
         <Box
           p="1%"
-          mt="2rem"
+          mt="1%"
           ml={{ md: "2rem" }}
           backgroundColor="teal.400"
           rounded="lg"
           fontWeight="bold"
-          mb="6%"
+          mb="2%"
         >
           createdAt : {proposal.createdAt}
         </Box>
         <Box
           p="1%"
-          mt="2rem"
+          mt="1%"
           ml={{ md: "2rem" }}
           backgroundColor="teal.400"
           rounded="lg"
           fontWeight="bold"
-          mb="6%"
+          mb="2%"
         >
           author : {proposal.autor}
         </Box>
         <Box
           p="1%"
-          mt="2rem"
+          mt="1%"
           ml={{ md: "2rem" }}
           backgroundColor="teal.400"
           rounded="lg"
           fontWeight="bold"
-          mb="6%"
+          mb="2%"
         >
           paiment receiver : {proposal.receiver}
         </Box>
         <Box
           p="1%"
-          mt="2rem"
+          mt="1%"
           ml={{ md: "2rem" }}
           backgroundColor="teal.400"
           rounded="lg"
           fontWeight="bold"
-          mb="6%"
+          mb="2%"
         >
           amount : {proposal.amount / 10 ** 18} ETH
         </Box>
         <Box
           p="1%"
-          mt="2rem"
+          mt="1%"
           ml={{ md: "2rem" }}
           backgroundColor="teal.400"
           rounded="lg"
           fontWeight="bold"
-          mb="6%"
+          mb="2%"
         >
           nombre de votes validant : {proposal.nbYes}
         </Box>
         <Box
           p="1%"
-          mt="2rem"
+          mt="1%"
           ml={{ md: "2rem" }}
           backgroundColor="teal.400"
           rounded="lg"
           fontWeight="bold"
-          mb="6%"
         >
           nombre de votes refusant : {proposal.nbNo}
         </Box>
       </Box>
+      </Center>
         </>
     );
 };

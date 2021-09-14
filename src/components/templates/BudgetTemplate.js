@@ -10,7 +10,7 @@ const BudgetTemplate = () => {
           ml={{ md: "6rem" }}
           mt={{ base: "2rem", sm: "3rem", lg: "6rem" }}
           textAlign="center"
-          fontSize="4xl"
+          fontSize={{base:"40px", md:"4xl"}}
           w={{ sm: "70%" }}
           fontFamily="mono"
         >

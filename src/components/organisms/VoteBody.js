@@ -82,6 +82,7 @@ const VoteBody = () => {
           ml="12rem"
           fontWeight="bold"
           mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
+          
         >
           
           ID de la proposition*
@@ -91,8 +92,9 @@ const VoteBody = () => {
             placeholder="1"
             ml="3rem"
             mr="1rem"
+            position="static"
           ></Input>
-          <Button onClick={handleClickSearchId}>Cherchez</Button>
+          <Button onClick={handleClickSearchId} position="static" m={{base:"1rem", sm:"2rem", md:"0"}}>Cherchez</Button>
         </Box>
       </Center>
       <Center>
@@ -108,19 +110,19 @@ const VoteBody = () => {
             {proposal.title}
             </FormLabel>
             {proposal.statuVote === "0" ? (<>
-        <HStack column="row">
+        <HStack column="row" position="static">
           <Circle p="2%" mt="2%" mb="4%" w="2%" backgroundColor="orange"></Circle> <Box mt="2%">Proposition toujours en cours de vote</Box>
           </HStack>
         </>) : proposal.statuVote === "1" ? (<>
-          <HStack column="row">
+          <HStack column="row" position="static">
           <Circle p="2%" mt="2%" mb="4%" w="2%" backgroundColor="green"></Circle> <Box  mt="2%">Proposition votée et validée</Box>
           </HStack>
           </>) : proposal.statuVote === "2" ? (<>
-            <HStack column="row">
+            <HStack column="row" position="static">
           <Circle p="2%" mt="2%" mb="4%" w="2%" backgroundColor="red"></Circle> <Box  mt="2%">Proposition votée et refusée</Box>
           </HStack>
           </>) : ""}
-            <Box fontWeight="bold" w={{ sm: "80%", md: "79%", lg: "80%" }} backgroundColor="teal.400" rounded="md" mb="2%">Auteur de la proposition :</Box><Box> {proposal.autor}</Box>
+            <Box fontWeight="bold" w={{ sm: "80%", md: "79%", lg: "80%" }} backgroundColor="teal.400" rounded="md" mb="2%" >Auteur de la proposition : {proposal.autor}</Box>
             <Box  fontWeight="bold" w={{ sm: "80%", md: "79%", lg: "80%" }} backgroundColor="teal.400" rounded="md" mb="2%">Montant de la proposition : {proposal.amount / 10**18} ETH</Box>
             <Box  fontWeight="bold" w={{ sm: "80%", md: "79%", lg: "80%" }} backgroundColor="teal.400" rounded="md" mb="2%">Durée de la proposition : {proposal.createdAt}</Box>
             {/* <------------------------ */}

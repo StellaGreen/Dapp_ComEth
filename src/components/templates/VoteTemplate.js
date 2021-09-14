@@ -12,7 +12,7 @@ const VoteTemplate = () => {
         <Heading
           mt={{ base: "2rem", sm: "3rem", lg: "6rem" }}
           ml={{ sm: "1rem" }}
-          fontSize="4xl"
+          fontSize={{base:"40px", md:"4xl"}}
           fontFamily="mono"
         >
           Just Vote

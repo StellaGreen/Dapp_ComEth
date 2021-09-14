@@ -9,7 +9,7 @@ const StatsTemplate = () => {
         <Heading
           mt={{ base: "2rem", sm: "3rem", lg: "6rem" }}
           ml={{ md: "6rem" }}
-          fontSize="4xl"
+          fontSize={{base:"40px", md:"4xl"}}
           textAlign="center"
           fontFamily="mono"
         >
