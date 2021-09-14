@@ -10,7 +10,7 @@ import {
   import { ComEthContext } from "../../context/ComEthContext";
   
 
-const PoepleBudget = () => {
+const PoepleBody = () => {
     const [active, setActive] = useState("")
     const [estActif, setEstActif] = useState(null)
     const comEth = useContext(ComEthContext);
@@ -48,7 +48,7 @@ const PoepleBudget = () => {
         <Box backgroundColor="#2ac9c7" rounded="md" p="1rem" fontWeight="bold" m="1rem">Activités au seint de la ComEth</Box>
         </Center>
         <Box >
-          <Box m="1rem" ml={{ md: "1rem" }}>
+          <Box ml={{ md: "1rem" }}>
             <Box padding="1rem" fontWeight="black">
               Voir qui est Actif :
             </Box>
@@ -93,4 +93,4 @@ const PoepleBudget = () => {
     );
 };
 
-export default PoepleBudget;
+export default PoepleBody;

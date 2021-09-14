@@ -70,6 +70,7 @@ const BudgetBody = () => {
                 _hover={{ bg: "#21bdbf" }}
                 fontSize={{base:"sm",sm:"md"}}
                 m="10rem"
+                position="static"
               >
                 Chercher
               </Button>
