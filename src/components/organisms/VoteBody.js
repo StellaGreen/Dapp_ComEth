@@ -105,6 +105,7 @@ const VoteBody = () => {
           w={{ base: "20rem", sm: "30rem", lg: "40rem" }}
           backgroundColor="blackAlpha.200"
           position="static"
+          rounded="md"
         >
           <FormControl w={{ base: "17rem", sm: "32rem" }} margin="2rem">
             <FormLabel fontWeight="bold" fontSize="lg" margin="1rem">

@@ -1,4 +1,4 @@
-import { Box, Stack, Button } from "@chakra-ui/react";
+import { Box, Stack, Button, Center } from "@chakra-ui/react";
 import {  useContext, useState } from "react";
 import { ComEthContext } from "../../context/ComEthContext";
 
@@ -29,10 +29,11 @@ const BudgetBody = () => {
     };
     return (
         <>
+        <Center>
             <Box
         boxShadow="lg"
-        ml={{base:"1rem", sm: "1rem", md: "14rem", lg: "24rem" }}
-        mr={{base:"1rem", sm: "1rem" }}
+        ml={{base:"1rem", sm: "2rem", lg:"7rem"}}
+        mr={{base:"1rem", sm: "2rem", lg:"7rem"}}
         p="2rem"
         mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
         rounded="md"
@@ -99,6 +100,7 @@ const BudgetBody = () => {
               </Button>
       </Stack>
       </Box>
+      </Center>
         </>
     );
 };
