@@ -8,7 +8,7 @@ const BudgetTemplate = () => {
       <Center>
         <Heading
           ml={{ md: "6rem" }}
-          mt={{ base: "2rem", sm: "1rem", lg: "2rem" }}
+          mt={{ base: "2rem", sm: "3rem", lg: "6rem" }}
           textAlign="center"
           fontSize="4xl"
           w={{ sm: "70%" }}

@@ -11,7 +11,7 @@ const PeopleTemplate = () => {
     <>
       <Center>
         <Heading
-          mt={{ base: "2rem", sm: "1rem", lg: "2rem" }}
+          mt={{ base: "2rem", sm: "3rem", lg: "6rem" }}
           ml={{md:"5rem"}}
           textAlign="center"
           fontSize={{base:"xl", sm:"4xl"}}

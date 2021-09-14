@@ -10,7 +10,7 @@ const VoteTemplate = () => {
     <>
       <Center>
         <Heading
-          mt={{ base: "2rem", sm: "1rem", lg: "2rem" }}
+          mt={{ base: "2rem", sm: "3rem", lg: "6rem" }}
           ml={{ sm: "1rem" }}
           fontSize="4xl"
           fontFamily="mono"
