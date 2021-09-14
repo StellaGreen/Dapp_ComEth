@@ -55,7 +55,7 @@ const LandingPageTemplate = () => {
           backgroundColor="blue.500"
           fontWeight="bold"
           p="0.8rem"
-          m={{base:"0.8rem",sm:"0"}}
+          m={{base:"0.8rem",sm:"1rem"}}
             marginRight={{base:"0.5rem", md:"2rem"}}
             colorScheme="blue"
             onClick={() => handleOnClickLogin()}
@@ -71,7 +71,7 @@ const LandingPageTemplate = () => {
           as="button"
           fontWeight="bold"
           p="1rem"
-          m={{base:"0.8rem",sm:"0"}}
+          m={{base:"0.8rem",sm:"1rem"}}
           backgroundColor="blue.500"
             marginLeft="2rem"
             colorScheme="blue"

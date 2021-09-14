@@ -55,6 +55,7 @@ const CreateComethForm = () => {
       const cb = (ComEthAddress, ComEthOwner) => {
         if (ComEthOwner.toLowerCase() === web3State.account.toLowerCase()) {
           setComEthAddress(ComEthAddress);
+          localStorage.setItem("AddressComEth", JSON.stringify(ComEthAddress))
           toast({
             title: "Votre communauté à sa propre addresse Ethereum !",
             description: `Votre addresse : ${ComEthOwner} L'addresse de votre communauté : ${ComEthAddress}`,

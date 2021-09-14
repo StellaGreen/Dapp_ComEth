@@ -11,8 +11,7 @@ const MainHeader = () => {
     },[])
     return (
         <>
-            {window.location.pathname === "/create" || "/login" ? "" : ""}
-            {window.location.pathname === "/info" || "/home" || "/proposition" || "/vote" || "/stats" || "/budget" || "/people" ? (<>
+           
                 <Box pos="sticky" w="100%" backgroundColor="teal.400">
                     <Stack direction="row">
                         <Logo />
@@ -22,7 +21,6 @@ const MainHeader = () => {
                         </Box>
                     </Stack>
                 </Box>
-            </>) :"" }
         </>
     );
 };

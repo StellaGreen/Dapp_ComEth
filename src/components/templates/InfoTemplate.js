@@ -8,7 +8,6 @@ const InfoTemplate = () => {
       <Center>
         <Heading mt={{ base: "2rem", sm: "1rem", lg: "2rem" }} textAlign="center" fontSize="4xl" fontFamily="mono">Vos Informations</Heading>
       </Center>
-      
       <InformationBody />
     </>
   );
