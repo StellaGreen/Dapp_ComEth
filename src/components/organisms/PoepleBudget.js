@@ -56,6 +56,7 @@ const PoepleBody = () => {
               <Input
                 onChange={handleAddress}
                 backgroundColor="teal.600"
+                placeholder="0x0..."
                 ></Input>
               <Button
               onClick={handlActive}
