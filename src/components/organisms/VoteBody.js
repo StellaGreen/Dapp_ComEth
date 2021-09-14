@@ -79,7 +79,7 @@ const VoteBody = () => {
         <>
              <Center>
         <Box
-          ml="12rem"
+          ml={{base:"5rem", lg:"12rem"}}
           fontWeight="bold"
           mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
           
