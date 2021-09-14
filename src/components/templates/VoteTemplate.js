@@ -15,7 +15,7 @@ const VoteTemplate = () => {
           fontSize={{base:"40px", md:"4xl"}}
           fontFamily="mono"
         >
-          Just Vote
+          Votez
         </Heading>
       </Center>
      <VoteBody />
