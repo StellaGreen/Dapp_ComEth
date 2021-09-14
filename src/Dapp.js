@@ -28,39 +28,39 @@ const Dapp = ({ comEthAdr }) => {
   return (
     <>
     <Box minH="100vh">
-      {window.location.pathname === "/" ? <LandingHeader /> : <MainHeader />}
+      {["/", "/create", "/login"].includes(window.location.pathname) ? <LandingHeader /> : <MainHeader />}
       <Switch>
         <Route exact path="/" component={LandingPage}>
           <LandingPage />
         </Route>
-        <Route exact path="/create" component={Create}>
+        <Route exact path="/Create" component={Create}>
           <Create />
         </Route>
-        <Route exact path="/login" component={Login}>
+        <Route exact path="/Login" component={Login}>
           <Login />
         </Route>
 
         <ComEthContextProvider comEthAdr={comEthAdr}>
 
-          <Route exact path="/home" component={Home}>
+          <Route exact path="/Home" component={Home}>
             <Home comEthAdr={comEthAdr} />
           </Route>
-          <Route exact path="/vote" component={Vote}>
+          <Route exact path="/Vote" component={Vote}>
             <Vote />
           </Route>
-          <Route exact path="/proposition" component={Proposition}>
+          <Route exact path="/Proposition" component={Proposition}>
             <Proposition />
           </Route>
-          <Route exact path="/info" component={Info}>
+          <Route exact path="/Info" component={Info}>
             <Info />
           </Route>
-          <Route exact path="/stats" component={Stats}>
+          <Route exact path="/Stats" component={Stats}>
             <Stats />
           </Route>
-          <Route exact path="/budget" component={Budget}>
+          <Route exact path="/Budget" component={Budget}>
             <Budget />
           </Route>
-          <Route exact path="/people" component={People}>
+          <Route exact path="/People" component={People}>
             <People />
           </Route>
         </ComEthContextProvider>
