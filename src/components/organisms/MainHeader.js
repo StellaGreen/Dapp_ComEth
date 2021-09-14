@@ -11,19 +11,9 @@ const MainHeader = () => {
     },[])
     return (
         <>
-            {window.location.pathname === "/create" || "/login" ? "" : (<>
-                <Box pos="sticky" w="100%" backgroundColor="teal.400" >
-                    <Stack direction="row">
-                        <Logo />
-                        <Spacer />
-                        <Box display={{ base: "flex", sm: "flex", md: "none" }}>
-                            <MobilNav />
-                        </Box>
-                    </Stack>
-                </Box>
-            </>)}
-            {window.location.pathname === "/info" ? (<>
-                <Box pos="sticky" w="100%" backgroundColor="teal.400" >
+            {window.location.pathname === "/create" || "/login" ? "" : ""}
+            {window.location.pathname === "/info" || "/home" || "/proposition" || "/vote" || "/stats" || "/budget" || "/people" ? (<>
+                <Box pos="sticky" w="100%" backgroundColor="teal.400">
                     <Stack direction="row">
                         <Logo />
                         <Spacer />
