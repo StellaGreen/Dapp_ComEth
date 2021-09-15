@@ -37,7 +37,7 @@ const ComEthAddressPopover = () => {
             >
               <Tooltip
                 rounded="md"
-                label="Retrouvez ici l'addresse de votre communauté."
+                label="Retrouvez ici l'addresse de votre communauté"
               >
                 <LinkIcon />
               </Tooltip>
