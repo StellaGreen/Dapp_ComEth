@@ -1,4 +1,4 @@
-import { Box, Center, Circle, Input, HStack } from "@chakra-ui/react";
+import { Box, Center, Circle, Input, HStack, Stack } from "@chakra-ui/react";
 import { useContext, useState } from "react";
 import { ComEthContext } from "../../context/ComEthContext";
 
@@ -193,16 +193,17 @@ const StatsBody = () => {
         >
           amount : {proposal.amount / 10 ** 18} ETH
         </Box>
+        <Stack direction="row">
         <Box
           p="1%"
           mt="1%"
+          h="2rem"
           ml={{ md: "2rem" }}
           backgroundColor="teal.400"
           rounded="lg"
           fontWeight="bold"
-          mb="2%"
         >
-          nombre de votes validant : {proposal.nbYes}
+          ✔️ : {proposal.nbYes}
         </Box>
         <Box
           p="1%"
@@ -212,8 +213,9 @@ const StatsBody = () => {
           rounded="lg"
           fontWeight="bold"
         >
-          nombre de votes refusant : {proposal.nbNo}
+          ❌ : {proposal.nbNo}
         </Box>
+        </Stack>
       </Box>
       </Center>
         </>

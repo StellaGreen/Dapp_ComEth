@@ -201,6 +201,7 @@ const VoteBody = () => {
               Destinataire des fonds de la proposition :
             </Box>
             <Box>{proposal.receiver}</Box>
+            {proposal.statuVote === "0" ? (
             <Center>
               <Button
                 onClick={handleClickVote}
@@ -210,7 +211,7 @@ const VoteBody = () => {
               >
                 Votez
               </Button>
-            </Center>
+            </Center>) : "" }
           </FormControl>
         </Box>
       </Center>
