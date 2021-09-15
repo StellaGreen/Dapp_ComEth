@@ -69,6 +69,7 @@ const BudgetBody = () => {
         onClick={handleBalance}
                 backgroundColor="whiteAlpha.300"
                 _hover={{ bg: "#21bdbf" }}
+                _active={{ bg:"#8deaf2"}}
                 fontSize={{base:"sm",sm:"md"}}
                 m="10rem"
                 position="static"
@@ -95,6 +96,7 @@ const BudgetBody = () => {
                 backgroundColor="whiteAlpha.300"
                 fontSize={{base:"sm",sm:"md"}}
                 _hover={{ bg: "#21bdbf" }}
+                _active={{ bg:"#8deaf2"}}
               >
                 Chercher
               </Button>

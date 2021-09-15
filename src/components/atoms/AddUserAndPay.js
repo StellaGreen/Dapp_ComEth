@@ -1,5 +1,5 @@
 import React, { useContext} from "react";
-import { Circle, Center, useToast} from "@chakra-ui/react";
+import { Circle, Center, useToast, Tooltip} from "@chakra-ui/react";
 import { ComEthContext } from "../../context/ComEthContext";
 import { Web3Context } from "web3-hooks";
 
@@ -64,6 +64,7 @@ const AddUserAndPay = () => {
   return (
     <>
       <Center>
+      <Tooltip rounded="md" label="Ajoutez-vous dans votre communauté à votre première venue." fontSize="md">
         <Circle
           onClick={handleAddUser}
           backgroundColor="blackAlpha.300"
@@ -74,10 +75,13 @@ const AddUserAndPay = () => {
           textAlign="center"
           fontWeight="bold"
           _hover= {{bg:"#1e3b45"}}
+          _active={{ bg:"#8deaf2"}}
         >
           {" "}
           Se rajouter
         </Circle>
+        </Tooltip>
+        <Tooltip rounded="md" label="Régularisez votre situation chaque mois" fontSize="md">
         <Circle
           onClick={handleClickPay}
           w={{base:"50%",md:"20%"}}
@@ -87,10 +91,12 @@ const AddUserAndPay = () => {
           textAlign="center"
           fontWeight="bold"
           _hover= {{bg:"#1e3b45"}}
+          _active={{ bg:"#8deaf2"}}
         >
           {" "}
           Se mettre à jour
         </Circle>
+        </Tooltip>
       </Center>
     </>
   );

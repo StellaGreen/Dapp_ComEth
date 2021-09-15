@@ -21,6 +21,7 @@ const MobilNav = () => {
                     size="lg"
                     backgroundColor="teal.600"
                     _hover={{ bg: "#0db5aa" }}
+                    _active={{ bg:"#8deaf2"}}
                     mr="1rem"
                     mt="2rem"
                 />

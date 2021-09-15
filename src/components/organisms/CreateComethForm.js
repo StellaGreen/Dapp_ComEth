@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import { Box, Circle, useToast, Input, Center, Text } from "@chakra-ui/react";
+import { Box, Circle, useToast, Input, Center, Text, Tooltip } from "@chakra-ui/react";
 import { Redirect } from "react-router-dom";
 
 import { ComEthFactoryContext } from "../../App";
@@ -126,6 +126,7 @@ const CreateComethForm = () => {
             ETH
           </Box>
         </Center>
+        <Tooltip rounded="md" label="Une fois que vous aurez validez, attendez le pop-up, vous saurez rediriger automatiquement dans l'application" fontSize="md">
         <Circle
           fontWeight="bold"
           textAlign="center"
@@ -134,12 +135,14 @@ const CreateComethForm = () => {
           boxShadow="lg"
           onClick={handleClickCreate}
           _hover={{ bg: "#0db5aa" }}
+          _active={{ bg:"#8deaf2"}}
           _selected={{ bg: "#17d4c7" }}
           p="0.5em"
           margin="2rem"
         >
           Créez votre ComEth
         </Circle>
+        </Tooltip>
       </Box>
       {created && <Redirect exact from="/create" to="/home" />}
     </>

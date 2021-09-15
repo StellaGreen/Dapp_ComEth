@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heading, Circle, Center } from "@chakra-ui/react";
+import { Heading, Circle, Center, Tooltip } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import { Web3Context } from "web3-hooks";
 import { useContext } from "react";
@@ -48,7 +48,7 @@ const LandingPageTemplate = () => {
         </Text>
       </Center>
       <Center>
-        
+      <Tooltip rounded="md" label="Si vous n'avez pas de communauté, créez en une !" fontSize="md">
         <Link to={web3State.isLogged ? "/create" : "/"}>
           <Circle
           as="button"
@@ -65,7 +65,8 @@ const LandingPageTemplate = () => {
             Créez votre ComEth
           </Circle>
         </Link>
-
+      </Tooltip>
+      <Tooltip rounded="md" label="Rejoignez votre communauté grace à son addresse" fontSize="md">
         <Link to={web3State.isLogged ? "/login" : "/"}>
           <Circle
           as="button"
@@ -82,7 +83,7 @@ const LandingPageTemplate = () => {
             Rejoignez votre ComEth
           </Circle>
         </Link>
-       
+       </Tooltip>
       </Center>
       <FooterLandingPage />
     </>

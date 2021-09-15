@@ -73,6 +73,7 @@ const StatsBody = () => {
             Dernière proposition votée / ou à voter
           </Box>
         </Center>
+        <Box boxShadow="sm" m="4%" p="0.5%" pb="2%" rounded="md" backgroundColor="teal.500">
         <Box fontWeight="bold" textAlign="center" m="3%">
           Rechercher avec l'id de la proposition
         </Box>
@@ -94,10 +95,12 @@ const StatsBody = () => {
             w="40%"
             onClick={handleOnClickProposal}
             _hover={{ bg: "#21bdbf" }}
+            _active={{ bg: "#8deaf2"}}
           >
             Rechercher
           </Circle>
         </Center>
+        </Box>
         {proposal.statuVote === 0 ? (
               <>
                 <HStack column="row" position="static">
@@ -176,6 +179,7 @@ const StatsBody = () => {
           p="1%"
           h="2rem"
           ml="20%"
+          w="10rem"
           backgroundColor="teal.400"
           rounded="lg"
           fontWeight="bold"

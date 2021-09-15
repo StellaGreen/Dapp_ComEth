@@ -103,9 +103,8 @@ const VoteBody = () => {
           mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
           ml={{ sm: "0rem", md: "4rem" }}
           boxShadow="lg"
-          w={{ base: "20rem", sm: "30rem",md:"35rem" , lg: "30rem" }}
+          w={{ base: "20rem", sm: "32.5rem",md:"35rem" , lg: "34rem" }}
           backgroundColor="blackAlpha.200"
-          position="static"
           rounded="md"
         >
           <Stack direction="row" spacing="-7rem">
@@ -120,6 +119,7 @@ const VoteBody = () => {
           rounded="lg"
           fontWeight="bold"
           mb="2%"
+          position="static"
         >
               {proposal.title}
               </Box>

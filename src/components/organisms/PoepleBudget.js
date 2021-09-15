@@ -5,7 +5,7 @@ import {
     Input,
     Button,
     Stack,
-    Text
+    Tooltip
   } from "@chakra-ui/react";
   import { useContext, useState } from "react";
   import { ComEthContext } from "../../context/ComEthContext";
@@ -106,12 +106,14 @@ const PoepleBody = () => {
                     N'est pas actif
                   </Circle>
                 ) : ""}
-                <Box mt="3rem">
+                <Stack direction="row" mt="2rem" spacing="35%">
+                <Tooltip rounded="md" label="Ceci entraine l'inactivité du compte, aucuns frais ne seront cumulés pour l'adhésion mensuelle." fontSize="md">
                 <Button onClick={handleClickDesac}>Se désactiver</Button>
-                <Text>Ceci entraine l'inactivité du compte, aucuns frais ne seront cumulés pour l'adhésion mensuelle.</Text>
-                </Box>
+                </Tooltip>
+                <Tooltip rounded="md" label="Ceci entraine la suppression de votre addresse au sein de votre communauté. Dans le cas ou vous seriez banni, aucun remboursement ne vous sera accordé. Regularisez votre situation puis quittez la ComEth pour récuperer votre dû." fontSize="md">
                 <Button onClick={handleClickQuit}>Quitter la ComEth</Button>
-                <Text>Ceci entraine la suppression de votre addresse au sein de votre communauté. Dans le cas ou vous seriez banni, aucun remboursement ne vous sera accordé. Regularisez votre situation puis quittez la ComEth pour récuperer votre dû.</Text>
+                </Tooltip>
+                </Stack>
           </Box>
         </Box>
       </Box>

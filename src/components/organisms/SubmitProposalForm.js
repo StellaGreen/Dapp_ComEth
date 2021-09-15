@@ -95,7 +95,7 @@ const SubmitProposalForm = () => {
           <FormLabel fontWeight="bold">
           <Box
               fontWeight="bold"
-              w={{base:"90%", sm: "74%", md: "46%", lg: "44%" }}
+              w={{base:"90%", sm: "65%", md: "43%", lg: "44%" }}
               backgroundColor="teal.400"
               pl="2%"
               rounded="md"
@@ -118,7 +118,7 @@ const SubmitProposalForm = () => {
           <FormLabel p="-0" fontWeight="bold">
           <Box
               fontWeight="bold"
-              w={{base:"80%", sm: "64%", md: "40%", lg: "40%" }}
+              w={{base:"80%", sm: "73%", md: "46%", lg: "45%" }}
               backgroundColor="teal.400"
               pl="2%"
               rounded="md"
@@ -144,7 +144,7 @@ const SubmitProposalForm = () => {
           <FormLabel fontWeight="bold">
           <Box
               fontWeight="bold"
-              w={{base:"23%", sm: "19%", md: "13%", lg: "14%" }}
+              w={{base:"80%", sm: "24%", md: "17%", lg: "16%" }}
               backgroundColor="teal.400"
               pl="2%"
               rounded="md"
@@ -165,7 +165,7 @@ const SubmitProposalForm = () => {
           <FormLabel fontWeight="bold">
           <Box
               fontWeight="bold"
-              w={{base:"80%", sm: "42%", md: "26%", lg: "25%" }}
+              w={{base:"95%", sm: "79%", md: "50%", lg: "48%" }}
               backgroundColor="teal.400"
               pl="2%"
               rounded="md"
