@@ -130,7 +130,7 @@ const SubmitProposalForm = () => {
             size="sm"
             boxShadow="lg"
             w={{ sm: "99%", md: "32rem" }}
-            placeholder="0,75"
+            placeholder="0.75"
             margin="1rem"
           />
           <FormLabel fontWeight="bold">Paiement reveiver</FormLabel>
