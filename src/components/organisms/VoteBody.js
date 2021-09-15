@@ -188,8 +188,8 @@ const VoteBody = () => {
               placeholder="Selectionnez votre réponse"
               onChange={handleChangeChoice}
             >
-              <option value={1}>Oui</option>
-              <option value={0}>Non</option>
+              <option value={"1"}>Oui</option>
+              <option value={"0"}>Non</option>
             </Select>
             <Box
               fontWeight="bold"
