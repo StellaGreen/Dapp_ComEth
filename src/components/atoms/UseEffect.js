@@ -11,7 +11,7 @@ const UseEffect = () => {
         if (comEth) {
             const cb = (paymentReceiver, amount, proposalId) => {
                 toast({
-                    title: "La proposition à était validée, félicitation !",
+                    title: "La proposition a été validée, félicitations !",
                     description: `Destinataire : ${paymentReceiver}, du montant : ${amount / 10 ** 18} ETH, de la proposition ID :${proposalId}.`,
                     status: "info",
                     position: "top-right",
@@ -53,7 +53,7 @@ const UseEffect = () => {
             const cb = (sender, amount) => {
                 toast({
                     title: "Vous avez bien régularisé votre situation",
-                    description: `Avec votre addresse : ${sender}, vous avez déposé dans le pot commun de votre communauté, un montant de : ${amount / 10 ** 18} ETH`,
+                    description: `Avec votre addresse : ${sender}, vous avez déposé dans le pot commun de votre communauté un montant de : ${amount / 10 ** 18} ETH`,
                     status: "info",
                     position: "top-right",
                     padding: "1rem",
@@ -94,7 +94,7 @@ const UseEffect = () => {
             toast({
                 title: "Proposition rejetée par la majorité !",
                 description: `La proposition à l'ID : ${proposalId} vient d'être rejetée, les fonds proposés ne seront pas redistribués`,
-                status: "info",
+                status: "warning",
                 position: "top-right",
                 padding: "1rem",
                 fontWeight: "bold",
@@ -113,7 +113,7 @@ const UseEffect = () => {
             const cb = (id, descriptions) => {
                 toast({
                     title: "Proposition créée",
-                    description: `id de la proposition: ${id} . Desciprion : ${descriptions}`,
+                    description: `Id de la proposition: ${id} . Description : ${descriptions}`,
                     status: "info",
                     position: "top-right",
                     padding: "1rem",

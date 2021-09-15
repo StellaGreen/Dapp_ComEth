@@ -44,7 +44,7 @@ const LandingPageTemplate = () => {
           fontWeight="bold"
           fontSize={{base:"22px",sm:"24px",lg:"25px"}}
         >
-          A new possibility to create communities and manage sharing funds
+          Une nouvelle possibilité de création de communautés et de gestion de fonds partagés
         </Text>
       </Center>
       <Center>
@@ -62,7 +62,7 @@ const LandingPageTemplate = () => {
             _hover= {{bg:"#42daf5"}}
               _selected={{bg:"#055c6b"}}
           >
-            Create a Community
+            Créez votre ComEth
           </Circle>
         </Link>
 
@@ -79,7 +79,7 @@ const LandingPageTemplate = () => {
               _hover= {{bg:"#42daf5"}}
               _selected={{bg:"#055c6b"}}
           >
-            Join a Community
+            Rejoignez votre ComEth
           </Circle>
         </Link>
        

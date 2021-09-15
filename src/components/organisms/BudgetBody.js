@@ -49,7 +49,7 @@ const BudgetBody = () => {
           mb="2rem"
           rounded="lg"
         >
-          Définir les budget alloué - à venir - totaux
+          Budgets de votre communauté
         </Box>
         <Stack direction="row">
         <Box
@@ -88,7 +88,7 @@ const BudgetBody = () => {
           rounded="lg"
           s
         >
-          Fond total commun : {invest / 10**18} ETH
+          Investissement total : {invest / 10**18} ETH
         </Box>
         <Button
         onClick={handleInvest}

@@ -5,6 +5,7 @@ import {
     Input,
     Button,
     Stack,
+    Text
   } from "@chakra-ui/react";
   import { useContext, useState } from "react";
   import { ComEthContext } from "../../context/ComEthContext";
@@ -33,6 +34,24 @@ const PoepleBody = () => {
       }
     };
 
+    const handleClickDesac = async () => {
+
+      try{
+        await comEth.toggleIsActive()
+
+      }catch(e){
+        console.log(e.error)
+      }
+    }
+
+    const handleClickQuit = async () => {
+      try {
+        await comEth.quitComEth()
+      }catch(e){
+        console.log(e.error)
+      }
+    }
+
     return (
         <>
             <Box
@@ -45,7 +64,7 @@ const PoepleBody = () => {
         p="1rem"
       >
         <Center>
-        <Box backgroundColor="#2ac9c7" rounded="md" p="1rem" fontWeight="bold" m="1rem">Activités au seint de la ComEth</Box>
+        <Box backgroundColor="#2ac9c7" rounded="md" p="1rem" fontWeight="bold" m="1rem">Activités au sein de la ComEth</Box>
         </Center>
         <Box >
           <Box ml={{ md: "1rem" }}>
@@ -56,7 +75,7 @@ const PoepleBody = () => {
               <Input
                 onChange={handleAddress}
                 backgroundColor="teal.600"
-                placeholder="0x0..."
+                placeholder="0x00000..."
                 ></Input>
               <Button
               onClick={handlActive}
@@ -87,6 +106,12 @@ const PoepleBody = () => {
                     N'est pas actif
                   </Circle>
                 ) : ""}
+                <Box mt="3rem">
+                <Button onClick={handleClickDesac}>Se désactiver</Button>
+                <Text>Ceci entraine l'inactivité du compte, aucuns frais ne seront cumulés pour l'adhésion mensuelle.</Text>
+                </Box>
+                <Button onClick={handleClickQuit}>Quitter la ComEth</Button>
+                <Text>Ceci entraine la suppression de votre addresse au sein de votre communauté. Dans le cas ou vous seriez banni, aucun remboursement ne vous sera accordé. Regularisez votre situation puis quittez la ComEth pour récuperer votre dû.</Text>
           </Box>
         </Box>
       </Box>

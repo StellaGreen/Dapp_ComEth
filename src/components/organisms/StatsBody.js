@@ -70,7 +70,7 @@ const StatsBody = () => {
             fontWeight="bold"
             textAlign="center"
           >
-            Dernière proposition voter/ou à voter
+            Dernière proposition votée / ou à voter
           </Box>
         </Center>
         <Box fontWeight="bold" textAlign="center" m="3%">
@@ -139,15 +139,15 @@ const StatsBody = () => {
               </>
             ) : ""}
         <Box
-          p="1%"
-          mt="4%"
           ml={{ md: "2rem" }}
-          backgroundColor="teal.400"
+          fontSize={{base:"lg",md:"xl"}}
+          backgroundColor="teal.300"
+          textAlign="center"
           rounded="lg"
           fontWeight="bold"
           mb="2%"
         >
-          title : {proposal.title}
+          {proposal.title}
         </Box>
         <Box
           p="1%"
@@ -158,47 +158,35 @@ const StatsBody = () => {
           fontWeight="bold"
           mb="2%"
         >
-          createdAt : {proposal.createdAt}
+          Auteur de la proposition : {proposal.autor}
         </Box>
         <Box
           p="1%"
           mt="1%"
+          mb="4%"
           ml={{ md: "2rem" }}
+          backgroundColor="teal.400"
+          rounded="lg"
+          fontWeight="bold"
+        >
+          Destinataire : {proposal.receiver}
+        </Box>
+        <Stack direction="row" spacing="2rem">
+        <Box
+          p="1%"
+          h="2rem"
+          ml="20%"
           backgroundColor="teal.400"
           rounded="lg"
           fontWeight="bold"
           mb="2%"
         >
-          author : {proposal.autor}
+          Montant : {proposal.amount / 10 ** 18} ETH
         </Box>
-        <Box
-          p="1%"
-          mt="1%"
-          ml={{ md: "2rem" }}
-          backgroundColor="teal.400"
-          rounded="lg"
-          fontWeight="bold"
-          mb="2%"
-        >
-          paiment receiver : {proposal.receiver}
-        </Box>
-        <Box
-          p="1%"
-          mt="1%"
-          ml={{ md: "2rem" }}
-          backgroundColor="teal.400"
-          rounded="lg"
-          fontWeight="bold"
-          mb="2%"
-        >
-          amount : {proposal.amount / 10 ** 18} ETH
-        </Box>
-        <Stack direction="row">
         <Box
           p="1%"
           mt="1%"
           h="2rem"
-          ml={{ md: "2rem" }}
           backgroundColor="teal.400"
           rounded="lg"
           fontWeight="bold"
@@ -208,7 +196,7 @@ const StatsBody = () => {
         <Box
           p="1%"
           mt="1%"
-          ml={{ md: "2rem" }}
+          h="2rem"
           backgroundColor="teal.400"
           rounded="lg"
           fontWeight="bold"

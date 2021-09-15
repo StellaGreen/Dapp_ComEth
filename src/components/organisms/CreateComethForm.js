@@ -29,8 +29,8 @@ const CreateComethForm = () => {
       let tx = await comEthFactory.createComEth(ethers.utils.parseEther(subscriptionPrice)); // <------------
       await tx.wait();
       toast({
-        title: "Confirmed transaction",
-        description: `Transaction hash: ${tx.hash}`, // hash de la transac
+        title: "Transaction confirmée",
+        description: `Veuillez attendre le deuxième pop-up, hash de la transaction : ${tx.hash}`,
         status: "success",
         duration: 7000,
         isClosable: true,
@@ -38,7 +38,7 @@ const CreateComethForm = () => {
     } catch (e) {
       if (e.code === 4001) {
         toast({
-          title: "Transaction signature denied",
+          title: "Transaction refusée à la signature",
           description: e.message,
           status: "error",
           duration: 9000,
@@ -56,7 +56,7 @@ const CreateComethForm = () => {
           setComEthAddress(ComEthAddress);
           localStorage.setItem("AddressComEth", JSON.stringify(ComEthAddress))
           toast({
-            title: "Votre communauté à sa propre addresse Ethereum !",
+            title: "Votre communauté a sa propre addresse Ethereum !",
             description: `L'addresse de votre communauté : ${ComEthAddress}`,
             status: "info",
             position: "top-right",

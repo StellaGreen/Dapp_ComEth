@@ -14,7 +14,7 @@ const AddUserAndPay = () => {
     } catch (e) {
       if (e.code === 4001) {
         toast({
-          title: "Transaction refusé à la signature",
+          title: "Transaction refusée à la signature",
           description: e.message,
           status: "error",
           duration: 4000,
@@ -41,7 +41,7 @@ const AddUserAndPay = () => {
     } catch (e) {
       if (e.code === 4001) {
         toast({
-          title: "Transaction refusé à la signature",
+          title: "Transaction refusée à la signature",
           description: e.message,
           status: "error",
           duration: 4000,
@@ -49,8 +49,8 @@ const AddUserAndPay = () => {
         });
       } else {
         toast({
-          title: "Vous avez déjà régularisé votre situation pour ce moi",
-          description: "Vous avez déjà payé, attendez le moi prochain avant de régulariser votre situation",
+          title: "Vous avez déjà régularisé votre situation pour ce mois",
+          description: "Vous avez déjà payé, attendez le mois prochain avant de régulariser votre situation",
           status: "error",
           duration: 4000,
           isClosable: true,

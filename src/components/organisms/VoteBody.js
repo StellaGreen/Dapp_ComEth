@@ -8,6 +8,7 @@ import {
   Input,
   HStack,
   Circle,
+  Stack
 } from "@chakra-ui/react";
 import { useContext, useState } from "react";
 import { ComEthContext } from "../../context/ComEthContext";
@@ -15,8 +16,8 @@ const VoteBody = () => {
   const comEth = useContext(ComEthContext);
   const [id, setId] = useState("");
   const [proposal, setProposal] = useState({
-    nbYes: null,
-    NbNo: null,
+    nbYes: 0,
+    NbNo: 0,
     statuVote: null,
     createdAt: "",
     autor: "",
@@ -79,7 +80,7 @@ const VoteBody = () => {
           fontWeight="bold"
           mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
         >
-          ID de la proposition*
+          ID de la proposition
           <Input
             w="15%"
             onChange={handleChangeId}
@@ -102,14 +103,26 @@ const VoteBody = () => {
           mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
           ml={{ sm: "0rem", md: "4rem" }}
           boxShadow="lg"
-          w={{ base: "20rem", sm: "30rem", lg: "40rem" }}
+          w={{ base: "20rem", sm: "30rem",md:"35rem" , lg: "30rem" }}
           backgroundColor="blackAlpha.200"
           position="static"
           rounded="md"
         >
+          <Stack direction="row" spacing="-7rem">
+            <Box>
           <FormControl w={{ base: "17rem", sm: "32rem" }} margin="2rem">
             <FormLabel fontWeight="bold" fontSize="lg" margin="1rem">
+            <Box
+          fontSize={{base:"lg",md:"xl"}}
+          backgroundColor="teal.300"
+          textAlign="center"
+          w={{ sm: "80%", md: "79%", lg: "80%" }}
+          rounded="lg"
+          fontWeight="bold"
+          mb="2%"
+        >
               {proposal.title}
+              </Box>
             </FormLabel>
             {proposal.statuVote === "0" ? (
               <>
@@ -171,15 +184,7 @@ const VoteBody = () => {
             >
               Montant de la proposition : {proposal.amount / 10 ** 18} ETH
             </Box>
-            <Box
-              fontWeight="bold"
-              w={{ sm: "80%", md: "79%", lg: "80%" }}
-              backgroundColor="teal.400"
-              rounded="md"
-              mb="2%"
-            >
-              Durée de la proposition : {proposal.createdAt}
-            </Box>
+            {proposal.statuVote === "0" ? (
             <Select
               boxShadow="lg"
               margin="1rem"
@@ -190,7 +195,7 @@ const VoteBody = () => {
             >
               <option value={"1"}>Oui</option>
               <option value={"0"}>Non</option>
-            </Select>
+            </Select> ) : "" }
             <Box
               fontWeight="bold"
               w={{ sm: "80%", md: "79%", lg: "80%" }}
@@ -213,6 +218,19 @@ const VoteBody = () => {
               </Button>
             </Center>) : "" }
           </FormControl>
+          </Box>
+          <Stack direction="column">
+            {proposal.nbYes === 0 ? "" : (
+            <Box mt="2rem">
+          ✔️ : {proposal.nbYes}
+          </Box>)}
+          {proposal.NbNo === 0 ? "" : (
+          <Box mt="2rem">
+          ❌ : {proposal.NbNo}
+          </Box>)}
+          
+          </Stack>
+          </Stack>
         </Box>
       </Center>
     </>

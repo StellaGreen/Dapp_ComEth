@@ -93,7 +93,16 @@ const SubmitProposalForm = () => {
           mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
         >
           <FormLabel fontWeight="bold">
-            Titre de proposition proposition
+          <Box
+              fontWeight="bold"
+              w={{base:"90%", sm: "74%", md: "46%", lg: "44%" }}
+              backgroundColor="teal.400"
+              pl="2%"
+              rounded="md"
+              mb="2%"
+            >
+            Intitulé de la proposition : 
+            </Box>
           </FormLabel>
           <Input
             onChange={handleChangeProposition}
@@ -101,13 +110,22 @@ const SubmitProposalForm = () => {
             size="sm"
             boxShadow="lg"
             w={{ sm: "99%", md: "32rem" }}
-            placeholder="Salle de sport ?"
+            placeholder="Une salle de sport ?"
             margin="1rem"
             position="static"
           />
 
           <FormLabel p="-0" fontWeight="bold">
-            Choisir votre limie de temps
+          <Box
+              fontWeight="bold"
+              w={{base:"80%", sm: "64%", md: "40%", lg: "40%" }}
+              backgroundColor="teal.400"
+              pl="2%"
+              rounded="md"
+              mb="2%"
+            >
+            Choisir votre limite de temps :
+            </Box>
           </FormLabel>
           <Select
             onChange={handleChangeTimeLimit}
@@ -123,7 +141,18 @@ const SubmitProposalForm = () => {
             <option value="2419200">4 semaines</option>
           </Select>
 
-          <FormLabel fontWeight="bold">Amount</FormLabel>
+          <FormLabel fontWeight="bold">
+          <Box
+              fontWeight="bold"
+              w={{base:"23%", sm: "19%", md: "13%", lg: "14%" }}
+              backgroundColor="teal.400"
+              pl="2%"
+              rounded="md"
+              mb="2%"
+            >
+            Montant :
+            </Box>
+            </FormLabel>
           <Input
             onChange={handleChangeAmount}
             backgroundColor="teal.600"
@@ -133,7 +162,17 @@ const SubmitProposalForm = () => {
             placeholder="0.75"
             margin="1rem"
           />
-          <FormLabel fontWeight="bold">Paiement reveiver</FormLabel>
+          <FormLabel fontWeight="bold">
+          <Box
+              fontWeight="bold"
+              w={{base:"80%", sm: "42%", md: "26%", lg: "25%" }}
+              backgroundColor="teal.400"
+              pl="2%"
+              rounded="md"
+              mb="2%"
+            >Destinataire du montant accordé :
+            </Box>
+            </FormLabel>
           <Input
             onChange={handleChangeAddressReceive}
             backgroundColor="teal.600"
