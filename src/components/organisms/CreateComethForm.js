@@ -124,6 +124,7 @@ const CreateComethForm = () => {
             <Text textAlign="center" mb={{ base: "0.3rem", sm: "0" }}>
               Montant de la souscription
             </Text>
+            <Tooltip rounded="md" label="Faites attention de bien mettre un point et non une virgule" fontSize="md">
             <Input
               onChange={handleChangeSubscription}
               ml="2rem"
@@ -131,7 +132,8 @@ const CreateComethForm = () => {
               w="25%"
               placeholder="0.1"
             />
-            <Text>ETH</Text>
+            </Tooltip>
+            ETH
           </Box>
         </Center>
         <Tooltip
