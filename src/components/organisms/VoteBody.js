@@ -15,27 +15,8 @@ import { useContext, useEffect, useState } from "react";
 import { ComEthContext } from "../../context/ComEthContext";
 const VoteBody = () => {
   const comEth = useContext(ComEthContext);
-  const [id, setId] = useState("");
-  const [proposal, setProposal] = useState({
-    nbYes: 0,
-    NbNo: 0,
-    statuVote: null,
-    createdAt: "",
-    autor: "",
-    title: "",
-    receiver: "",
-    amount: 0,
-  });
   const [choice, setChoice] = useState("");
-
-  const handleChangeId = (e) => {
-    try {
-      setId(e.target.value);
-    } catch (e) {
-      console.log(e.error);
-    }
-  };
-  
+  const [id, setId] = useState("");
   const handleChangeChoice = (e) => {
     try {
       setChoice(Number(e.target.value));
@@ -49,6 +30,25 @@ const VoteBody = () => {
       console.log( "choice", choice);
     }
   },[setChoice,choice])
+  const [proposal, setProposal] = useState({
+    nbYes: 0,
+    NbNo: 0,
+    statuVote: null,
+    createdAt: "",
+    autor: "",
+    title: "",
+    receiver: "",
+    amount: 0,
+  });
+
+  const handleChangeId = (e) => {
+    try {
+      setId(e.target.value);
+    } catch (e) {
+      console.log(e.error);
+    }
+  };
+  
 
   const handleClickSearchId = async () => {
     setProposal(proposal);
