@@ -192,7 +192,7 @@ const PoepleBody = () => {
                 {getUsersAct.isBanned === true ? (
                   <Circle
                     m="0.5rem"
-                    backgroundColor="green"
+                    backgroundColor="red.600"
                     fontFamily="monospace"
                     fontWeight="bold"
                     textAlign="center"
@@ -203,7 +203,7 @@ const PoepleBody = () => {
                 ) : getUsersAct.isBanned === false ? (
                   <Circle
                     m="0.5rem"
-                    backgroundColor="red.600"
+                    backgroundColor="green"
                     fontFamily="monospace"
                     fontWeight="bold"
                     textAlign="center"
