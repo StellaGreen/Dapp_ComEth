@@ -15,9 +15,12 @@ export const useComEth = () => {
 };
 
 export const ComEthContextProvider = ({ comEthAdr, children }) => {
+  
+  if(comEthAdr === null){
+    comEthAdr = JSON.parse(localStorage.getItem("AddressComEth"))
+  }
   const comEth = useContract(comEthAdr, ComEthAbi);
 
-// "0x971593FE2B3378cB20FA82454bDaeEe78095ACb0"
 
   useEffect(() => {
     console.log("ComEthContextProvider", comEthAdr);
