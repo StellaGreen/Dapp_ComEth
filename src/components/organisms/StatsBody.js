@@ -1,4 +1,4 @@
-import { Box, Center, Circle, Input, HStack, Stack } from "@chakra-ui/react";
+import { Box, Center, Circle, Input, HStack, Stack, Tooltip } from "@chakra-ui/react";
 import { useContext, useState } from "react";
 import { ComEthContext } from "../../context/ComEthContext";
 
@@ -81,13 +81,15 @@ const StatsBody = () => {
           <Box mr="1rem" ml="1.5rem">
             ID
           </Box>
+          <Tooltip rounded="md" label="L'id est donné après l'enregistrement d'une proposition, un pop-up apparaît lorsque la proposition a été enregistré dans la blockchain" fontSize="md">
           <Input
             w="40%"
             onChange={handleOnChangeId}
             mr="1rem"
             placeholder="0"
             position="static"
-          ></Input>
+          />
+          </Tooltip>
           <Circle
             backgroundColor="whiteAlpha.200"
             fontWeight="bold"

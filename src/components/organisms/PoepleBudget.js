@@ -95,11 +95,13 @@ const PoepleBody = () => {
               Voir qui est Actif :
             </Box>
             <Stack direction="row">
+            <Tooltip rounded="md" label="Addresse Ethereum" fontSize="md">
               <Input
                 onChange={handleChangeAddress}
                 backgroundColor="teal.600"
                 placeholder="0x00000..."
-              ></Input>
+              />
+              </Tooltip>
               <Button
                 onClick={handlClickGetUser}
                 backgroundColor="whiteAlpha.300"

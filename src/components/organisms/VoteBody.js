@@ -8,7 +8,8 @@ import {
   Input,
   HStack,
   Circle,
-  Stack
+  Stack,
+  Tooltip
 } from "@chakra-ui/react";
 import { useContext, useState } from "react";
 import { ComEthContext } from "../../context/ComEthContext";
@@ -81,6 +82,7 @@ const VoteBody = () => {
           mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
         >
           ID de la proposition
+          <Tooltip rounded="md" label="L'id est donné après l'enregistrement d'une proposition, un pop-up apparaît lorsque la proposition a été enregistré dans la blockchain" fontSize="md">
           <Input
             w="15%"
             onChange={handleChangeId}
@@ -88,7 +90,7 @@ const VoteBody = () => {
             ml="3rem"
             mr="1rem"
             position="static"
-          ></Input>
+          /></Tooltip>
           <Button
             onClick={handleClickSearchId}
             position="static"
@@ -103,134 +105,141 @@ const VoteBody = () => {
           mt={{ base: "1rem", sm: "2rem", md: "2rem", lg: "2rem" }}
           ml={{ sm: "0rem", md: "4rem" }}
           boxShadow="lg"
-          w={{ base: "20rem", sm: "32.5rem",md:"35rem" , lg: "34rem" }}
+          w={{ base: "20rem", sm: "32.5rem", md: "35rem", lg: "34rem" }}
           backgroundColor="blackAlpha.200"
           rounded="md"
         >
           <Stack direction="row" spacing="-7rem">
             <Box>
-          <FormControl w={{ base: "17rem", sm: "32rem" }} margin="2rem">
-            <FormLabel fontWeight="bold" fontSize="lg" margin="1rem">
-            <Box
-          fontSize={{base:"lg",md:"xl"}}
-          backgroundColor="teal.300"
-          textAlign="center"
-          w={{ sm: "80%", md: "79%", lg: "80%" }}
-          rounded="lg"
-          fontWeight="bold"
-          mb="2%"
-          position="static"
-        >
-              {proposal.title}
-              </Box>
-            </FormLabel>
-            {proposal.statuVote === "0" ? (
-              <>
-                <HStack column="row" position="static">
-                  <Circle
-                    p="2%"
-                    mt="2%"
-                    mb="4%"
-                    w="2%"
-                    backgroundColor="orange"
-                  ></Circle>{" "}
-                  <Box mt="2%">Proposition toujours en cours de vote</Box>
-                </HStack>
-              </>
-            ) : proposal.statuVote === "1" ? (
-              <>
-                <HStack column="row" position="static">
-                  <Circle
-                    p="2%"
-                    mt="2%"
-                    mb="4%"
-                    w="2%"
-                    backgroundColor="green"
-                  ></Circle>{" "}
-                  <Box mt="2%">Proposition votée et validée</Box>
-                </HStack>
-              </>
-            ) : proposal.statuVote === "2" ? (
-              <>
-                <HStack column="row" position="static">
-                  <Circle
-                    p="2%"
-                    mt="2%"
-                    mb="4%"
-                    w="2%"
-                    backgroundColor="red"
-                  ></Circle>{" "}
-                  <Box mt="2%">Proposition votée et refusée</Box>
-                </HStack>
-              </>
-            ) : (
-              ""
-            )}
-            <Box
-              fontWeight="bold"
-              w={{ sm: "80%", md: "79%", lg: "80%" }}
-              backgroundColor="teal.400"
-              rounded="md"
-              mb="2%"
-            >
-              Auteur de la proposition : {proposal.autor}
+              <FormControl w={{ base: "17rem", sm: "32rem" }} margin="2rem">
+                <FormLabel fontWeight="bold" fontSize="lg" margin="1rem">
+                  <Box
+                    fontSize={{ base: "lg", md: "xl" }}
+                    backgroundColor="teal.300"
+                    textAlign="center"
+                    w={{ sm: "80%", md: "79%", lg: "80%" }}
+                    rounded="lg"
+                    fontWeight="bold"
+                    mb="2%"
+                    position="static"
+                  >
+                    {proposal.title}
+                  </Box>
+                </FormLabel>
+                {proposal.statuVote === "0" ? (
+                  <>
+                    <HStack column="row" position="static">
+                      <Circle
+                        p="2%"
+                        mt="2%"
+                        mb="4%"
+                        w="2%"
+                        backgroundColor="orange"
+                      ></Circle>{" "}
+                      <Box mt="2%">Proposition toujours en cours de vote</Box>
+                    </HStack>
+                  </>
+                ) : proposal.statuVote === "1" ? (
+                  <>
+                    <HStack column="row" position="static">
+                      <Circle
+                        p="2%"
+                        mt="2%"
+                        mb="4%"
+                        w="2%"
+                        backgroundColor="green"
+                      ></Circle>{" "}
+                      <Box mt="2%">Proposition votée et validée</Box>
+                    </HStack>
+                  </>
+                ) : proposal.statuVote === "2" ? (
+                  <>
+                    <HStack column="row" position="static">
+                      <Circle
+                        p="2%"
+                        mt="2%"
+                        mb="4%"
+                        w="2%"
+                        backgroundColor="red"
+                      ></Circle>{" "}
+                      <Box mt="2%">Proposition votée et refusée</Box>
+                    </HStack>
+                  </>
+                ) : (
+                  ""
+                )}
+                <Box
+                  fontWeight="bold"
+                  w={{ sm: "80%", md: "79%", lg: "80%" }}
+                  backgroundColor="teal.400"
+                  rounded="md"
+                  mb="2%"
+                >
+                  Auteur de la proposition : {proposal.autor}
+                </Box>
+                <Box
+                  fontWeight="bold"
+                  w={{ sm: "80%", md: "79%", lg: "80%" }}
+                  backgroundColor="teal.400"
+                  rounded="md"
+                  mb="2%"
+                >
+                  Montant de la proposition : {proposal.amount / 10 ** 18} ETH
+                </Box>
+                {proposal.statuVote === "0" ? (
+                  <Select
+                    boxShadow="lg"
+                    margin="1rem"
+                    fontSize={{ base: "15px" }}
+                    w={{ sm: "60%", md: "59%", lg: "80%" }}
+                    placeholder="Selectionnez votre réponse"
+                    onChange={handleChangeChoice}
+                  >
+                    <option value={"1"}>Oui</option>
+                    <option value={"0"}>Non</option>
+                  </Select>
+                ) : (
+                  ""
+                )}
+                <Box
+                  fontWeight="bold"
+                  w={{ sm: "80%", md: "79%", lg: "80%" }}
+                  backgroundColor="teal.400"
+                  rounded="md"
+                  mb="2%"
+                >
+                  Destinataire des fonds de la proposition :
+                </Box>
+                <Box>{proposal.receiver}</Box>
+                {proposal.statuVote === "0" ? (
+                  <Center>
+                    <Button
+                      onClick={handleClickVote}
+                      boxShadow="lg"
+                      margin="2re"
+                      _hover={{ bg: "#21bdbf" }}
+                      aria-label="Voter"
+                    >
+                      Votez
+                    </Button>
+                  </Center>
+                ) : (
+                  ""
+                )}
+              </FormControl>
             </Box>
-            <Box
-              fontWeight="bold"
-              w={{ sm: "80%", md: "79%", lg: "80%" }}
-              backgroundColor="teal.400"
-              rounded="md"
-              mb="2%"
-            >
-              Montant de la proposition : {proposal.amount / 10 ** 18} ETH
-            </Box>
-            {proposal.statuVote === "0" ? (
-            <Select
-              boxShadow="lg"
-              margin="1rem"
-              fontSize={{ base: "15px" }}
-              w={{ sm: "60%", md: "59%", lg: "80%" }}
-              placeholder="Selectionnez votre réponse"
-              onChange={handleChangeChoice}
-            >
-              <option value={"1"}>Oui</option>
-              <option value={"0"}>Non</option>
-            </Select> ) : "" }
-            <Box
-              fontWeight="bold"
-              w={{ sm: "80%", md: "79%", lg: "80%" }}
-              backgroundColor="teal.400"
-              rounded="md"
-              mb="2%"
-            >
-              Destinataire des fonds de la proposition :
-            </Box>
-            <Box>{proposal.receiver}</Box>
-            {proposal.statuVote === "0" ? (
-            <Center>
-              <Button
-                onClick={handleClickVote}
-                boxShadow="lg"
-                margin="2re"
-                _hover={{ bg: "#21bdbf" }}
-                aria-label="Voter"
-              >
-                Votez
-              </Button>
-            </Center>) : "" }
-          </FormControl>
-          </Box>
-          <Stack direction="column">
-            {proposal.nbYes === 0 ? "" : (
-            <Box mt="2rem">
-          ✔️ : {proposal.nbYes}
-          </Box>)}
-          {proposal.NbNo === 0 ? "" : (
-          <Box mt="2rem">
-          ❌ : {proposal.NbNo}
-          </Box>)}
-          
-          </Stack>
+            <Stack direction="column">
+              {proposal.nbYes === 0 ? (
+                ""
+              ) : (
+                <Box mt="2rem">✔️ : {proposal.nbYes}</Box>
+              )}
+              {proposal.NbNo === 0 ? (
+                ""
+              ) : (
+                <Box mt="2rem">❌ : {proposal.NbNo}</Box>
+              )}
+            </Stack>
           </Stack>
         </Box>
       </Center>

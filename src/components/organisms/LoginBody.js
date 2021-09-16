@@ -1,4 +1,4 @@
-import { Circle, Input, Container, Center, Box } from "@chakra-ui/react";
+import { Circle, Input, Container, Center, Box, Tooltip } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { ComEthAddressContext } from "../../App";
 import { useState, useContext } from "react";
@@ -25,6 +25,7 @@ const LoginBody = () => {
           rounded="lg"
           pb="0.3rem"
         >
+          <Tooltip rounded="md" label="Adresse Ethereum de votre communauté" fontSize="md">
           <Input
             boxShadow="lg"
             w={{ base: "90%", md: "32rem" }}
@@ -33,6 +34,7 @@ const LoginBody = () => {
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
+          </Tooltip>
           <Link to="/home">
             <Center>
               <Circle

@@ -5,6 +5,7 @@ import {
   FormLabel,
   Input,
   Select,
+  Tooltip
 } from "@chakra-ui/react";
 import React from "react";
 import { ComEthContext } from "../../context/ComEthContext";
@@ -104,6 +105,7 @@ const SubmitProposalForm = () => {
             Intitulé de la proposition : 
             </Box>
           </FormLabel>
+          <Tooltip rounded="md" label="Saisissez clairement votre idée pour qu'elle soit correctement jugée" fontSize="md">
           <Input
             onChange={handleChangeProposition}
             backgroundColor="teal.600"
@@ -114,7 +116,7 @@ const SubmitProposalForm = () => {
             margin="1rem"
             position="static"
           />
-
+          </Tooltip>
           <FormLabel p="-0" fontWeight="bold">
           <Box
               fontWeight="bold"
@@ -153,6 +155,7 @@ const SubmitProposalForm = () => {
             Montant :
             </Box>
             </FormLabel>
+            <Tooltip rounded="md" label="Faites attention de bien mettre un point et non une virgule" fontSize="md">
           <Input
             onChange={handleChangeAmount}
             backgroundColor="teal.600"
@@ -162,6 +165,7 @@ const SubmitProposalForm = () => {
             placeholder="0.75"
             margin="1rem"
           />
+          </Tooltip>
           <FormLabel fontWeight="bold">
           <Box
               fontWeight="bold"
@@ -173,6 +177,7 @@ const SubmitProposalForm = () => {
             >Destinataire du montant accordé :
             </Box>
             </FormLabel>
+            <Tooltip rounded="md" label="Adresse Ethereum du destinataire du montant saisi" fontSize="md">
           <Input
             onChange={handleChangeAddressReceive}
             backgroundColor="teal.600"
@@ -182,6 +187,7 @@ const SubmitProposalForm = () => {
             placeholder="0x00...."
             margin="1rem"
           />
+          </Tooltip>
           <Center>
             <Circle
               as="button"
