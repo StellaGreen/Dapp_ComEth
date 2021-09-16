@@ -96,6 +96,7 @@ const StatsBody = () => {
             onClick={handleOnClickProposal}
             _hover={{ bg: "#21bdbf" }}
             _active={{ bg: "#8deaf2"}}
+            aria-label="Chercher les informations d une proposition"
           >
             Rechercher
           </Circle>

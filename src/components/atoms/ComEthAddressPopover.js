@@ -34,6 +34,7 @@ const ComEthAddressPopover = () => {
               w={{ base: "8%", sm: "5%", lg: "2%" }}
               p={{ base: "1%", sm: "1%", lg: "0.5%" }}
               boxShadow="inner"
+              aria-label="Copier adresse"
             >
               <Tooltip
                 rounded="md"

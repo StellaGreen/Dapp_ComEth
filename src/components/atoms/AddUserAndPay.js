@@ -64,7 +64,7 @@ const AddUserAndPay = () => {
   return (
     <>
       <Center>
-      <Tooltip rounded="md" label="Ajoutez-vous dans votre communauté à votre première venue." fontSize="md">
+      <Tooltip rounded="md" label="Ajoutez-vous dans votre communauté à votre première venue, et attendez le pop-up de validation" fontSize="md">
         <Circle
           onClick={handleAddUser}
           backgroundColor="blackAlpha.300"
@@ -76,6 +76,7 @@ const AddUserAndPay = () => {
           fontWeight="bold"
           _hover= {{bg:"#1e3b45"}}
           _active={{ bg:"#8deaf2"}}
+          aria-label="Se rajouter en tant que membre"
         >
           {" "}
           Se rajouter
@@ -92,6 +93,7 @@ const AddUserAndPay = () => {
           fontWeight="bold"
           _hover= {{bg:"#1e3b45"}}
           _active={{ bg:"#8deaf2"}}
+          aria-label="Payer sa cotisation mensuelle"
         >
           {" "}
           Se mettre à jour

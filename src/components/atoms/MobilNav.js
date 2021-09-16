@@ -16,7 +16,7 @@ const MobilNav = () => {
             <Menu pos="absolute">
                 <MenuButton
                     as={IconButton}
-                    aria-label="Options"
+                    aria-label="Menu déroulant mobile"
                     icon={<HamburgerIcon />}
                     size="lg"
                     backgroundColor="teal.600"

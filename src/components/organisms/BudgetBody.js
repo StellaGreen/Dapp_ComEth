@@ -73,6 +73,7 @@ const BudgetBody = () => {
                 fontSize={{base:"sm",sm:"md"}}
                 m="10rem"
                 position="static"
+                aria-label="Chercher combien il reste dans le pot commun"
               >
                 Chercher
               </Button>
@@ -97,6 +98,7 @@ const BudgetBody = () => {
                 fontSize={{base:"sm",sm:"md"}}
                 _hover={{ bg: "#21bdbf" }}
                 _active={{ bg:"#8deaf2"}}
+                aria-label="Chercher combien d'ethers ont était investi dans votre communauté depuis sa création"
               >
                 Chercher
               </Button>

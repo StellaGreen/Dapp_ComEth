@@ -191,6 +191,7 @@ const SubmitProposalForm = () => {
               fontWeight="bold"
               onClick={handleSubmitAll}
               _hover={{ bg: "#21bdbf" }}
+              aria-label="Valider la proposition"
             >
               Valider
             </Circle>

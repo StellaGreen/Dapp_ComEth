@@ -213,6 +213,7 @@ const VoteBody = () => {
                 boxShadow="lg"
                 margin="2re"
                 _hover={{ bg: "#21bdbf" }}
+                aria-label="Voter"
               >
                 Votez
               </Button>

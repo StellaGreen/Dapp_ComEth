@@ -128,6 +128,26 @@ const UseEffect = () => {
             }
         };
     }, [comEth, toast]);
+    useEffect(() => {
+    if (comEth) {
+        const cb = (recipient,amount) => {
+            toast({
+                title: "Vous venez de quitter votre communauté",
+                description: `Votre addresse : ${recipient} a été remboursée d'un montant de ${amount / 10**18} ETH (calcul fait sur la quantité d'ETH restante dans le contrat)`,
+                status: "warning",
+                position: "top-right",
+                padding: "1rem",
+                fontWeight: "bold",
+                duration: 8000,
+                isClosable: true,
+            });
+        };
+        comEth.on("Withdrawn", cb)
+        return () => {
+            comEth.off("Withdrawn", cb)
+        }
+    };
+}, [comEth, toast]);
     return (
         <>
             <Box></Box>

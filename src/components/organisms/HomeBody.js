@@ -67,7 +67,7 @@ const HomeBody = () => {
             p="0.5rem"
             rounded="md"
             backgroundColor="teal.400"
-            mb={{ base: "25%", sm: "23%", lg: "25%" }}
+            mb={{ base: "25%", sm: "23%", lg: "17%" }}
           >
             Retrouvez ici vos informations, statistiques et propositions déjà votées
           </Box>

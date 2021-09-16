@@ -17,16 +17,14 @@ const CreateComethForm = () => {
 
   const toast = useToast();
 
-  // subscription price parametter <------------------------
   const handleChangeSubscription = (e) => {
     setSubscriptionPrice(e.target.value.toString());
     console.log("ETH",e.target.value)
   };
-  //-------------------------------------------------------------
 
   const handleClickCreate = async () => {
     try {
-      let tx = await comEthFactory.createComEth(ethers.utils.parseEther(subscriptionPrice)); // <------------
+      let tx = await comEthFactory.createComEth(ethers.utils.parseEther(subscriptionPrice));
       await tx.wait();
       toast({
         title: "Transaction confirmée",
@@ -126,7 +124,7 @@ const CreateComethForm = () => {
             ETH
           </Box>
         </Center>
-        <Tooltip rounded="md" label="Une fois que vous aurez validez, attendez le pop-up, vous saurez rediriger automatiquement dans l'application" fontSize="md">
+        <Tooltip rounded="md" label="Une fois que vous aurez validé, attendez le pop-up, vous serez redirigé automatiquement dans l'application" fontSize="md">
         <Circle
           fontWeight="bold"
           textAlign="center"
